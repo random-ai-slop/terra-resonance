@@ -103,3 +103,17 @@ The final [freeze review](reviews/agreement-r3-freeze.md) found the scope suffic
 Implementation ownership is instantiated through actual native domain tasks, with exact base/attempt/path recorded in primary CURRENT. Numerical methods owns the evaluator/loader/bounded JSON reader and scientific tests/schema. Package/production receives its accepted commit before implementing CLI/export/recipe and user guide. Website/delivery owns the independent mechanical release-version preparation, using a lighter transient model with parent verification. Root owns integration, independent audits, distribution checks, maintained overview/contract/roadmap, workflow retrospective and publication. No transient reviewer is simultaneously the native numerical or export author.
 
 The user supplied actual task IDs after list discovery omitted completed native tasks; direct reads verified all three clean read-only bootstraps. Preserve known IDs for direct reads/waits and do not use list omission as a liveness judgment. This real recovery replaces the earlier fallback proposal; no extra worktree or duplicate task is needed. Model tiers are now explicitly authorized and recorded in WORKFLOW.
+
+## Candidate implementation acceptance
+
+The frozen candidate4e1d79ad9eb7d80c7da9051c29de3a513e6d0fc0 implements this increment without expanding the numerical solver scope. Numerical and package native tasks returned scoped commits; the package task accepted the integrated numerical API before dependent implementation. The website/delivery domain prepared synchronized0.3.0 metadata with one lighter-model child and independent parent verification.
+
+Three postimplementation reviews cover distinct risks:
+
+1. [Scientific audit](reviews/agreement-audit-1-science.md): independent polynomial integration and rational counterexamples, one12-solve matrix with44 cross-method and44 refinement rows. Existing reference evidence and quality labels remain unchanged.
+2. [Package and artifact audit](reviews/agreement-audit-2-package.md): actual PREM and receiving-sidecar journeys. Two typography defects were repaired and independently closed on0779d960 with six regenerated PNG/native-SVG cases; complete metadata and scientific captions were preserved.
+3. [Distribution audit](reviews/agreement-audit-3-release.md): exact frozen runtime/source/guide/recipe bytes, separate wheel/sdist installations outside the checkout, copied four-solve recipe and actual output readback. Two preflight evidence gaps were corrected before execution.
+
+Root integration passed182 Python tests,25 website tests, type/lint and seven resource comparisons. Both candidate installations passed their independent sphere reference, explicit source/direction/20-to-40 resolution checks, sidecar-only recovery, existing comparison and artifact decode. The scientific evaluator's seven audited source identities did not change during rendering repairs. No new schema migration, website metric, automatic mode tracking, PyPI publisher or default-backend promotion was introduced.
+
+Final review/retrospective prose is an evidence-only source change. Hosted CI rebuilds and rechecks that final input; tagged package attachments and Pages remain separate publication checks, visible in the repository's Actions and release records. Candidate-local evidence is not presented as proof of a later public artifact. See the [workflow retrospective](team/RETROSPECTIVE.md) for observed team behavior and the limited protocol improvements.

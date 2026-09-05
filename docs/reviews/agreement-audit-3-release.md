@@ -6,11 +6,11 @@ revision 3, AGENTS/WORKFLOW/primary CURRENT, `scripts/check_distribution.py`,
 review file is owned by the reviewer. No build, install, numerical rerun, source
 change, or external publication was performed during preparation.
 
-**Status: preparation complete; installed acceptance pending.** The package
-author is repairing the two renderer-only findings from audit 2. Root must
-supply the accepted frozen input and actual archive/install evidence before
-this audit can close. Earlier source tests and 0.2.1 release evidence do not
-establish 0.3.0 installed acceptance.
+**Status: candidate audit 3 passed on frozen input `4e1d79ad`; final hosted
+build/publication remains a separate root-owned boundary.** Preparation findings
+and their corrections are retained below. The candidate closure at the end
+records actual installed evidence; earlier source tests and 0.2.1 release
+evidence were not substituted for it.
 
 Preparation follow-up: independently inspected root's subsequent checker diff.
 Both gaps below are addressed in source: the sdist guide receives byte equality
@@ -145,3 +145,82 @@ identity checks as WORKFLOW specifies. Do not rerun the 12-solve science matrix
 for renderer or review-text changes. Hosted CI/Python-version compatibility and
 actual tagged publication remain distinct evidence supplied by root, not
 assumptions inferred from these preparation notes.
+
+## Frozen candidate inspection
+
+Independently inspected candidate input
+`4e1d79ad9eb7d80c7da9051c29de3a513e6d0fc0` with a clean primary worktree.
+Both archives under `dist/phase3-candidate` contain 41 runtime/resource files
+matching the frozen source. All 222 tracked files represented in the sdist
+match that commit; the three public schema symlinks are correctly represented
+by their committed target contents. Generated packaging metadata is distinguished
+from tracked source. The package version is 0.3.0 and SPDX is GPL-3.0-only;
+live coordination, website, local artifacts and environments remain excluded.
+
+| Candidate | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Wheel | 678773 | `300597241cf21cbf1c50a059e4cf4ad735eab722aaf12412817ddcd8695511c0` |
+| Sdist | 4854565 | `f376f50e42da7fce85ad5040fe0f8f65effb3384a0146ef136e2446e55ff8b90` |
+
+Frozen checker SHA-256 is
+`1c0ed80c6ba415f47ada89757e22a60041fc1e7b567b4be0e08d26be0e5956a8`;
+recipe is `d1da357ec409ed5d19b6fbc6742ca8291d19908d2eba2ed9911aafa5b9e89e9b`;
+guide is `beffe976a8255c270f6af5a0d1cd27ea9266dba240ec4f2f3acaf42a995f5985`.
+Each was compared to the actual frozen Git blob, not just its working filename.
+
+Audit 2's independent repair closure identifies exporter
+`47ddbb87b3318b08a5999da24c349f8f9c88f398a05ac640e2074efca5be12f8`,
+which is exactly the frozen packaged renderer. This review checked all six
+repair input identities and 24 PNG/SVG/sidecar hashes against that closure
+record and independently viewed the repaired 800×480 native-SVG raster. Both
+scientific notices, the residual direction and the accuracy caption remain
+legible. No rerender or numerical rerun was needed.
+
+These candidate identities are not the eventual evidence-only public archive
+identities. Root will use the actual hosted final-source CI/build/install and
+downloaded tagged release checks for that boundary, avoiding a redundant local
+rebuild solely for review prose. At this checkpoint the existing root-owned
+isolated-install process is still running; no installed pass is inferred.
+
+## Candidate installed closure
+
+Root's single existing installation command completed with exit 0. Independently
+inspected `artifacts/public-delivery/release-v0.3.0/candidate-install.json`, SHA-256
+`7c9f51d3cf80e43d24a3bfed23df4f0f3296e426656e9739220e7e6cb43d1a6e`.
+Its two archive hashes agree with the bytes inspected above. The wheel and sdist
+use distinct fresh `env-0` and `env-1` Python 3.13.7 installations; each copied
+recipe's readback import path is its own installed package path. The recorded
+copied script hash matches the frozen recipe. No source-tree or shared-site
+installation was substituted.
+
+Both installations passed six fresh example loads, the example CLI, small
+custom default/pilot solves, existing exports/GLB readback, two-pair agreement
+computation, sidecar-only recovery, tampered-report rejection, and the existing
+general comparison workflow. Each copied recipe produced the four expected
+reports, validated exact source directions and actual 20/40 sphere counts, and
+checked all 15 output identities. Existing-directory retries failed with every
+output hash unchanged. The maximum independent sphere frequency error in both
+runs is `5.954120280118016e-8`, against the separately stated 0.5% named-case
+ceiling. This does not certify arbitrary-model accuracy or promote quality.
+
+The retained installed-wheel figures under
+`artifacts/public-delivery/release-v0.3.0/candidate-installed-figures` are linked
+by `identity.json` to the candidate wheel and frozen commit. All five retained
+file hashes match the combined installation report. Independently viewed the
+actual 1200×800 PNG: `d=1.07719e-7`, signed relative frequency change
+`3.83079e-9`, sign -1 and the separate residual scale remain readable and
+nonzero. Parsed its native SVG to verify vector paths and absence of embedded
+raster imagery. Both computation and rendering producers are 0.3.0. Different
+full report/SVG hashes between fresh runs are not treated as a failure: timing
+provenance and SVG production metadata are not an asserted byte-deterministic
+scientific result.
+
+**No candidate release blocker remains.** This closes the third distinct
+implementation audit, including both preparation gaps. No duplicated install,
+build, test suite, rendering matrix or scientific solve was run by this reviewer.
+The final evidence-only documentation commit will change the sdist input;
+therefore these candidate hashes must not be presented as the eventual public
+release hashes. Root's final hosted CI must build and check the actual final
+source, including supported interpreter jobs and isolated package journeys,
+then verify the downloaded tagged archives against that source. This candidate
+closure does not claim those later external actions have already happened.

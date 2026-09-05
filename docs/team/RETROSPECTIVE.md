@@ -1,8 +1,8 @@
 # Autonomous-team trial: observed outcomes
 
-Status: interim evidence through package/artifact audit2. Renderer repairs and isolated-release audit remain pending; this document does not close the full trial.
+Status: development and candidate-installation trial complete. Final evidence-only hosted rebuild, CI and public artifact identity are enforced by the release workflow and recorded in GitHub Actions; publication is a separate gate.
 
-## What the trial established so far
+## What the trial established
 
 Three domain tasks actually completed read-only bootstrap in separate worktrees. Each located the absolute primary CURRENT, recognized that a role charter was insufficient write authority, and stopped. Two also correctly identified stale setup statements in CURRENT rather than treating them as stronger evidence than actual Git state. All initial worktrees remained clean.
 
@@ -10,7 +10,7 @@ Native list discovery omitted the completed tasks. The coordinator repeatedly de
 
 The numerical task switched its clean archival bootstrap checkout directly to the accepted public plan commit, preserving the separate archive history. It returned a scoped commit, declared exact import binding,77 targeted/data checks and an explicit package-consumer API. The coordinator checked base-to-handoff commits and paths, inspected source, found one malformed-ID preflight issue that the author repaired, integrated the commit and ran77 affected checks on the integrated source. Version-only primary changes did not cause a needless numerical rebase.
 
-The package task subsequently acknowledged the integrated numerical revision and checked evaluator interface in its own clean worktree before starting its seven-path assignment. This is actual receiving-domain continuation rather than a handoff note with no consumer. It returned the scoped exporter, CLI and copied recipe commit; root integrated it and29 affected export/CLI checks passed. Independent artifact acceptance found two presentation defects requiring scoped repair.
+The package task subsequently acknowledged the integrated numerical revision and checked evaluator interface in its own clean worktree before starting its seven-path assignment. This is actual receiving-domain continuation rather than a handoff note with no consumer. It returned the scoped exporter, CLI and copied recipe commit; root integrated it and29 affected export/CLI checks passed. Independent artifact acceptance found two presentation defects, repaired by the same author in a new bounded attempt and independently closed on the integrated renderer.
 
 The website/delivery task used exactly one explicitly selected `gpt-5.6-luna` child for synchronized version literals, while the domain parent retained its configured model and independently checked the exact diff and unchanged lock dependencies. The coordinator inspected and integrated that scoped commit and reran the metadata check. This demonstrates bounded model-tier use with verification. It does not demonstrate a cost/speed gain; mechanical delegation carries coordination overhead, so isolated literal edits should usually stay local or be batched into an existing useful domain task.
 
@@ -22,10 +22,22 @@ Scientific audit1 used a different author and independent polynomial antiderivat
 
 Independent package audit2 exercised sidecar-only recovery, recomputed CSV authority, real PREM material domains, exact/tiny residuals and actual PNG/native SVG output. It found long-label clipping and overlapping notices at supported short-wide dimensions that normal/minimum author figures had missed. The repair stays with the original package owner; the non-author reviewer retains closure responsibility. Numerical evidence remains valid because no numerical runtime changes are requested. Future figure checks should include long valid metadata and supported aspect combinations when typography changes; this is a targeted coverage improvement, not a new exhaustive visual test matrix.
 
-## Observations to complete after release
+## Installation and release review
 
-- No competing runtime writer, discarded work or archival-history merge has been observed.
-- No numerical handoff has been invalidated after acceptance. The pre-integration malformed-ID finding was repaired within the same attempt.
-- Initial native discovery required user intervention; the updated bootstrap return path addresses the observed failure without another task.
-- One numerical integration rerun was justified by accepted-source integration and binding; the independent physical matrix ran once. Distribution builds and artifact regeneration will be recorded with their actual causes.
-- Final package/CLI/figure findings, installation/release identities, retained domain handoffs and any resulting protocol changes remain to be recorded before completion.
+Audit3 found two acceptance gaps before installation: the shipped guide was checked only for existence, and recipe readback did not connect saved files to actual resolutions and comparison directions. Root strengthened exact guide-byte comparison and moved recipe readback into the isolated installed environment using the public validators. The reviewer inspected those changes, checked both frozen archives against41 runtime/resource files and222 tracked source files, and inspected an actual installed-wheel PNG with its retained native SVG and full sidecars.
+
+The frozen candidate4e1d79ad9eb7d80c7da9051c29de3a513e6d0fc0 was built once locally. Its wheel and source distribution each installed into a separate new environment outside the repository with isolated imports. Both executed the new two-pair CLI/received-sidecar journey, existing examples and general comparison, actual PNG/SVG/probe/GLB decode, the copied four-solve recipe, report/source/resolution readback and unchanged-output rejection. The source recipe's independent sphere frequency error remained at most5.954120280118016e-8; this named result is not a general accuracy claim. Complete integration checks passed182 Python tests,25 website tests, type/lint and seven canonical resource comparisons.
+
+The candidate source archive necessarily contains the pre-installation review status. Committing final evidence prose therefore requires an evidence-only rebuild. The existing hosted CI performs that final build, complete runtime/resource/recipe/guide byte checks and isolated installations before Pages/release acceptance. No second identical local build is needed. Tagged release attachments must be checked against the final source and their actual published checksums; a local candidate pass alone never substitutes for that step.
+
+## Observed outcomes and protocol changes
+
+- No competing runtime writer, discarded work or private archival-history merge was observed. Native tasks returned scoped commits and idle ownership; temporary reviewers did not become substitute product owners.
+- The numerical handoff remained valid after integration. Renderer repairs changed only the exporter, its targeted regressions and author report; all seven scientific-audit source identities stayed unchanged.
+- Three feature-design rounds and three distinct implementation audits supplied different evidence. Pre-integration malformed-ID and residual-direction findings were repaired; independent audit2 closed two actual layout defects; audit3 closed two installation-evidence gaps. Further broad review rounds were unnecessary.
+- The independent12-solve matrix ran once. Renderer review reused complete reports. Six affected render cases were regenerated once by the repair author and once by the independent reviewer, because the producer changed. Full integration and platform/release checks retain their distinct purposes.
+- Initial native discovery required user intervention. The bootstrap return-message rule now supplies the actual source task ID without a custom registry or duplicate conversation.
+- Width/height-independent figures now require the affected short-wide cases, long valid metadata and combined notices when typography changes. Measured bounds plus actual native output caught what character counts and default-size checks missed.
+- One lighter-model mechanical assignment was independently verified. No speed, cost or intelligence ranking was measured; local execution remains preferable when delegation has no useful independent work.
+
+The durable team remains three domains under one coordinator. New work starts from an explicit accepted public revision and bounded task/attempt; retained context is useful, standing write authority is not. Future small changes use the affected independent review rather than inheriting a ceremonial three-round minimum. Native task IDs, worktree heads and resumable domain handoffs remain in the ignored primary CURRENT/handoffs, with maintained public charters and this protocol available to new contributors.
