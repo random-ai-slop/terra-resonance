@@ -42,6 +42,24 @@ blender --background --python examples/blender_import.py -- artifacts/demo-media
 
 The script reads the adjacent `.glb.json` manifest, imports actual shape keys and animation, sets timeline/camera and saves `.blend`. Native Blender was not available in the baseline environment. Do not replace a failed import with an empty file or static sphere. Existing `.blend` output needs `--overwrite`. The root node handles z-up to glTF y-up; manually rotating the scientific vertices again would double-transform them.
 
+## Same-model toroidal agreement
+
+```sh
+OPENBLAS_NUM_THREADS=1 python examples/recipes/agreement.py artifacts/agreement-new
+```
+
+The output directory must not exist. This copied recipe also runs outside the
+checkout using only the installed package and SciPy. Four solves cover a
+homogeneous sphere at mesh targets 20/40 with the default and experimental T
+methods. Four self-contained reports separate cross-method agreement from each
+method's refinement. A CSV, native SVG and PNG illustrate `cross-40`; their
+sidecars retain the complete report. Separate `independent-frequency.json`
+checks the T0_2 spherical-Bessel frequency against a named 0.5% ceiling without
+promoting solver quality. Files are individually committed; a later failure
+retains completed outputs. No directory deletion or implicit overwrite occurs.
+See the [agreement guide](../../docs/AGREEMENT.md) for exact filenames, the
+two-pair API/CLI example, sidecar-only recovery and scientific limits.
+
 ## Vs sensitivity with step-size and grid evidence
 
 ```sh

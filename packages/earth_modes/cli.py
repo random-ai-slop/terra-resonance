@@ -184,6 +184,18 @@ def parser():
     compare.add_argument("--reference-mode")
     compare.add_argument("--candidate-mode")
     _output(compare)
+    agreement = commands.add_parser(
+        "agreement", help="Checked same-model elastic T agreement; no accuracy promotion."
+    )
+    route = agreement.add_mutually_exclusive_group(required=True)
+    route.add_argument("--reference", type=Path, help="Complete reference Bundle JSON.")
+    route.add_argument("--report", type=Path, help="Self-contained report or export sidecar JSON.")
+    agreement.add_argument("--candidate", type=Path, help="Complete candidate Bundle JSON.")
+    agreement.add_argument("--pair", action="append", nargs=2, metavar=("REFERENCE_ID", "CANDIDATE_ID"))
+    agreement.add_argument("--pair-index", type=int, help="Zero-based pair selected for SVG/PNG only.")
+    agreement.add_argument("--width", type=int, help="Figure width, 640..4096; default 1200.")
+    agreement.add_argument("--height", type=int, help="Figure height, 480..4096; default 800.")
+    _output(agreement)
     return root
 
 
@@ -447,7 +459,22 @@ def _probe(args):
 
 
 def run(args):
-    if args.command == "example":
+    if args.command == "agreement":
+        from .agreement import MAX_BUNDLE_BYTES, export_agreement, load_agreement, toroidal_agreement
+
+        if args.report is not None:
+            if args.candidate is not None or args.pair is not None:
+                raise ValueError("--report cannot be combined with --candidate or --pair")
+            report = load_agreement(args.report)
+        else:
+            if args.candidate is None or not args.pair:
+                raise ValueError("agreement requires --reference, --candidate and at least one --pair")
+            reference = _read_json(args.reference, max_bytes=MAX_BUNDLE_BYTES)
+            candidate = _read_json(args.candidate, max_bytes=MAX_BUNDLE_BYTES)
+            report = toroidal_agreement(reference, candidate, args.pair)
+        print(export_agreement(report, args.out, pair_index=args.pair_index,
+                               width=args.width, height=args.height, overwrite=args.overwrite))
+    elif args.command == "example":
         from .examples import list_examples, load_example
         from .data import save_project
         if args.list:
