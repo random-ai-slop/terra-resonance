@@ -1,6 +1,6 @@
 # Terra Resonance operating workflow
 
-Status: active operating protocol v1.1, 2026-09-04, incorporating the explicitly requested public delivery domain after three workflow design reviews. Actual adoption and development-trial outcomes remain tracked in CURRENT.
+Status: active operating protocol v1.2, 2026-09-04, incorporating the explicitly requested public delivery domain after three workflow design reviews. Actual adoption and development-trial outcomes remain tracked in CURRENT.
 
 ## Start and authority
 
@@ -32,7 +32,7 @@ Return a commit containing only permitted changes and evidence, with a clean dec
 
 A ready handoff contains: task/attempt; input and output commit; changed paths; implemented API or artifact; owner's self-check (including a relevant failure case), exact reproduction command and actual result; known limits; remaining dependency; next consumer/action. Link existing reports instead of copying their contents. The consumer acknowledges the input before dependent changes.
 
-On timeout, poll the same thread/process handle or inspect its current authoritative status. Do not equate an observation timeout with failure, and do not restart an encoding/build/worker from a lock file or old note. If liveness is uncertain, keep the affected writer claim paused and inspect known process/child handles. A replacement requires confirmed quiescence or a separate checkout with explicit revocation of the old attempt’s integration authority. If a worker is truly terminal or unavailable, inspect partial work, preserve its checkpoint and explicitly transfer the same task to a new attempt. Record which prior evidence is invalidated. A resumed worker rechecks current files and accepted inputs rather than trusting remembered success.
+On timeout, poll the same thread/process handle or inspect its current authoritative status. Native list discovery can omit a completed task: a user-supplied actual ID successfully recovered all three bootstrap reports in this trial. Preserve actual IDs and use direct reads/waits; list omission does not mean absence. Ask for an ID only when native discovery cannot resolve the client handle; never duplicate creation merely because a list omits it. Do not equate an observation timeout with failure, and do not restart an encoding/build/worker from a lock file or old note. If liveness is uncertain, keep the affected writer claim paused and inspect known process/child handles. A replacement requires confirmed quiescence or a separate checkout with explicit revocation of the old attempt’s integration authority. If a worker is truly terminal or unavailable, inspect partial work, preserve its checkpoint and explicitly transfer the same task to a new attempt. Record which prior evidence is invalidated. A resumed worker rechecks current files and accepted inputs rather than trusting remembered success.
 
 Keep a short domain handoff only at task completion, interruption or transfer. Do not maintain parallel domain task boards. Closed tasks retain the decisive evidence and rationale; CURRENT keeps the active milestone and a compact completed summary.
 
@@ -57,3 +57,9 @@ A post-freeze defect reopens affected inputs. State which evidence remains valid
 For each trial, record observed owner collisions, invalidated handoffs and causes, artifact regeneration/build reasons, broad reruns with no changed inputs, reviewer findings by discovery stage, and cold-start continuation outcome. Do not invent timing/token baselines. Hard outcomes are no lost accepted requirement, no competing writer, reproducible non-author evidence, and no stale released artifact.
 
 Retrospective changes must remove friction or prevent a concrete failure. Keep the current protocol when it works. The user-requested public GitHub/Pages delivery, alongside Sites and bilingual frontend maintenance, justifies one combined website/delivery domain. Do not split development and deployment into competing owners. Add further domains, automation or machine checkers only for demonstrated recurring need.
+
+## Model selection by task
+
+The user explicitly permits model tiers. Keep high-capability models for scientific derivation, ambiguous design, semantic integration and adversarial numerical/release review. Use a lighter available model for a bounded mechanical task whose input, allowed edit and acceptance command are already settled: deterministic text/version updates, file inventories, or an established command run with evidence collection. Start with `gpt-5.6-luna` for those tasks, escalating to a stronger model only for a concrete unresolved interpretation or failure. Do not call a task mechanical merely because its output is short; scientific signs, units, provenance and release destination decisions retain capable review.
+
+Each dispatch names the selected model when overridden, the reason, exact inputs and a checkable result. The receiving owner inspects the actual diff/artifact. A cheaper author does not remove independent review; model diversity alone is not evidence of correctness. Existing running tasks retain their settings unless an explicit new bounded assignment justifies a change. Prefer native model options over editing global configuration or creating duplicate conversations solely to change a model.

@@ -2,7 +2,7 @@
 
 Read `docs/team/WORKFLOW.md` before project work. Coordinated specialists also read the primary local `docs/team/CURRENT.md` at the absolute path supplied in their dispatch; that ignored operational file is not shipped in public clones. Independent contributors follow their own explicit user assignment and can use `docs/team/CURRENT.example.md`. A role charter grants no current write assignment. User instructions take precedence over these project rules.
 
-- The coordinator owns scope, the current task record, cross-domain integration, release acceptance and the complete monorepo and release acceptance; assigned website work can be owned by the website/delivery domain.
+- The coordinator owns scope, the current task record, cross-domain integration, the complete monorepo and release acceptance; assigned website work can be owned by the website/delivery domain.
 - Durable scientific and package/production tasks execute bounded task/attempt assignments, self-check and hand off evidence, then become idle. A role charter alone is read-only.
 - Match the current task/attempt, accepted source/contract revision and exact allowed paths before editing. Preserve dirty/untracked work; do not reset or discard it to synchronize.
 - Use transient subagents for concrete independent work and adversarial reviews within the coordinator's assigned concurrency allowance. Avoid duplicate implementations and reviews with no distinct risk.
