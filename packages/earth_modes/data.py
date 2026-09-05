@@ -550,7 +550,7 @@ def save_project(project, path, overwrite=False):
     _write_json(project, path, overwrite)
 
 
-def _read_json(path):
+def _read_json(path, *, max_bytes=None):
     def unique_object(pairs):
         result = {}
         for key, value in pairs:
@@ -562,6 +562,14 @@ def _read_json(path):
     def invalid_constant(value):
         raise ValueError(f"nonfinite JSON constant: {value}")
 
+    if max_bytes is not None:
+        bound = _integer(max_bytes, "max_bytes", 1)
+        with Path(path).open("rb") as stream:
+            raw = stream.read(bound + 1)
+        if len(raw) > bound:
+            raise ValueError(f"JSON input exceeds {bound} bytes")
+        return json.loads(raw.decode("utf-8"), object_pairs_hook=unique_object,
+                          parse_constant=invalid_constant)
     with Path(path).open(encoding="utf-8") as stream:
         return json.load(stream, object_pairs_hook=unique_object, parse_constant=invalid_constant)
 

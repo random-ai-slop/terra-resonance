@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Toroidal linear mass agreement 1.0",
+  "description": "Structural contract only. validate_agreement additionally checks complete bundle semantics, hashes, connected support, budgets and recomputed scientific rows. Unknown JSON extensions are retained.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "metric",
+    "generator",
+    "interpretation",
+    "generator_version",
+    "model_hash",
+    "sources",
+    "pairs",
+    "rows"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "metric": {
+      "const": "toroidal-linear-mass-v1"
+    },
+    "generator": {
+      "const": "earth_modes.agreement"
+    },
+    "interpretation": {
+      "const": "Same-canonical-model elastic T agreement; reference is a denominator, not physical truth. Agreement and mesh change do not certify continuum accuracy."
+    },
+    "generator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "sources": {
+      "type": "object",
+      "required": [
+        "reference",
+        "candidate"
+      ],
+      "properties": {
+        "reference": {
+          "type": "object",
+          "required": [
+            "bundle_hash",
+            "bundle"
+          ],
+          "properties": {
+            "bundle_hash": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "bundle": {
+              "$ref": "mode-bundle.schema.json"
+            }
+          },
+          "additionalProperties": true
+        },
+        "candidate": {
+          "type": "object",
+          "required": [
+            "bundle_hash",
+            "bundle"
+          ],
+          "properties": {
+            "bundle_hash": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "bundle": {
+              "$ref": "mode-bundle.schema.json"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "pairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "required": [
+          "pair_index",
+          "l",
+          "reference_n",
+          "candidate_n",
+          "reference_mode_id",
+          "candidate_mode_id",
+          "radial_label_mismatch",
+          "alignment_indeterminate",
+          "layer_ids",
+          "reference_frequency_hz",
+          "candidate_frequency_hz",
+          "reference_continuous_norm",
+          "candidate_continuous_norm",
+          "delta_frequency_hz",
+          "relative_frequency_change",
+          "signed_overlap",
+          "overlap",
+          "alignment_sign",
+          "shape_distance",
+          "reference_mesh_elements",
+          "reference_radial_samples",
+          "candidate_mesh_elements",
+          "candidate_radial_samples"
+        ],
+        "properties": {
+          "pair_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "l": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "reference_n": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "candidate_n": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "reference_mode_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_mode_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "radial_label_mismatch": {
+            "type": "boolean"
+          },
+          "alignment_indeterminate": {
+            "type": "boolean"
+          },
+          "layer_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reference_frequency_hz": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "candidate_frequency_hz": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "reference_continuous_norm": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "candidate_continuous_norm": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "delta_frequency_hz": {
+            "type": "number"
+          },
+          "relative_frequency_change": {
+            "type": "number"
+          },
+          "signed_overlap": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1
+          },
+          "overlap": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "alignment_sign": {
+            "type": "integer",
+            "enum": [
+              -1,
+              1
+            ]
+          },
+          "shape_distance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.4142135623731094
+          },
+          "reference_mesh_elements": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "reference_radial_samples": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 9007199254740991
+            }
+          },
+          "candidate_mesh_elements": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "candidate_radial_samples": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 9007199254740991
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
