@@ -4,7 +4,7 @@ Rendering lives in :mod:`earth_modes.export`; importing the numerical API does
 not initialize a plotting backend or require a browser.
 """
 
-__version__ = "0.2.1"
+__version__ = "0.3.0"
 
 from .data import (
     bundle_hash,
