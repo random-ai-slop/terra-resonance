@@ -1,6 +1,6 @@
 # Long-term development roadmap
 
-This roadmap groups complete scientific/user tasks rather than adding interface switches. The original design v1.1 is the historical basis; phase 1 delivered version 0.1.0. [PHASE-2](PHASE-2.md) defines the current 0.2.0 work. Plan, package and schema versions are managed independently. Future branches are not implicit commitments for the current release.
+This roadmap groups complete scientific/user tasks rather than adding interface switches. The original design v1.1 is the historical basis; phase 1 delivered version 0.1.0. [PHASE-2](PHASE-2.md) records the 0.2.0 scope; public delivery followed in 0.2.1. [PHASE-3](PHASE-3.md) defines the current explicit toroidal agreement increment. Plan, package and schema versions are managed independently. Future branches are not implicit commitments for the current release.
 
 ## A — trustworthy, interpretable SNREI workbench
 
@@ -13,6 +13,12 @@ Completion requires applicable ACCEPTANCE items, representative lessons, install
 Version 0.2.0 improves installed examples, English maintained artifacts, coherent website locales, reproducible surface-grid spacing and an independent elastic T pilot. The default validated solver remains intact. [NUMERICAL-OWNERSHIP](NUMERICAL-OWNERSHIP.md) records the executable T evidence and a gated T→R→S migration.
 
 The scientific stack remains Python/NumPy/SciPy, already backed by compiled LAPACK. T promotion requires the named sphere, shell and PREM evidence, domain/normalization identity and resource checks. R next needs gravity, density sheets and fluid/solid boundary evidence. S additionally needs justified mixed/essential-space extraction, l=1 center/translation and all six topologies. A native/WASM rewrite requires a measured hotspot and stable interfaces; language preference alone is insufficient. Keep pinned upstream development references without permanently maintaining two complete production stacks.
+
+### A3 — reusable same-model agreement evidence
+
+Version 0.3.0 adds an installed elastic-T agreement report, native scientific figures, all-pair CSV and a copied two-resolution recipe. Complete source bundles, explicit mode pairs and continuous material-sided normalization make a report transferable without its original source paths. Three design rounds froze the scope; actual implementation and review acceptance are recorded in [PHASE-3](PHASE-3.md).
+
+This step supports eventual numerical ownership without promoting the pilot: code agreement, each method's mesh change and an independent reference error remain separate. The next numerical increment should address a measured unsupported workload or the explicitly gated R formulation. A second import adapter remains a separate useful route; report serialization alone is not an importer, mode tracker or anisotropic solver.
 
 ## B — interoperability and material sensitivities
 

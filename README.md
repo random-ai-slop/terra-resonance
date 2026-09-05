@@ -4,7 +4,7 @@
 
 Normal-mode calculations and scientific visualization for spherically symmetric planets. The Python package computes modes, samples fields and exports reproducible artifacts. The optional English/Chinese website explores the same versioned data without a hidden Python service.
 
-The 0.1.0 baseline completed three sequential implementation reviews. The 0.2.0 changes and their evidence are tracked in [Phase 2](docs/PHASE-2.md); a plan is not an acceptance result. Scientific claims are bounded by the [numerical evidence](docs/validation/NUMERICS.md) and each mode's provenance.
+The 0.1.0 baseline completed three sequential implementation reviews. The 0.2.0 changes are tracked in [Phase 2](docs/PHASE-2.md); [Phase 3](docs/PHASE-3.md) tracks explicit toroidal agreement and its implementation audits. A plan is not an acceptance result. Scientific claims are bounded by the [numerical evidence](docs/validation/NUMERICS.md) and each mode's provenance.
 
 ## Start with the installed package
 
@@ -15,7 +15,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install .
 ```
 
-Alternatively download the wheel and `SHA256SUMS` from the GitHub release, verify its checksum and install the wheel with `python -m pip install path/to/terra_resonance-0.2.1-py3-none-any.whl`. The package is not currently published on PyPI. Activate that environment, then run these commands from any working directory:
+Alternatively download the wheel and `SHA256SUMS` from the GitHub release, verify its checksum and install the wheel with `python -m pip install path/to/terra_resonance-0.3.0-py3-none-any.whl`. The package is not currently published on PyPI. Activate that environment, then run these commands from any working directory:
 
 ```sh
 terra example --list
@@ -66,6 +66,12 @@ export_image(bundle, scene, "toroidal.png")
 ```
 
 This uses fixed illustration normalization by default, not an earthquake-source-calibrated displacement in metres. A separate experimental `earth_modes.experimental.solve_toroidal` studies an independently assembled toroidal solver; it does not replace the default backend. See the [phase scope](docs/PHASE-2.md).
+
+## Compare two toroidal computations
+
+`earth_modes.agreement.toroidal_agreement` measures explicitly paired elastic T modes from two complete bundles of the same canonical model. It reports signed frequency change and a mass-weighted, globally sign-aligned radial-shape distance. JSON embeds both complete inputs; native SVG/PNG and scalar CSV retain a reloadable report sidecar. Code agreement and mesh refinement remain separate from independent accuracy evidence.
+
+See the [agreement guide](docs/AGREEMENT.md) and [copied two-resolution recipe](examples/recipes/agreement.py) for standalone API/CLI use, independent Bessel frequency checks and received-sidecar re-export. The existing general comparison still supports separate models and unchanged raw curves.
 
 ## Artifacts and reproducibility
 
@@ -120,6 +126,6 @@ Illustration normalization uses each mode's fixed radial maximum norm. Geometric
 - [Development](docs/DEVELOPMENT.md): module ownership, meaningful validation and release steps.
 - [Data](docs/DATA.md), [contract](docs/CONTRACT.md), [schemas](schema/README.md).
 - [Output recipes](examples/recipes/README.md), [lessons](examples/lessons/README.md), [acceptance](docs/ACCEPTANCE.md).
-- [Current phase](docs/PHASE-2.md), [roadmap](docs/ROADMAP.md), [historical reviews](docs/reviews/).
+- [Current phase](docs/PHASE-3.md), [roadmap](docs/ROADMAP.md), [historical reviews](docs/reviews/).
 
 The default numerical core adapts fixed [Ouroboros v6.0](https://github.com/harrymd/Ouroboros/tree/fa63363040a28c08d9fe2bd7d05dcc823d90dd1e); [vendor notes](vendor/README.md) and bundle provenance record local corrections. Independent frequency references use fixed [MINEOS](https://github.com/geodynamics/mineos/tree/26f842dbe95b0c27d5e77146d415268db1239913). Visualization was inspired by [Saviot's Earth demonstration](https://saviot.cnrs.fr/terre/index.en.html). Coastlines are Natural Earth 110m public-domain data; palettes and licensing are documented in [assets](packages/earth_modes/assets/README.md). The package is GPL-3.0-only; retain upstream licenses and attribution when distributing it.

@@ -4,7 +4,7 @@ Public source, Pages and release operations are documented in [PUBLISHING](PUBLI
 
 Active agent coordination follows [WORKFLOW](team/WORKFLOW.md), routed by root AGENTS.md. [CURRENT](team/CURRENT.md) is the sole live task record and is excluded from source distributions; worktree copies are historical. Earlier phase-specific ownership below remains historical context.
 
-The first release completed three sequential implementation reviews; see [the log](reviews/IMPLEMENTATION-LOG.md). Development checks, independent numerical evidence, planning reviews and implementation reviews remain separate records. Phase 2 has its own [scope and ownership](PHASE-2.md). Successful commands alone do not establish scientific correctness.
+The first release completed three sequential implementation reviews; see [the log](reviews/IMPLEMENTATION-LOG.md). Development checks, independent numerical evidence, planning reviews and implementation reviews remain separate records. Phase 2 has its own [scope and ownership](PHASE-2.md); [Phase 3](PHASE-3.md) adds explicit T agreement and exercises actual domain handoff. Successful commands alone do not establish scientific correctness.
 
 ## Module boundaries
 
@@ -16,7 +16,7 @@ The first release completed three sequential implementation reviews; see [the lo
 | `data.py`, `assets/schema/` | Semantic validation, JCS hashes, defaults and portable projects |
 | `fields.py`, `sampling.py` | Vector spherical harmonics, derivatives, material sides and faithful radial sampling |
 | `export*.py` | Export API, budgets/transactions, geometry/overlays and GLB |
-| `analysis.py`, `cli.py` | Separate-model comparisons and a thin command layer |
+| `analysis.py`, `agreement.py`, `agreement_export.py`, `cli.py` | General comparison, same-model T metrics, native agreement exports and a thin command layer |
 | `examples.py` | Fresh installed projects from one bundle and one English catalog |
 | `apps/web/lib/science/` | TypeScript contracts, matching fields/geometry and browser artifacts |
 | `apps/web/components/observatory/`, website i18n | UI, locale presentation and controls |

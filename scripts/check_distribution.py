@@ -14,6 +14,7 @@ from email.parser import BytesParser
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 import struct
 import subprocess
@@ -30,7 +31,8 @@ REQUIRED = (
     "assets/examples/prem-modes.json", "assets/examples/lessons.json",
     "assets/prem-isotropic-3mhz.txt", "assets/coastlines.json", "assets/palettes.json",
     "assets/schema/mode-bundle.schema.json", "assets/schema/scene.schema.json",
-    "assets/schema/project.schema.json", "vendor/Ouroboros/LICENSE", "vendor/README.md",
+    "assets/schema/project.schema.json", "assets/schema/agreement.schema.json",
+    "vendor/Ouroboros/LICENSE", "vendor/README.md",
 )
 
 
@@ -68,8 +70,11 @@ def audit(path, version):
         metadata = files["PKG-INFO"]
         prefix = "packages/earth_modes/"
         for name in ("README.md", "LICENSE", "pyproject.toml", "MANIFEST.in",
-                     "examples/recipes/render.py", "scripts/check_distribution.py"):
+                     "examples/recipes/render.py", "examples/recipes/agreement.py", "docs/AGREEMENT.md",
+                     "scripts/check_distribution.py"):
             require(name in files, f"Missing sdist file: {name}")
+        require(files["examples/recipes/agreement.py"] == (ROOT / "examples/recipes/agreement.py").read_bytes(),
+                "Archived agreement recipe differs from the accepted source")
     fields = BytesParser().parsebytes(metadata)
     require(fields["Name"] == "terra-resonance" and fields["Version"] == version,
             f"Wrong distribution metadata in {path.name}")
@@ -177,10 +182,56 @@ def installed_check(version):
     bound = scene["deformation"] * scene["color_limit"]
     error = float(np.max(np.linalg.norm(displacement-reference, axis=1)))
     require(error <= .01*bound, "GLB non-key reconstruction exceeds fixed bound")
+    # A received scientific artifact must work without the original source paths.
+    from earth_modes.agreement import load_agreement, export_agreement
+    from earth_modes.data import save_bundle
+    from earth_modes.analysis import export_comparison
+    selected = ["T0_2:solid:sphere", "T1_2:solid:sphere"]
+    save_bundle(bundle, "agreement-reference.json")
+    save_bundle(pilot, "agreement-candidate.json")
+    compute = [str(cli), "agreement", "--reference", "agreement-reference.json",
+               "--candidate", "agreement-candidate.json", "--out", "agreement.json"]
+    for identity in selected:
+        compute.extend(["--pair", identity, identity])
+    subprocess.run(compute, check=True)
+    agreement = load_agreement("agreement.json")
+    require(len(agreement["rows"]) == 2 and agreement["generator_version"] == version,
+            "Installed agreement report identity differs")
+    export_agreement(agreement, "agreement.svg", pair_index=1, width=640, height=480)
+    svg = ET.parse("agreement.svg").getroot()
+    require(svg.tag.endswith("svg") and any(e.tag.endswith("path") for e in svg.iter()),
+            "Agreement SVG lacks native paths")
+    require(not any(e.tag.endswith("image") for e in svg.iter()), "Agreement SVG embeds a raster plot")
+    Path("agreement-reference.json").unlink(); Path("agreement-candidate.json").unlink()
+    Path("agreement.json").unlink()
+    for output, options in (("recovered.csv", []),
+                            ("recovered.png", ["--pair-index", "0", "--width", "640", "--height", "480"])):
+        subprocess.run([str(cli), "agreement", "--report", "agreement.svg.json", "--out", output, *options], check=True)
+    with Path("recovered.csv").open(newline="") as stream:
+        recovered = list(csv.DictReader(stream))
+    require([int(r["pair_index"]) for r in recovered] == [0, 1], "CSV lost explicit pair order")
+    require(all(float(row["delta_frequency_hz"]) == expected["delta_frequency_hz"]
+                for row, expected in zip(recovered, agreement["rows"])), "CSV changed frequency differences")
+    with Image.open("recovered.png") as picture:
+        picture.load(); require(picture.size == (640, 480), "Recovered PNG dimensions differ")
+    sidecar = load_agreement("recovered.png.json")
+    require(sidecar["sources"] == agreement["sources"], "Received sidecar lost full sources")
+    bad = json.loads(Path("agreement.svg.json").read_text())
+    bad["rows"][0]["shape_distance"] = -1e-15
+    Path("tampered.json").write_text(json.dumps(bad))
+    rejected = subprocess.run([str(cli), "agreement", "--report", "tampered.json", "--out", "invalid.csv"],
+                              capture_output=True, text=True)
+    require(rejected.returncode != 0 and not Path("invalid.csv").exists()
+            and not Path("invalid.csv.json").exists(), "Tampered report published a valid-looking artifact")
+    export_comparison(bundle, pilot, [(selected[0], selected[0])], "legacy-comparison.csv")
+    require(json.loads(Path("legacy-comparison.csv.json").read_text())["generator_version"] == version,
+            "Existing comparison producer version regressed")
     subprocess.run([sys.executable, "-m", "pip", "check"], check=True)
     return {"package": str(package), "python": sys.version.split()[0], "version": version,
             "examples": ids, "solver_modes": len(bundle["modes"]), "pilot_modes": len(pilot["modes"]),
-            "png": [320, 240], "svg": True, "probe_samples": 4, "glb_error": error}
+            "png": [320, 240], "svg": True, "probe_samples": 4, "glb_error": error,
+            "agreement_pairs": 2, "agreement_sidecar_only_recovery": True,
+            "agreement_tamper_rejected": True, "existing_comparison": True}
 
 
 def main():
