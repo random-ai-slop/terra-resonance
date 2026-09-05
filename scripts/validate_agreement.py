@@ -382,13 +382,23 @@ def main():
     dirty_runtime = subprocess.run(['git', 'diff', '--quiet', 'HEAD', '--', 'packages/earth_modes'], cwd=ROOT).returncode
     require(dirty_runtime == 0, 'Runtime sources differ from accepted integration I')
     # Import the new public API only after the accepted integration guard.
+    import earth_modes
     from earth_modes import agreement
+    expected_package = (ROOT/'packages/earth_modes').resolve()
+    imported_package = Path(earth_modes.__file__).resolve()
+    require(imported_package == expected_package/'__init__.py', 'earth_modes import is not bound to accepted primary source')
+    require(Path(agreement.__file__).resolve() == expected_package/'agreement.py', 'agreement import is not bound to accepted primary source')
+    runtime_identity = dict(imported_package=str(imported_package), imported_agreement=str(Path(agreement.__file__).resolve()),
+        files={str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest() for path in (
+            expected_package/'__init__.py', expected_package/'agreement.py', expected_package/'data.py',
+            expected_package/'models.py', expected_package/'solver.py', expected_package/'experimental/toroidal.py',
+            expected_package/'assets/schema/agreement.schema.json')})
 
     artifacts = args.artifacts.resolve()
     artifacts.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
     evidence = dict(schema_version='1.0', status='running', integration_commit=head,
-        recorded_utc=datetime.now(timezone.utc).isoformat(), script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        recorded_utc=datetime.now(timezone.utc).isoformat(), runtime_identity=runtime_identity, script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         environment=dict(python=platform.python_version(), numpy=np.__version__, scipy=scipy.__version__, platform=platform.platform(), openblas_threads=1),
         scope='Independent audit of canonical elastic T agreement; no new continuum accuracy or solver promotion claim.',
         oracle='Layer-local polynomial antiderivatives in longdouble, independently of the production Gaussian rule.',
