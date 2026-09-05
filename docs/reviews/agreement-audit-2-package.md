@@ -4,7 +4,7 @@ Assignment: AUDIT-PKG/1. Reviewed integrated runtime `e9e660e5e45bfd7960bb33abd8
 
 ## Disposition
 
-**Changes required for two P2 figure-layout defects.** Scientific content, checked report/CSV authority, sidecar-only recovery and the exercised failure protections passed. Neither finding changes the agreement metric or requires broader scope. After an author fixes the two layout cases, independently regenerate and inspect those cases before closing this stage. Clean-installed delivery remains the subsequent release audit.
+**Initial disposition on `e9e660e5`: changes required for two P2 figure-layout defects.** Scientific content, checked report/CSV authority, sidecar-only recovery and the exercised failure protections passed. Neither finding changes the agreement metric or requires broader scope. After an author fixes the two layout cases, independently regenerate and inspect those cases before closing this stage. Clean-installed delivery remains the subsequent release audit.
 
 ## Findings
 
@@ -65,3 +65,27 @@ The scientific agreement matrix and independent rational/Bessel references remai
 Retained directory: `artifacts/agreement-package-audit/`. `verification.json` records accepted source identity, agreement-source file hashes, artifact/sidecar hashes, actual text bounds, seven CLI results and the authority check. Original SCI1 producer/version/hash values remain inside the real PREM and fixture sidecars. Audit-manufactured cases have their actual current producer and newly computed hashes; they are not labelled as original SCI1 outputs.
 
 Author acceptance: use `long-labels-report.json` and `both-notices-640x480.png.json` as checked inputs; generate the listed minimum/default/wide figures with the fixed renderer. Retain before/after evidence, visually inspect PNG and native SVG rasterization, and measure a positive gap/contained text. Keep complete sidecar metadata and all current scientific captions. There are no requested numerical changes or new product features.
+
+
+## Independent repair closure
+
+**Both P2 findings are closed on integrated runtime `0779d9600f46eef341fad65767d5920d087814cb`** (native author commit `67c91c9235ccebd41ce10d0084b5a2aa999ab9a2`). The historical findings and original failing artifacts above remain intact. This stage now passes; clean-installed/release acceptance remains audit 3.
+
+I inspected the scoped renderer diff and author handoff, then independently regenerated exactly the six affected cases from this audit's retained full reports. The author evidence was contextual comparison only, not substituted for this run. `repair-closure/verify.py` verified the checked-out producing commit and exact committed exporter bytes before rendering. Exporter SHA-256 is `47ddbb87b3318b08a5999da24c349f8f9c88f398a05ac640e2074efca5be12f8`.
+
+For each case, the run exported a native PNG and native SVG, reloaded both complete sidecars, decoded the PNG, excluded embedded raster images from the SVG, and rasterized the SVG at matching pixel dimensions with `rsvg-convert`. I visually inspected all twelve resulting native/vector-raster views. Default-size calls omitted width and height. No solver, test suite, build or runtime edit was performed.
+
+| Independent repaired case | Rightmost figure text (px) | Footer-to-accuracy gap (px) | Axis-to-footer gap (px) |
+| --- | ---: | ---: | ---: |
+| long-labels-640x480 | 605.200 | 9.000 | 13.850 |
+| long-labels-1200x800 | 1139.984 | 11.000 | 36.858 |
+| both-notices-640x480 | 580.747 | 9.000 | 9.000 |
+| both-notices-800x480 | 719.391 | 11.000 | 11.000 |
+| both-notices-1200x480 | 741.391 | 11.000 | 11.000 |
+| both-notices-1200x800 | 741.391 | 11.000 | 19.497 |
+
+All figure text lies inside the canvas. Both long method labels and the long model label retain a visible display ellipsis; the full “material boundaries dotted” suffix is visible. At minimum, wide-short and default sizes, both scientific notices have clear separation from the accuracy caption and radius label. The adjustment does not remove the residual direction, separate-scale warning, units, pair identity or agreement-not-accuracy statement. Native vector curves remain legible.
+
+Every output sidecar retained the exact original source bundles, pairs, rows and computational generator version; the 180-character method/model strings and arbitrary user metadata remain complete. Input mappings were unchanged. The new rendering metadata records the resolved dimensions while the scientific source identity remains intact.
+
+Closure evidence: `artifacts/agreement-package-audit/repair-closure/verification.json`, `run.log`, `verify.py`, and six PNG/SVG/full-sidecar sets with `-vector.png` rasterizations. The JSON records producing SHA, exporter identity, source/output/sidecar hashes, text bounds and measured gaps. The independently measured gaps agree with the author handoff. No remaining issue was found in this bounded repair recheck; no new feature or scientific change is requested. The reviewer returns to idle.
