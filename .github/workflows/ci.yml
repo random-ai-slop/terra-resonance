@@ -86,6 +86,11 @@ jobs:
       - run: npm test
       - run: npm run check
       - run: npm run lint
+      - name: Verify Pages does not require Sites hosting metadata
+        run: |
+          if [ -f .openai/hosting.json ]; then
+            mv .openai/hosting.json "$RUNNER_TEMP/terra-hosting.json"
+          fi
       - run: npm run build:pages
       - name: Retain static Pages output
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

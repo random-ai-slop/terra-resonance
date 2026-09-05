@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/postcss';
 import vinext from 'vinext';
 import { defineConfig } from 'vite';
+import { readFile } from 'node:fs/promises';
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   '00000000-0000-4000-8000-000000000000';
@@ -51,7 +52,9 @@ export default defineConfig(async () => {
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
   const { cloudflare } = await import('@cloudflare/vite-plugin');
   const { sites } = await import('@openai/sites-vite-plugin');
-  const { default: hostingConfig } = await import('./.openai/hosting.json', { with: { type: 'json' } });
+  // A literal dynamic JSON import is still resolved while Vite bundles config.
+  // Read only in this runtime branch so Pages needs no hosting metadata at all.
+  const hostingConfig = JSON.parse(await readFile(new URL('./.openai/hosting.json', import.meta.url), 'utf8'));
   const { d1, r2 } = hostingConfig;
 
   return {
