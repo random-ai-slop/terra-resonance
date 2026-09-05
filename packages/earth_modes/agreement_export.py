@@ -39,10 +39,22 @@ def _csv_rows(report, rows):
         yield result
 
 
-def _short(value, count):
-    # Display only. Full user metadata remains unchanged in the sidecar.
+def _fit_label(artist, value, max_width, *, prefix="", suffix=""):
+    """Ellipsize only the user text using this figure's measured pixel width."""
     text = " ".join(str(value).split())
-    return text if len(text) <= count else text[:count - 1] + "…"
+    renderer = artist.figure.canvas.get_renderer()
+    artist.set_text(prefix + text + suffix)
+    if artist.get_window_extent(renderer).width <= max_width:
+        return
+    lo, hi = 0, len(text)
+    while lo < hi:
+        middle = (lo + hi + 1) // 2
+        artist.set_text(prefix + text[:middle] + "…" + suffix)
+        if artist.get_window_extent(renderer).width <= max_width:
+            lo = middle
+        else:
+            hi = middle - 1
+    artist.set_text(prefix + text[:lo] + "…" + suffix)
 
 
 def _figure(report, evaluated, index, width, height):
@@ -98,8 +110,8 @@ def _figure(report, evaluated, index, width, height):
     label = f"T agreement · pair {index} of {len(evaluated['rows'])} (zero-based) · l={row['l']} · n={row['reference_n']} → {row['candidate_n']}"
     fig.text(.055, .96, label, fontsize=font + 2, weight="bold", va="top")
     for y, role, color in ((.91, "reference", colors[0]), (.872, "candidate", colors[1])):
-        fig.text(.055, y, f"{role.capitalize()}: {_short(_solver(report, role), 57 if width < 800 else 85)}",
-                 color=color, fontsize=font, va="top", parse_math=False)
+        method = fig.text(.055, y, "", color=color, fontsize=font, va="top", parse_math=False)
+        _fit_label(method, _solver(report, role), .9 * width - 4, prefix=f"{role.capitalize()}: ")
     fig.text(.055, .827,
              f"f: {row['reference_frequency_hz']:.8g} → {row['candidate_frequency_hz']:.8g} Hz"
              f"    Δf/f: {row['relative_frequency_change']:+.5g}", fontsize=font, va="top")
@@ -112,14 +124,24 @@ def _figure(report, evaluated, index, width, height):
     if row["alignment_indeterminate"]:
         warnings.append("Near-zero overlap; sign +1 is indeterminate")
     model = report["sources"]["reference"]["bundle"]["model"]
-    footer = " · ".join(warnings) if warnings else f"Model: {_short(model['name'], 58)} · material boundaries dotted"
-    # Two separate lines keep both scientific notices legible at 640 × 480.
-    if len(warnings) == 2:
-        footer = "\n".join(warnings)
-    fig.text(.055, .105, footer, color="#8a4523" if warnings else "#555555",
-             fontsize=font - 1, va="top", linespacing=1.25, parse_math=False)
-    fig.text(.055, .04, "Agreement is not continuum accuracy. Full IDs, norms, mesh and quality: adjacent .json sidecar.",
-             fontsize=font - 1, va="top", color="#444444")
+    # Reserve measured line heights from the bottom, including both notices.
+    # Width may increase the font even on a short canvas, so fractions alone
+    # cannot guarantee a gap between the footer, accuracy caption and x label.
+    renderer = fig.canvas.get_renderer()
+    gap = max(6, font)
+    accuracy = fig.text(.055, max(12, .025 * height) / height,
+                        "Agreement is not continuum accuracy. Full IDs, norms, mesh and quality: adjacent .json sidecar.",
+                        fontsize=font - 1, va="bottom", color="#444444")
+    footer_y = (accuracy.get_window_extent(renderer).y1 + gap) / height
+    footer = fig.text(.055, footer_y, "\n".join(warnings),
+                      color="#8a4523" if warnings else "#555555", fontsize=font - 1,
+                      va="bottom", linespacing=1.25, parse_math=False)
+    if not warnings:
+        _fit_label(footer, model["name"], .9 * width - 4,
+                   prefix="Model: ", suffix=" · material boundaries dotted")
+    decorations = residual.bbox.y0 - residual.get_tightbbox(renderer).y0
+    minimum_bottom = (footer.get_window_extent(renderer).y1 + gap + decorations) / height
+    fig.subplots_adjust(bottom=max(fig.subplotpars.bottom, minimum_bottom))
     return fig
 
 

@@ -178,3 +178,104 @@ Use `python agreement.py OUTPUT_DIR` from a copied recipe in each isolated
 installation; preserve the above filenames and test new-directory refusal.
 The author's passing self-checks do not close those independent audits. After
 the scoped commit and native handoff, this domain becomes idle.
+
+## PKG-LAYOUT/1: independent audit-2 layout repairs
+
+Accepted repair base B: `e9e660e5e45bfd7960bb33abd80abb8b380afef6`. The same
+native package owner read primary CURRENT and the independent
+`docs/reviews/agreement-audit-2-package.md` before writes, inspected a clean
+checkout, and switched directly to B. The preceding implementation had already
+been integrated. Repair H is the containing scoped commit returned to the
+coordinator. Only `packages/earth_modes/agreement_export.py`,
+`tests/test_agreement_export.py` and this report changed.
+
+The independent audit found two P2 presentation defects that earlier minimum
+sphere checks had not covered: 180-wide-W metadata clipped even after the old
+character-count truncation, and two notices overlapped the accuracy caption at
+800×480 / 1200×480 because width increased the font without increasing footer
+space. These findings invalidate the affected layout evidence; they do not
+invalidate the unchanged scientific agreement matrix.
+
+The repair measures the actual text artist in pixels with the figure's Agg
+renderer, then finds the longest fitting prefix of user text with a visible
+ellipsis. The role prefix remains intact. The model label reserves its complete
+`material boundaries dotted` suffix before fitting the user name. Font sizes
+are retained; no valid metadata or aspect ratio is rejected. Full metadata,
+including source names, method labels and the audit's Unicode extension, remains
+unchanged in report sidecars.
+
+The accuracy caption is anchored above a height-dependent bottom margin. Actual
+caption and one/two-line footer bounds determine the next position, with a
+font-dependent positive gap. The residual axis's measured decorations reserve
+the same minimum gap above that footer. This is a local renderer adjustment,
+not an additional layout framework. Both scientific notices, accuracy caution,
+residual direction, separate-scale notice and all other scientific captions are
+preserved.
+
+### Executed focused checks
+
+The primary interpreter explicitly imported this worktree's exporter:
+
+```sh
+env PYTHONPATH=/Users/veritaswang/.codex/worktrees/6eaa/free-oscillation/packages OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=/tmp/terra-pkg-layout-mpl /Users/veritaswang/Desktop/code/random-ai-slop/free-oscillation/.venv/bin/python -c 'import earth_modes.agreement_export as module; print(module.__file__)'
+```
+
+Observed path:
+`/Users/veritaswang/.codex/worktrees/6eaa/free-oscillation/packages/earth_modes/agreement_export.py`.
+Using that same environment and interpreter,
+`python -m pytest -q tests/test_agreement_export.py` completed with **28 passed
+in 90.03 s**, exit 0. New regressions measure long-label containment and preserved
+sidecar metadata at minimum/default size, and both-notice gaps at 640×480,
+800×480, 1200×480 and 1200×800. The first run initialized a new temporary
+Matplotlib font cache; its wall time is not a runtime performance measurement.
+`git diff --check` also passed.
+
+### Actual artifact inspection and measured gaps
+
+The retained non-author inputs were loaded directly from the primary
+`artifacts/agreement-package-audit/long-labels-report.json` and
+`artifacts/agreement-package-audit/both-notices-640x480.png.json`. No solver ran.
+The author driver `/tmp/terra-pkg-layout-1/verify_layout.py` generated native PNG
+and SVG for each case below, loaded every sidecar and checked full metadata
+preservation. Default-size calls omitted width/height. Every SVG was parsed to
+exclude raster images and then rendered with `/usr/local/bin/rsvg-convert` at
+the matching pixel dimensions. All twelve native/rasterized PNGs were decoded
+and visually inspected.
+
+| Case | Rightmost figure text, px | Footer-to-accuracy gap, px | Axis-to-footer gap, px |
+| --- | ---: | ---: | ---: |
+| Long labels, 640×480 | 605.200 | 9.000 | 13.850 |
+| Long labels, 1200×800 | 1139.984 | 11.000 | 36.858 |
+| Both notices, 640×480 | 580.747 | 9.000 | 9.000 |
+| Both notices, 800×480 | 719.391 | 11.000 | 11.000 |
+| Both notices, 1200×480 | 741.391 | 11.000 | 11.000 |
+| Both notices, 1200×800 | 741.391 | 11.000 | 19.497 |
+
+All figure text bounds remain inside the canvas. The ellipsis is visible in both
+method labels and the model label at both sizes, and the boundary explanation is
+fully visible. Both notices have clear raster separation from the accuracy
+caption and radius label at short/wide sizes. Native vector curves, units,
+separate residual scale and explicit direction remain legible. The before
+evidence stays in the independent audit directory; the repair generated new
+artifacts rather than overwriting that evidence.
+
+Reproduce the retained author inspection with:
+
+```sh
+env PYTHONPATH=/Users/veritaswang/.codex/worktrees/6eaa/free-oscillation/packages OPENBLAS_NUM_THREADS=1 MPLCONFIGDIR=/tmp/terra-pkg-layout-mpl /Users/veritaswang/Desktop/code/random-ai-slop/free-oscillation/.venv/bin/python /tmp/terra-pkg-layout-1/verify_layout.py
+```
+
+The driver intentionally uses no-clobber exports; use a fresh output directory
+when repeating it. Artifacts are under `/tmp/terra-pkg-layout-1`, named
+`long-labels-{640x480,1200x800}` and
+`both-notices-{640x480,800x480,1200x480,1200x800}`, with `.png`, `.svg`, each
+full-report `.json` sidecar, and `-vector.png` rasterizations.
+`verification.json` records all text bounds, positive gaps, input/output hashes,
+Matplotlib version and producing source identity. Exporter SHA-256:
+`47ddbb87b3318b08a5999da24c349f8f9c88f398a05ac640e2074efca5be12f8`.
+
+These self-checks establish the bounded repair handoff. The coordinator and
+independent reviewer still own integration and closure of audit 2. No numerical
+code, solver matrix, release build, dependency installation, child agent,
+publication or website operation was performed. No background writer remains
+after the native handoff; the package domain returns to idle.

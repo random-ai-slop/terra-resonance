@@ -209,3 +209,50 @@ def test_zero_residual_and_long_names_have_finite_axes(tmp_path):
         assert any("Exact zero" in text.get_text() for text in fig.axes[1].texts)
     finally:
         fig.clear()
+
+
+@pytest.mark.parametrize("width,height", [(640, 480), (1200, 800)])
+def test_wide_user_labels_fit_measured_canvas_and_preserve_metadata(width, height, tmp_path):
+    a = bundle()
+    a["model"]["name"] = "W" * 180
+    a["provenance"]["solver"] = "W" * 180
+    report = compare(a, a)
+    before = deepcopy(report)
+    fig = agreement_export._figure(report, agreement._checked_evaluation(report), 0, width, height)
+    try:
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        for prefix in ("Reference: ", "Candidate: ", "Model: "):
+            text, = [item for item in fig.texts if item.get_text().startswith(prefix)]
+            assert "…" in text.get_text()
+            bounds = text.get_window_extent(renderer)
+            assert bounds.x0 >= 0 and bounds.x1 <= width - 10
+            if prefix == "Model: ":
+                assert text.get_text().endswith(" · material boundaries dotted")
+    finally:
+        fig.clear()
+    path = tmp_path / "long.svg"
+    export_agreement(report, path, width=width, height=height)
+    saved = load_agreement(str(path) + ".json")
+    saved.pop("export_production")
+    assert saved == before == report
+
+
+@pytest.mark.parametrize("width,height", [(640, 480), (800, 480), (1200, 480), (1200, 800)])
+def test_both_notices_have_measured_gaps_from_accuracy_and_axes(width, height):
+    report = compare(*sign_fixture())
+    fig = agreement_export._figure(report, agreement._checked_evaluation(report), 0, width, height)
+    try:
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        notice, = [item for item in fig.texts if "Different n labels" in item.get_text()]
+        assert "Near-zero overlap; sign +1 is indeterminate" in notice.get_text()
+        accuracy, = [item for item in fig.texts if "Agreement is not continuum accuracy" in item.get_text()]
+        notice_bounds, accuracy_bounds = [item.get_window_extent(renderer) for item in (notice, accuracy)]
+        assert notice_bounds.y0 - accuracy_bounds.y1 >= 6
+        assert fig.axes[-1].get_tightbbox(renderer).y0 - notice_bounds.y1 >= 6
+        for bounds in (notice_bounds, accuracy_bounds):
+            assert 0 <= bounds.x0 < bounds.x1 <= width
+            assert 0 <= bounds.y0 < bounds.y1 <= height
+    finally:
+        fig.clear()
