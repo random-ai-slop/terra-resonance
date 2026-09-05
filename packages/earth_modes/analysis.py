@@ -103,6 +103,8 @@ def compare_bundles(a, b, pairs):
 
 def export_comparison(a, b, pairs, path, *, overwrite=False):
     """Write a native SVG/PNG comparison or a frequency CSV with a complete sidecar."""
+    from . import __version__
+
     result = compare_bundles(a, b, pairs)
     path = Path(path)
     if path.suffix.lower() not in (".svg", ".png", ".csv"):
@@ -154,7 +156,7 @@ def export_comparison(a, b, pairs, path, *, overwrite=False):
         info.update(
             result,
             generator="earth_modes.analysis",
-            generator_version="0.1.0",
+            generator_version=__version__,
             reference_provenance=a["provenance"],
             candidate_provenance=b["provenance"],
             reference_mode_provenance={m["id"]: m["provenance"] for m in a["modes"]},

@@ -67,3 +67,7 @@ Retain the explicit limitations: general custom models are not uniformly certifi
 README's sentence after its evaluate_field example calls the selected coefficients “canonical mode coefficients,” while that example uses normalized illustration evaluation. Prefer “illustration coefficients applied to canonical eigenfunctions” to align with the accurate normalization explanation later in the same README. This is a small explanatory correction, not a numerical defect.
 
 Subject to the targeted metadata/publication-input corrections and actual CI/distribution results, no further scientific feature work is required for the authorized public release. Do not delay publication infrastructure by reopening advanced physics or the separate planned agreement trial.
+
+## Coordinator release correction
+
+Final source inspection also found `export_comparison` recording a hardcoded generator version0.1.0. It now records the actual package version, and the existing end-to-end CLI comparison journey asserts the saved metadata. The correction changes provenance only; frequency and eigenfunction algorithms/data are unchanged. This explicitly invalidates the prior package candidate bytes and requires fresh CI/release builds.

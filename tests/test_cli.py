@@ -10,6 +10,7 @@ import sys
 import pytest
 
 from earth_modes.cli import main
+from earth_modes import __version__
 from earth_modes.data import load_bundle, default_scene, make_project, save_project
 from earth_modes.analysis import compare_bundles, select_pair
 
@@ -121,7 +122,9 @@ def test_model_solve_inspect_scene_export_probe_compare(tmp_path, capsys):
         )
         == 0
     )
-    assert json.loads(Path(str(result) + ".json").read_text())["rows"][0]["delta_frequency_hz"] == 0
+    comparison_metadata = json.loads(Path(str(result) + ".json").read_text())
+    assert comparison_metadata["rows"][0]["delta_frequency_hz"] == 0
+    assert comparison_metadata["generator_version"] == __version__
     project = make_project(
         data,
         default_scene(data),
