@@ -1,4 +1,4 @@
-# Implementation contract · release 0.2 / Bundle and Project 1.0 / Scene 1.0–1.1
+# Implementation contract · release 0.3 / Bundle and Project 1.0 / Scene 1.0–1.1
 
 The scientific baseline completed three planning and three implementation reviews in phase 1. Phase 2 preserves Bundle/Project 1.0 and introduces the separately versioned Scene 1.1 surface-grid contract. Historical reviews retain their at-the-time status; current phase implementation and release evidence are recorded separately. This document defines behavior, not proof that a pending release check has passed.
 
