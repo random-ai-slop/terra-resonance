@@ -104,7 +104,7 @@ Reject unbounded feature competition. Before adding a display layer or output, i
 ```sh
 .venv/bin/python -m build --outdir dist/python
 python3 -m venv /tmp/terra-release-check
-/tmp/terra-release-check/bin/python -m pip install dist/python/terra_resonance-0.2.0-py3-none-any.whl
+/tmp/terra-release-check/bin/python -m pip install dist/python/terra_resonance-0.3.0-py3-none-any.whl
 /tmp/terra-release-check/bin/terra example --list
 ```
 

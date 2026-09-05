@@ -74,8 +74,9 @@ def audit(path, version):
                      "examples/recipes/render.py", "examples/recipes/agreement.py", "docs/AGREEMENT.md",
                      "scripts/check_distribution.py"):
             require(name in files, f"Missing sdist file: {name}")
-        require(files["examples/recipes/agreement.py"] == (ROOT / "examples/recipes/agreement.py").read_bytes(),
-                "Archived agreement recipe differs from the accepted source")
+        for name in ("examples/recipes/agreement.py", "docs/AGREEMENT.md"):
+            require(files[name] == (ROOT / name).read_bytes(),
+                    f"Archived {name} differs from the accepted source")
     fields = BytesParser().parsebytes(metadata)
     require(fields["Name"] == "terra-resonance" and fields["Version"] == version,
             f"Wrong distribution metadata in {path.name}")
@@ -239,12 +240,37 @@ def installed_check(version):
 def check_recipe_outputs(folder, version):
     """Read actual outputs from a copied recipe run by an isolated installation."""
     from PIL import Image
+    import earth_modes
+    from earth_modes.agreement import load_agreement
+    from earth_modes.data import load_bundle
+
+    package = Path(earth_modes.__file__).resolve()
+    require(sys.flags.isolated and "PYTHONPATH" not in os.environ
+            and package.is_relative_to(Path(sys.prefix).resolve())
+            and not package.is_relative_to(ROOT), "Recipe readback escaped isolated installation")
 
     names = ("cross-20", "cross-40", "refinement-default", "refinement-pilot")
-    for name in names:
-        report = json.loads((folder / (name + ".json")).read_text())
+    selected = "T0_2:solid:sphere"
+    bundles = {f"{method}-{mesh}": load_bundle(folder / f"{method}-{mesh}.json")
+               for method in ("default", "pilot") for mesh in (20, 40)}
+    for name, bundle in bundles.items():
+        mesh = int(name.rsplit("-", 1)[1])
+        provenance = bundle["provenance"]
+        require(provenance["request"]["mesh_size"] == mesh
+                and provenance["effective_settings"]["mesh_counts"] == {"sphere": mesh}
+                and provenance["effective_settings"]["actual_mesh_size"] == mesh,
+                "Copied recipe mislabeled its actual sphere resolution")
+    comparisons = (("default-20", "pilot-20"), ("default-40", "pilot-40"),
+                   ("default-20", "default-40"), ("pilot-20", "pilot-40"))
+    reports = {}
+    for name, sources in zip(names, comparisons):
+        report = reports[name] = load_agreement(folder / (name + ".json"))
         require(report["generator_version"] == version and len(report["rows"]) == 1,
                 "Copied recipe report has wrong producer or pair count")
+        require(report["pairs"] == [[selected, selected]], "Copied recipe selected a different branch")
+        for role, source in zip(("reference", "candidate"), sources):
+            require(report["sources"][role]["bundle"] == bundles[source],
+                    "Copied recipe report lost source identity or comparison direction")
         row = report["rows"][0]
         require(math.isfinite(row["shape_distance"]) and row["shape_distance"] <= .003,
                 "Copied recipe shape regression exceeds named sphere bound")
@@ -253,19 +279,33 @@ def check_recipe_outputs(folder, version):
     require(len(results) == 4 and all(math.isfinite(row["relative_error"])
                                     and 0 <= row["relative_error"] <= .005 for row in results),
             "Copied recipe independent frequency check failed")
+    require({row["bundle"] for row in results} == {name + ".json" for name in bundles},
+            "Copied recipe frequency evidence duplicated or omitted a source")
+    reference_hz = evidence["reference"]["frequency_hz"]
+    require(math.isfinite(reference_hz) and reference_hz > 0, "Invalid independent frequency")
+    for result in results:
+        mode = next(m for m in bundles[result["bundle"][:-5]]["modes"] if m["id"] == selected)
+        require(result["mode_id"] == selected and result["frequency_hz"] == mode["frequency_hz"]
+                and result["relative_error"] == abs(mode["frequency_hz"] - reference_hz) / reference_hz,
+                "Copied recipe frequency evidence differs from its saved mode")
     require(set(evidence["agreement_reports"]) == {name + ".json" for name in names},
             "Copied recipe omitted a method/refinement report")
-    for method in ("default", "pilot"):
-        for mesh in (20, 40):
-            require((folder / f"{method}-{mesh}.json").is_file(), "Copied recipe missing a full bundle")
+    for suffix in ("csv", "svg", "png"):
+        sidecar = load_agreement(folder / f"cross-40.{suffix}.json")
+        require({key: value for key, value in sidecar.items() if key != "export_production"}
+                == reports["cross-40"], "Copied recipe sidecar differs from its complete report")
     with Image.open(folder / "cross-40.png") as picture:
         picture.load(); require(picture.size == (1200, 800), "Copied recipe PNG differs from default dimensions")
     vector = ET.parse(folder / "cross-40.svg").getroot()
     require(any(node.tag.endswith("path") for node in vector.iter())
             and not any(node.tag.endswith("image") for node in vector.iter()), "Copied recipe SVG is not native")
     with (folder / "cross-40.csv").open(newline="") as stream:
-        require(len(list(csv.DictReader(stream))) == 1, "Copied recipe scalar CSV is incomplete")
+        rows = list(csv.DictReader(stream))
+        require(len(rows) == 1 and float(rows[0]["shape_distance"]) == reports["cross-40"]["rows"][0]["shape_distance"],
+                "Copied recipe scalar CSV differs from its report")
     return {"reports": list(names), "independent_reference_hz": evidence["reference"]["frequency_hz"],
+            "package": str(package), "source_directions_checked": True,
+            "actual_sphere_elements": [20, 40],
             "maximum_independent_frequency_error": max(row["relative_error"] for row in results),
             "png": [1200, 800], "native_svg": True,
             "artifact_sha256": {str(path.relative_to(folder)): hashlib.sha256(path.read_bytes()).hexdigest()
@@ -280,9 +320,11 @@ def main():
     parser.add_argument("--kind", choices=("wheel", "sdist", "both"), default="both")
     parser.add_argument("--report", type=Path)
     parser.add_argument("--installed", metavar="VERSION", help=argparse.SUPPRESS)
+    parser.add_argument("--recipe-dir", type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
     if args.installed:
-        result = installed_check(args.installed)
+        result = (check_recipe_outputs(args.recipe_dir, args.installed) if args.recipe_dir
+                  else installed_check(args.installed))
     else:
         version = metadata_version(args.tag)
         if args.metadata_only:
@@ -314,7 +356,11 @@ def main():
                 recipe_output = work / "recipe-output"
                 subprocess.run([str(python), "-I", str(recipe), str(recipe_output)],
                                check=True, cwd=work, env=env)
-                recipe_result = check_recipe_outputs(recipe_output, version)
+                recipe_report = scratch / f"recipe-check-{index}.json"
+                subprocess.run([str(python), "-I", str(Path(__file__).resolve()), "--installed", version,
+                                "--recipe-dir", str(recipe_output), "--report", str(recipe_report)],
+                               check=True, cwd=work, env=env)
+                recipe_result = json.loads(recipe_report.read_text())
                 before = recipe_result["artifact_sha256"]
                 refused = subprocess.run([str(python), "-I", str(recipe), str(recipe_output)],
                                          cwd=work, env=env, capture_output=True, text=True)

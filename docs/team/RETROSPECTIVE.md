@@ -1,6 +1,6 @@
 # Autonomous-team trial: observed outcomes
 
-Status: interim evidence through scientific audit1. Package/artifact and isolated-release audits are still running or pending; this document does not close the full trial.
+Status: interim evidence through package/artifact audit2. Renderer repairs and isolated-release audit remain pending; this document does not close the full trial.
 
 ## What the trial established so far
 
@@ -10,7 +10,7 @@ Native list discovery omitted the completed tasks. The coordinator repeatedly de
 
 The numerical task switched its clean archival bootstrap checkout directly to the accepted public plan commit, preserving the separate archive history. It returned a scoped commit, declared exact import binding,77 targeted/data checks and an explicit package-consumer API. The coordinator checked base-to-handoff commits and paths, inspected source, found one malformed-ID preflight issue that the author repaired, integrated the commit and ran77 affected checks on the integrated source. Version-only primary changes did not cause a needless numerical rebase.
 
-The package task subsequently acknowledged the integrated numerical revision and checked evaluator interface in its own clean worktree before starting its seven-path assignment. This is actual receiving-domain continuation rather than a handoff note with no consumer. Its implementation and artifact acceptance remain pending at this interim checkpoint.
+The package task subsequently acknowledged the integrated numerical revision and checked evaluator interface in its own clean worktree before starting its seven-path assignment. This is actual receiving-domain continuation rather than a handoff note with no consumer. It returned the scoped exporter, CLI and copied recipe commit; root integrated it and29 affected export/CLI checks passed. Independent artifact acceptance found two presentation defects requiring scoped repair.
 
 The website/delivery task used exactly one explicitly selected `gpt-5.6-luna` child for synchronized version literals, while the domain parent retained its configured model and independently checked the exact diff and unchanged lock dependencies. The coordinator inspected and integrated that scoped commit and reran the metadata check. This demonstrates bounded model-tier use with verification. It does not demonstrate a cost/speed gain; mechanical delegation carries coordination overhead, so isolated literal edits should usually stay local or be batched into an existing useful domain task.
 
@@ -19,6 +19,8 @@ The website/delivery task used exactly one explicitly selected `gpt-5.6-luna` ch
 Three sequential feature-design rounds changed the plan substantively: continuous comparison versus canonical discrete normalization; full connected support; independent source identity; near-zero sign handling; exact small frequency differences; recomputed plotting authority; top-level transferable sidecars; format-specific options; precise serialization/interval budgets; and known effective-model/range checks. The final review explicitly found further planning unnecessary. No new physical solver, website metric, automatic tracker or generic study framework was added.
 
 Scientific audit1 used a different author and independent polynomial antiderivatives. One executed12-solve matrix covered44 cross-method and44 refinement rows, plus rational/manufactured counterexamples. The actual artifacts and runtime byte identities were retained and checked by the coordinator. It found no new runtime defect; its value is concrete independent physical coverage, not a prescribed count of criticism. The earlier19-case reference campaign was not rerun or relabeled. The package task was told to consume this evidence rather than duplicate the matrix.
+
+Independent package audit2 exercised sidecar-only recovery, recomputed CSV authority, real PREM material domains, exact/tiny residuals and actual PNG/native SVG output. It found long-label clipping and overlapping notices at supported short-wide dimensions that normal/minimum author figures had missed. The repair stays with the original package owner; the non-author reviewer retains closure responsibility. Numerical evidence remains valid because no numerical runtime changes are requested. Future figure checks should include long valid metadata and supported aspect combinations when typography changes; this is a targeted coverage improvement, not a new exhaustive visual test matrix.
 
 ## Observations to complete after release
 
