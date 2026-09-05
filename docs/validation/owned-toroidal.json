@@ -1,0 +1,910 @@
+{
+  "method": "Terra experimental SI quadratic toroidal FEM v1",
+  "numpy": "2.5.2",
+  "scipy": "1.18.1",
+  "gates": {
+    "relative_frequency_error": 0.005,
+    "sign_aligned_mass_shape_error": 0.01,
+    "scaled_fe_residual": 1e-09,
+    "fe_mass_orthogonality": 1e-08
+  },
+  "scope": "Named fixtures only. FE algebra diagnostics are separate from physical accuracy and exported trapezoid normalization.",
+  "cases": [
+    {
+      "case": "sphere",
+      "mode_id": "T0_2:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.0015922704796187473,
+      "reference_hz": 0.0015922704794661627,
+      "relative_frequency_error": 9.582823423670561e-11,
+      "sign_aligned_mass_shape_error": 3.5829576769831626e-06,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 0.9999999999999998
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T1_2:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.004542924313416553,
+      "reference_hz": 0.004542924292897135,
+      "relative_frequency_error": 4.516786500374792e-09,
+      "sign_aligned_mass_shape_error": 4.456763719540904e-05,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 0.9999999999999999
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T2_2:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.0066938031699707605,
+      "reference_hz": 0.0066938029304414,
+      "relative_frequency_error": 3.5783748630890955e-08,
+      "sign_aligned_mass_shape_error": 0.0001079145681692216,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T3_2:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.008767323665308167,
+      "reference_hz": 0.00876732250528437,
+      "relative_frequency_error": 1.3231220785669962e-07,
+      "sign_aligned_mass_shape_error": 0.00019068906960992754,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0000000000000002
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T0_3:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.0024603442936811503,
+      "reference_hz": 0.00246034429308138,
+      "relative_frequency_error": 2.437750001860195e-10,
+      "sign_aligned_mass_shape_error": 7.517468947976948e-06,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 0.9999999999999997
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T1_3:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.005376204371431045,
+      "reference_hz": 0.005376204334052861,
+      "relative_frequency_error": 6.952523001757527e-09,
+      "sign_aligned_mass_shape_error": 5.59500877017029e-05,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T2_3:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.007564155197613437,
+      "reference_hz": 0.007564154836681263,
+      "relative_frequency_error": 4.771612704956851e-08,
+      "sign_aligned_mass_shape_error": 0.00012797893751925125,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0000000000000002
+    },
+    {
+      "case": "sphere",
+      "mode_id": "T3_3:solid:sphere",
+      "mesh_target": 100,
+      "reference": "spherical Bessel traction roots and j_l(k r)",
+      "computed_hz": 0.009660982333865118,
+      "reference_hz": 0.009660980735521834,
+      "relative_frequency_error": 1.654431707187598e-07,
+      "sign_aligned_mass_shape_error": 0.00021958396054020586,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0
+    },
+    {
+      "case": "shell",
+      "mode_id": "T0_2:solid:shell",
+      "mesh_target": 100,
+      "reference": "independent first-order traction/displacement ODE; free inner and outer traction",
+      "computed_hz": 0.0015876502712184055,
+      "reference_hz": 0.0015876502711249599,
+      "relative_frequency_error": 5.88578075166879e-11,
+      "sign_aligned_mass_shape_error": 2.070240194998169e-06,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 0.9999999999999999
+    },
+    {
+      "case": "shell",
+      "mode_id": "T1_2:solid:shell",
+      "mesh_target": 100,
+      "reference": "independent first-order traction/displacement ODE; free inner and outer traction",
+      "computed_hz": 0.004519726848990057,
+      "reference_hz": 0.004519726844386379,
+      "relative_frequency_error": 1.0185743359869548e-09,
+      "sign_aligned_mass_shape_error": 2.145707258553767e-05,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 1.0000000000000004
+    },
+    {
+      "case": "shell",
+      "mode_id": "T2_2:solid:shell",
+      "mesh_target": 100,
+      "reference": "independent first-order traction/displacement ODE; free inner and outer traction",
+      "computed_hz": 0.006833667022127112,
+      "reference_hz": 0.006833666949739486,
+      "relative_frequency_error": 1.0592793975305881e-08,
+      "sign_aligned_mass_shape_error": 5.48019260260788e-05,
+      "comparison_grid_count": 4001,
+      "exported_mass_integral": 0.9999999999999998
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T1_1:solid:prem-00",
+      "mesh_target": 240,
+      "reference": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913, checked-in I.txt raw n0 l1",
+      "computed_hz": 0.002637325809545947,
+      "reference_hz": 0.0026373449999999997,
+      "relative_frequency_error": 7.2764291561000505e-06,
+      "exported_mass_integral": 0.9999999999999998,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_2:solid:prem-00",
+      "mesh_target": 240,
+      "reference": "Independent traction ODE with layer-local linear rho and vs",
+      "computed_hz": 0.0011359309273447932,
+      "reference_hz": 0.0011359309271825905,
+      "relative_frequency_error": 1.4279266657979406e-10,
+      "exported_mass_integral": 1.0000000000000002,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_3:solid:prem-00",
+      "mesh_target": 240,
+      "reference": "Independent traction ODE with layer-local linear rho and vs",
+      "computed_hz": 0.0017515633502343266,
+      "reference_hz": 0.001751563349605461,
+      "relative_frequency_error": 3.590310271306407e-10,
+      "exported_mass_integral": 0.9999999999999998,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_4:solid:prem-00",
+      "mesh_target": 240,
+      "reference": "Independent traction ODE with layer-local linear rho and vs",
+      "computed_hz": 0.002305449721455781,
+      "reference_hz": 0.002305449719916879,
+      "relative_frequency_error": 6.675062724781355e-10,
+      "exported_mass_integral": 1.0000000000000002,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "mesh_target": 240,
+      "reference": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913, checked-in T.txt raw n1 l1",
+      "computed_hz": 0.0012362275549002394,
+      "reference_hz": 0.001236232,
+      "relative_frequency_error": 3.5956841116790983e-06,
+      "exported_mass_integral": 1.0000000000000004,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "mesh_target": 240,
+      "reference": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913, checked-in T.txt raw n0 l2",
+      "computed_hz": 0.00037970612367799075,
+      "reference_hz": 0.000379707,
+      "relative_frequency_error": 2.3078900553974435e-06,
+      "exported_mass_integral": 0.9999999999999999,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "mesh_target": 240,
+      "reference": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913, checked-in T.txt raw n0 l3",
+      "computed_hz": 0.0005865821388963006,
+      "reference_hz": 0.0005865837,
+      "relative_frequency_error": 2.661348584065415e-06,
+      "exported_mass_integral": 1.0000000000000002,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    },
+    {
+      "case": "PREM",
+      "mode_id": "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "mesh_target": 240,
+      "reference": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913, checked-in T.txt raw n0 l4",
+      "computed_hz": 0.0007657910772294683,
+      "reference_hz": 0.0007657931999999999,
+      "relative_frequency_error": 2.7719892675692748e-06,
+      "exported_mass_integral": 0.9999999999999999,
+      "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+    }
+  ],
+  "groups": [
+    {
+      "case": "sphere",
+      "family": "T",
+      "l": 1,
+      "solid_domain_id": "solid:sphere",
+      "status": "success",
+      "matrix_dimension": 200,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 1,
+        "positive": 199,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 9,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.204134337031233e-17,
+          "mass": 3.300482714744744e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 6.73137604746812e-17,
+        "mass_orthogonality_defect": 2.1094237467877974e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": {
+          "expected_multiplicity": 1,
+          "removed_multiplicity": 1,
+          "scaled_stiffness_residual": 1.222820558245335e-17,
+          "first_positive_relative_gap": 8.65440245653451e-06,
+          "shape": "W proportional to r",
+          "method": "mass-whitened Householder complement"
+        }
+      },
+      "mesh_elements": 100,
+      "exported_radial_nodes": 201
+    },
+    {
+      "case": "sphere",
+      "family": "T",
+      "l": 2,
+      "solid_domain_id": "solid:sphere",
+      "status": "success",
+      "matrix_dimension": 200,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 200,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 9,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.2039866514119996e-17,
+          "mass": 3.300482714744744e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 7.13360268989075e-17,
+        "mass_orthogonality_defect": 1.887379141862766e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 100,
+      "exported_radial_nodes": 201
+    },
+    {
+      "case": "sphere",
+      "family": "T",
+      "l": 3,
+      "solid_domain_id": "solid:sphere",
+      "status": "success",
+      "matrix_dimension": 200,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 200,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 9,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.203765146630398e-17,
+          "mass": 3.300482714744744e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 6.712194241664885e-17,
+        "mass_orthogonality_defect": 1.9984014443252818e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 100,
+      "exported_radial_nodes": 201
+    },
+    {
+      "case": "shell",
+      "family": "T",
+      "l": 1,
+      "solid_domain_id": "solid:shell",
+      "status": "success",
+      "matrix_dimension": 201,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 1,
+        "positive": 200,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 6,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.74406085602465e-17,
+          "mass": 3.227602800788715e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 1.004743655432075e-16,
+        "mass_orthogonality_defect": 1.609823385706477e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": {
+          "expected_multiplicity": 1,
+          "removed_multiplicity": 1,
+          "scaled_stiffness_residual": 1.2119937371452284e-17,
+          "first_positive_relative_gap": 4.5305433288609045e-06,
+          "shape": "W proportional to r",
+          "method": "mass-whitened Householder complement"
+        }
+      },
+      "mesh_elements": 100,
+      "exported_radial_nodes": 201
+    },
+    {
+      "case": "shell",
+      "family": "T",
+      "l": 2,
+      "solid_domain_id": "solid:shell",
+      "status": "success",
+      "matrix_dimension": 201,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 201,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 7,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.743982986716123e-17,
+          "mass": 3.227602800788715e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 8.429894873781609e-17,
+        "mass_orthogonality_defect": 1.9984014443252818e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 100,
+      "exported_radial_nodes": 201
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 1,
+      "solid_domain_id": "solid:prem-00",
+      "status": "success",
+      "matrix_dimension": 192,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 1,
+        "positive": 191,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 1,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.632342105769804e-17,
+          "mass": 3.4285006477535333e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 7.25703989853345e-17,
+        "mass_orthogonality_defect": 3.3306690738754696e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": {
+          "expected_multiplicity": 1,
+          "removed_multiplicity": 1,
+          "scaled_stiffness_residual": 1.6699849201231857e-17,
+          "first_positive_relative_gap": 9.463909859072007e-06,
+          "shape": "W proportional to r",
+          "method": "mass-whitened Householder complement"
+        }
+      },
+      "mesh_elements": 96,
+      "exported_radial_nodes": 193
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 2,
+      "solid_domain_id": "solid:prem-00",
+      "status": "success",
+      "matrix_dimension": 192,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 192,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 2,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.632160222718324e-17,
+          "mass": 3.4285006477535333e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 7.458012557757306e-17,
+        "mass_orthogonality_defect": 1.8318679906315083e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 96,
+      "exported_radial_nodes": 193
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 3,
+      "solid_domain_id": "solid:prem-00",
+      "status": "success",
+      "matrix_dimension": 192,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 192,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 2,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.631897393230267e-17,
+          "mass": 3.4285006477535333e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 7.523548513360402e-17,
+        "mass_orthogonality_defect": 1.6653345369377348e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 96,
+      "exported_radial_nodes": 193
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 4,
+      "solid_domain_id": "solid:prem-00",
+      "status": "success",
+      "matrix_dimension": 192,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 192,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 1,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.631540726251283e-17,
+          "mass": 3.4285006477535333e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 7.302774258609675e-17,
+        "mass_orthogonality_defect": 1.9984014443252818e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 96,
+      "exported_radial_nodes": 193
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 1,
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "status": "success",
+      "matrix_dimension": 505,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 1,
+        "positive": 504,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 3,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.05050871899492e-17,
+          "mass": 3.546300847168577e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 1.2560692430229338e-15,
+        "mass_orthogonality_defect": 2.886579864025407e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": {
+          "expected_multiplicity": 1,
+          "removed_multiplicity": 1,
+          "scaled_stiffness_residual": 6.957837406278031e-18,
+          "first_positive_relative_gap": 2.099216858267689e-08,
+          "shape": "W proportional to r",
+          "method": "mass-whitened Householder complement"
+        }
+      },
+      "mesh_elements": 252,
+      "exported_radial_nodes": 505
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 2,
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "status": "success",
+      "matrix_dimension": 505,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 505,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 4,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.050506797095333e-17,
+          "mass": 3.546300847168577e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 6.254278627076719e-16,
+        "mass_orthogonality_defect": 2.796374243274613e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 252,
+      "exported_radial_nodes": 505
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 3,
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "status": "success",
+      "matrix_dimension": 505,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 505,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 4,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.0505039142379044e-17,
+          "mass": 3.546300847168577e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 8.305831136936017e-16,
+        "mass_orthogonality_defect": 2.4338170367954604e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 252,
+      "exported_radial_nodes": 505
+    },
+    {
+      "case": "PREM",
+      "family": "T",
+      "l": 4,
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "status": "success",
+      "matrix_dimension": 505,
+      "spectrum": {
+        "negative": 0,
+        "near_zero": 0,
+        "positive": 505,
+        "threshold": 0
+      },
+      "spectral_completeness": {
+        "status": "complete",
+        "reason": "Entire constrained discrete spectrum; known rigid rotation excluded, frequency window applied without renumbering"
+      },
+      "selected_count": 4,
+      "selection_status": "selected",
+      "diagnostics": {
+        "symmetry_relative": {
+          "stiffness": 5.0505000704129824e-17,
+          "mass": 3.546300847168577e-17
+        },
+        "mass_spd": true,
+        "maximum_scaled_residual": 1.0226279481342053e-15,
+        "mass_orthogonality_defect": 2.55351295663786e-15,
+        "residual_definition": "norm(Kx-lambda Mx)/((norm(K,F)+abs(lambda)*norm(M,F))*norm(x))",
+        "normalization": "constrained FE mass; distinct from exported trapezoid mass",
+        "rigid_rotation": null
+      },
+      "mesh_elements": 252,
+      "exported_radial_nodes": 505
+    }
+  ],
+  "PREM_mesh": {
+    "mesh_counts": {
+      "prem-00": 96,
+      "prem-02": 12,
+      "prem-03": 162,
+      "prem-04": 6,
+      "prem-05": 5,
+      "prem-06": 12,
+      "prem-07": 16,
+      "prem-08": 10,
+      "prem-09": 4,
+      "prem-10": 10,
+      "prem-11": 12,
+      "prem-12": 3
+    },
+    "mandatory_profile_knots": {
+      "prem-00": [
+        0.0,
+        38172.0,
+        76344.0,
+        114516.0,
+        152688.0,
+        190859.0,
+        229031.0,
+        267203.0,
+        305375.0,
+        343547.0,
+        381719.0,
+        419891.0,
+        458062.0,
+        496234.0,
+        534406.0,
+        572578.0,
+        610750.0,
+        648922.0,
+        687094.0,
+        725266.0,
+        763438.0,
+        801609.0,
+        839781.0,
+        877953.0,
+        916125.0,
+        954297.0,
+        992469.0,
+        1030641.0,
+        1068812.0,
+        1106984.0,
+        1145156.0,
+        1183328.0,
+        1221500.0
+      ],
+      "prem-02": [
+        3480000.0,
+        3517500.0,
+        3555000.0,
+        3592500.0,
+        3630000.0
+      ],
+      "prem-03": [
+        3630000.0,
+        3666482.0,
+        3702963.0,
+        3739444.0,
+        3775926.0,
+        3812407.0,
+        3848889.0,
+        3885370.0,
+        3921852.0,
+        3958333.0,
+        3994815.0,
+        4031296.0,
+        4067778.0,
+        4104259.0,
+        4140741.0,
+        4177222.0,
+        4213704.0,
+        4250185.0,
+        4286667.0,
+        4323148.0,
+        4359630.0,
+        4396111.0,
+        4432593.0,
+        4469074.0,
+        4505556.0,
+        4542037.0,
+        4578518.0,
+        4615000.0,
+        4651482.0,
+        4687963.0,
+        4724444.0,
+        4760926.0,
+        4797407.0,
+        4833889.0,
+        4870370.0,
+        4906852.0,
+        4943333.0,
+        4979815.0,
+        5016296.0,
+        5052778.0,
+        5089259.0,
+        5125741.0,
+        5162222.0,
+        5198704.0,
+        5235185.0,
+        5271667.0,
+        5308148.0,
+        5344630.0,
+        5381111.0,
+        5417593.0,
+        5454074.0,
+        5490556.0,
+        5527037.0,
+        5563518.0,
+        5600000.0
+      ],
+      "prem-04": [
+        5600000.0,
+        5633667.0,
+        5667333.0,
+        5701000.0
+      ],
+      "prem-05": [
+        5701000.0,
+        5771000.0
+      ],
+      "prem-06": [
+        5771000.0,
+        5804333.0,
+        5837667.0,
+        5871000.0,
+        5904333.0,
+        5937667.0,
+        5971000.0
+      ],
+      "prem-07": [
+        5971000.0,
+        5993500.0,
+        6016000.0,
+        6038500.0,
+        6061000.0,
+        6083500.0,
+        6106000.0,
+        6128500.0,
+        6151000.0
+      ],
+      "prem-08": [
+        6151000.0,
+        6179000.0,
+        6207000.0,
+        6235000.0,
+        6263000.0,
+        6291000.0
+      ],
+      "prem-09": [
+        6291000.0,
+        6318800.0,
+        6346600.0
+      ],
+      "prem-10": [
+        6346600.0,
+        6347000.0,
+        6348000.0,
+        6349000.0,
+        6350000.0,
+        6351000.0,
+        6352000.0,
+        6353000.0,
+        6354000.0,
+        6355000.0,
+        6356000.0
+      ],
+      "prem-11": [
+        6356000.0,
+        6357000.0,
+        6358000.0,
+        6359000.0,
+        6360000.0,
+        6361000.0,
+        6362000.0,
+        6363000.0,
+        6364000.0,
+        6365000.0,
+        6366000.0,
+        6367000.0,
+        6368000.0
+      ],
+      "prem-12": [
+        6368000.0,
+        6369000.0,
+        6370000.0,
+        6371000.0
+      ]
+    },
+    "actual_mesh_size": 348,
+    "estimated_working_memory_bytes": 219698560
+  },
+  "artificial_split": {
+    "mode_count": 4,
+    "max_relative_frequency_change": 0.0,
+    "tolerance": 1e-09,
+    "shared_boundary_w_jump": 0.0
+  },
+  "runtime_s": 1.83860541600734,
+  "status": "passed"
+}

@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "review_round": 3,
+  "status": "release_gate_passed; implementation round 3 closed by integration review",
+  "environment": "macOS x86_64, Python 3.13; two independent venvs, no editable, no system site packages, PYTHONPATH unset, scripts use python -I",
+  "wheel_workflow": {
+    "interpreter": "/private/tmp/terra-r3-wheel-env/bin/python",
+    "package_path": "/private/tmp/terra-r3-wheel-env/lib/python3.13/site-packages/earth_modes/__init__.py",
+    "cwd": "/private/tmp/terra-r3-wheel-release-run",
+    "pythonpath": null,
+    "commands": [
+      {
+        "argv": [
+          "--help"
+        ],
+        "returncode": 0,
+        "stdout": "usage: terra [-h] [--version]\n             {model,solve,inspect,scene,export,probe,compare} ...\n\nEarth normal modes: SI physics, explicit display scaling, reproducible\nexports.\n\npositional arguments:\n  {model,solve,inspect,scene,export,probe,compare}\n    model               Write a validated SI material Model JSON.\n    solve               Solve a Model JSON; config keys use the Python SI API.\n    inspect             Inspect frequencies and separate numerical quality\n                        evidence.\n    scene               Create a recommended scene bound to a bundle hash.\n    export              Render a bundle + scene, or a saved self-contained\n                        project.\n    probe               Sample a fixed material point; raw units are\n                        canonical, not earthquake metres.\n    compare             Compare explicit identities in separate models; no\n                        automatic mode tracking.\n\noptions:\n  -h, --help            show this help message and exit\n  --version             show program's version number and exit\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "model",
+          "homogeneous",
+          "--out",
+          "model.json"
+        ],
+        "returncode": 0,
+        "stdout": "model.json\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "model",
+          "prem",
+          "--out",
+          "prem-model.json"
+        ],
+        "returncode": 0,
+        "stdout": "prem-model.json\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "solve",
+          "model.json",
+          "--families",
+          "T",
+          "--l-min",
+          "2",
+          "--l-max",
+          "2",
+          "--gravity",
+          "0",
+          "--mesh",
+          "24",
+          "--out",
+          "modes.json"
+        ],
+        "returncode": 0,
+        "stdout": "Saved 6 modes: modes.json\n",
+        "stderr": "Solving Homogeneous solid sphere: families T; l=2..2; mesh=24; gravity=0 → modes.json\n  T0_2:solid:sphere: unverified · 0.34364651 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T1_2:solid:sphere: unverified · 0.98046367 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T2_2:solid:sphere: unverified · 1.4446871 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T3_2:solid:sphere: unverified · 1.8922643 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T4_2:solid:sphere: unverified · 2.3336768 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T5_2:solid:sphere: unverified · 2.7721846 mHz\n    warning: Finite-element result has not been independently benchmarked.\n"
+      },
+      {
+        "argv": [
+          "inspect",
+          "modes.json"
+        ],
+        "returncode": 0,
+        "stdout": "Homogeneous solid sphere · 6 modes\nT0_2:solid:sphere           0.3436465 mHz      2909.97 s  Q=None  unverified\nT1_2:solid:sphere           0.9804637 mHz      1019.93 s  Q=None  unverified\nT2_2:solid:sphere            1.444687 mHz      692.191 s  Q=None  unverified\nT3_2:solid:sphere            1.892264 mHz      528.467 s  Q=None  unverified\nT4_2:solid:sphere            2.333677 mHz      428.508 s  Q=None  unverified\nT5_2:solid:sphere            2.772185 mHz      360.726 s  Q=None  unverified\nWarning (6 modes): Finite-element result has not been independently benchmarked.\nGroups: 1; successful=1; not applicable=0; truncated=0. Use --details or --json for evidence.\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "scene",
+          "modes.json",
+          "--out",
+          "scene.json"
+        ],
+        "returncode": 0,
+        "stdout": "scene.json\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "export",
+          "modes.json",
+          "scene.json",
+          "--out",
+          "earth.png",
+          "--width",
+          "640",
+          "--height",
+          "480"
+        ],
+        "returncode": 0,
+        "stdout": "earth.png\n",
+        "stderr": "  T0_2:solid:sphere: unverified · 0.34364651 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T1_2:solid:sphere: unverified · 0.98046367 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T2_2:solid:sphere: unverified · 1.4446871 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T3_2:solid:sphere: unverified · 1.8922643 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T4_2:solid:sphere: unverified · 2.3336768 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T5_2:solid:sphere: unverified · 2.7721846 mHz\n    warning: Finite-element result has not been independently benchmarked.\nGeometry preflight: {\"point_count\": 4753, \"mesh_count\": 4753, \"spatial_cache_bytes\": 114072, \"latitude_intervals\": 48}\nPhysical t=0 s; 640 × 480 pixels.\n"
+      },
+      {
+        "argv": [
+          "export",
+          "modes.json",
+          "scene.json",
+          "--out",
+          "earth.glb",
+          "--duration",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "earth.glb\n",
+        "stderr": "  T0_2:solid:sphere: unverified · 0.34364651 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T1_2:solid:sphere: unverified · 0.98046367 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T2_2:solid:sphere: unverified · 1.4446871 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T3_2:solid:sphere: unverified · 1.8922643 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T4_2:solid:sphere: unverified · 2.3336768 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T5_2:solid:sphere: unverified · 2.7721846 mHz\n    warning: Finite-element result has not been independently benchmarked.\nGeometry preflight: {\"point_count\": 4753, \"mesh_count\": 4753, \"spatial_cache_bytes\": 114072, \"latitude_intervals\": 48}\nGLB physical window t=0..363.74588 s; adaptive morph keys are independent of nominal video fps; scalar colors are frozen at the start.\n/private/tmp/terra-r3-wheel-env/lib/python3.13/site-packages/earth_modes/export.py:585: UserWarning: GLB scientific colors are frozen at the export start; annotations remain in its manifest.\n  return write_glb(*args, **kwargs)\n"
+      }
+    ],
+    "dependencies": {
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.1",
+      "pillow": "12.3.0",
+      "rfc8785": "0.1.4"
+    },
+    "api": {
+      "mode_count": 6,
+      "vector": [
+        [
+          0.36221264978277357,
+          -2.2179128108357747e-17,
+          0.0
+        ]
+      ],
+      "image_size": [
+        640,
+        480
+      ]
+    },
+    "resources_present": true
+  },
+  "sdist_recipe": {
+    "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+    "mode_id": "S0_2",
+    "static_outputs": [
+      "earth.png",
+      "eigenfunctions.svg",
+      "model.svg",
+      "probe.csv",
+      "probe.svg",
+      "tables"
+    ],
+    "media_duration_s": 1.0,
+    "blender_native": "not run by this recipe",
+    "gif": {
+      "frame_count": 20,
+      "size": [
+        640,
+        480
+      ],
+      "frame_delays_ms": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ]
+    },
+    "mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 640,
+          "height": 480,
+          "r_frame_rate": "24/1",
+          "duration": "1.000000",
+          "nb_frames": "24"
+        }
+      ]
+    },
+    "glb": {
+      "bytes": 247124,
+      "vertex_count": 2145,
+      "target_count": 2,
+      "key_count": 25,
+      "non_keyframe_checks": [
+        {
+          "playback_s": 0.137,
+          "error_fraction_fixed_bound": 3.397992471640596e-05
+        },
+        {
+          "playback_s": 0.413,
+          "error_fraction_fixed_bound": 1.2713386332684634e-05
+        },
+        {
+          "playback_s": 0.819,
+          "error_fraction_fixed_bound": 3.018458997801647e-05
+        }
+      ]
+    }
+  },
+  "pip_check": {
+    "wheel": "No broken requirements found.",
+    "sdist": "No broken requirements found."
+  },
+  "native_blender": "not executed",
+  "artifacts": [
+    "/tmp/terra-r3-wheel-release-run",
+    "/tmp/terra-r3-sdist-recipe-final"
+  ],
+  "audited_archive_structure": {
+    "terra_resonance-0.1.0.tar.gz": {
+      "files": 179,
+      "required_documents_examples": [
+        "docs/USER-GUIDE.md",
+        "docs/CONTRACT.md",
+        "examples/prem-modes.json",
+        "examples/recipes/render.py",
+        "scripts/validate_numerics.py",
+        "tests/test_cli.py",
+        "MANIFEST.in"
+      ]
+    },
+    "terra_resonance-0.1.0-py3-none-any.whl": {
+      "files": 39,
+      "required_resources": [
+        "earth_modes/assets/coastlines.json",
+        "earth_modes/assets/palettes.json",
+        "earth_modes/assets/prem-isotropic-3mhz.txt",
+        "earth_modes/assets/MATPLOTLIB-LICENSE.txt",
+        "earth_modes/vendor/Ouroboros/LICENSE",
+        "earth_modes/vendor/README.md",
+        "earth_modes/assets/schema/mode-bundle.schema.json",
+        "earth_modes/assets/schema/scene.schema.json",
+        "earth_modes/assets/schema/project.schema.json"
+      ],
+      "runtime_files_match_source": true,
+      "host_paths_absent": true
+    }
+  },
+  "final_distribution": "dist/python/",
+  "final_archive_checksums": "dist/python/SHA256SUMS",
+  "final_archive_audit": "dist/python/release-verification.json"
+}

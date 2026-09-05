@@ -1,0 +1,495 @@
+{
+  "release": "0.2.0",
+  "status": "Installed API/CLI and media verification passed; final archive identity tracked outside the sdist in dist/python/phase-2-release-verification.json.",
+  "environment": "macOS x86_64; separate isolated Python 3.13 environments, old Terra removed, existing scientific dependencies retained; no editable, no system-site-packages, PYTHONPATH absent, python -I; cwd in temporary directories.",
+  "checks": {
+    "wheel": {
+      "kind": "wheel",
+      "package_version": "0.2.0",
+      "interpreter": "/private/tmp/terra-r3-wheel-env/bin/python",
+      "package_path": "/private/tmp/terra-r3-wheel-env/lib/python3.13/site-packages/earth_modes/__init__.py",
+      "cwd": "/var/folders/6k/s3t_029n0710wzkjtt75stch0000gp/T/terra-phase2-wheel-run-pmiem338",
+      "pythonpath": null,
+      "isolated_flag": 1,
+      "system_site_packages": false,
+      "dependency_reuse": "Prior isolated noneditable environment retained scientific dependencies; old Terra uninstalled before artifact install.",
+      "dependencies": {
+        "numpy": "2.5.2",
+        "scipy": "1.18.1",
+        "matplotlib": "3.11.1",
+        "pillow": "12.3.0",
+        "rfc8785": "0.1.4"
+      },
+      "examples": [
+        {
+          "id": "01-breathing",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "02-tangential",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "03-indices",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "04-liquid-core",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "05-traveling",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "06-beats",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        }
+      ],
+      "commands": [
+        {
+          "argv": [
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "0.2.0\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "example",
+            "--list"
+          ],
+          "returncode": 0,
+          "stdout": "01-breathing\n02-tangential\n03-indices\n04-liquid-core\n05-traveling\n06-beats\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "example",
+            "03-indices",
+            "--out",
+            "example.terra.json"
+          ],
+          "returncode": 0,
+          "stdout": "example.terra.json\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "model",
+            "homogeneous",
+            "--radius",
+            "1000000",
+            "--rho",
+            "5000",
+            "--vp",
+            "8000",
+            "--vs",
+            "4000",
+            "--out",
+            "custom-model.json"
+          ],
+          "returncode": 0,
+          "stdout": "custom-model.json\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "solve",
+            "custom-model.json",
+            "--families",
+            "T",
+            "--l-min",
+            "2",
+            "--l-max",
+            "2",
+            "--gravity",
+            "0",
+            "--mesh",
+            "20",
+            "--f-max-mhz",
+            "10",
+            "--out",
+            "custom-modes.json"
+          ],
+          "returncode": 0,
+          "stdout": "Saved 4 modes: custom-modes.json\n",
+          "stderr": "Solving Homogeneous solid sphere: families T; l=2..2; mesh=20; gravity=0 \u2192 custom-modes.json\n  T0_2:solid:sphere: unverified \u00b7 1.5922705 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T1_2:solid:sphere: unverified \u00b7 4.542944 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T2_2:solid:sphere: unverified \u00b7 6.6939869 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T3_2:solid:sphere: unverified \u00b7 8.768142 mHz\n    warning: Finite-element result has not been independently benchmarked.\n"
+        },
+        {
+          "argv": [
+            "scene",
+            "custom-modes.json",
+            "--wireframe-spacing-deg",
+            "30",
+            "--out",
+            "custom-scene.json"
+          ],
+          "returncode": 0,
+          "stdout": "custom-scene.json\n",
+          "stderr": ""
+        }
+      ],
+      "custom_solve_modes": 4,
+      "custom_field": [
+        [
+          0.0,
+          4.730257913889723e-17,
+          0.0
+        ]
+      ],
+      "pilot": {
+        "modes": 4,
+        "frequency_hz": 0.0015922705742720579,
+        "module_path": "/private/tmp/terra-r3-wheel-env/lib/python3.13/site-packages/earth_modes/experimental/toroidal.py",
+        "image": "pilot.png",
+        "glb": "pilot.glb"
+      },
+      "recipe": {
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "mode_id": "S0_2",
+        "static_outputs": [
+          "earth.png",
+          "eigenfunctions.svg",
+          "model.svg",
+          "probe.csv",
+          "probe.svg",
+          "tables"
+        ],
+        "media_duration_s": 1.0,
+        "blender_native": "not run by this recipe",
+        "gif": {
+          "frame_count": 20,
+          "size": [
+            640,
+            480
+          ],
+          "frame_delays_ms": [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ]
+        },
+        "mp4": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 640,
+              "height": 480,
+              "r_frame_rate": "24/1",
+              "duration": "1.000000",
+              "nb_frames": "24"
+            }
+          ]
+        },
+        "glb": {
+          "bytes": 247708,
+          "vertex_count": 2145,
+          "target_count": 2,
+          "key_count": 25,
+          "non_keyframe_checks": [
+            {
+              "playback_s": 0.137,
+              "error_fraction_fixed_bound": 3.397992471640596e-05
+            },
+            {
+              "playback_s": 0.413,
+              "error_fraction_fixed_bound": 1.2713386332684634e-05
+            },
+            {
+              "playback_s": 0.819,
+              "error_fraction_fixed_bound": 3.018458997801647e-05
+            }
+          ]
+        }
+      },
+      "decoding": {
+        "png": true,
+        "svg_xml": true,
+        "probe_csv_rows": 360,
+        "gif_all_frames": true,
+        "mp4_full_ffmpeg_decode": true,
+        "glb_non_keyframe_checks": true
+      },
+      "pip_check": "No broken requirements found.",
+      "resources_present": true,
+      "native_blender": "not executed"
+    },
+    "sdist": {
+      "kind": "sdist",
+      "package_version": "0.2.0",
+      "interpreter": "/private/tmp/terra-r3-sdist-env/bin/python",
+      "package_path": "/private/tmp/terra-r3-sdist-env/lib/python3.13/site-packages/earth_modes/__init__.py",
+      "cwd": "/var/folders/6k/s3t_029n0710wzkjtt75stch0000gp/T/terra-phase2-sdist-run-7qojady1",
+      "pythonpath": null,
+      "isolated_flag": 1,
+      "system_site_packages": false,
+      "dependency_reuse": "Prior isolated noneditable environment retained scientific dependencies; old Terra uninstalled before artifact install.",
+      "dependencies": {
+        "numpy": "2.5.2",
+        "scipy": "1.18.1",
+        "matplotlib": "3.11.1",
+        "pillow": "12.3.0",
+        "rfc8785": "0.1.4"
+      },
+      "examples": [
+        {
+          "id": "01-breathing",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "02-tangential",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "03-indices",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "04-liquid-core",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "05-traveling",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        },
+        {
+          "id": "06-beats",
+          "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9"
+        }
+      ],
+      "commands": [
+        {
+          "argv": [
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "0.2.0\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "example",
+            "--list"
+          ],
+          "returncode": 0,
+          "stdout": "01-breathing\n02-tangential\n03-indices\n04-liquid-core\n05-traveling\n06-beats\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "example",
+            "03-indices",
+            "--out",
+            "example.terra.json"
+          ],
+          "returncode": 0,
+          "stdout": "example.terra.json\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "model",
+            "homogeneous",
+            "--radius",
+            "1000000",
+            "--rho",
+            "5000",
+            "--vp",
+            "8000",
+            "--vs",
+            "4000",
+            "--out",
+            "custom-model.json"
+          ],
+          "returncode": 0,
+          "stdout": "custom-model.json\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "solve",
+            "custom-model.json",
+            "--families",
+            "T",
+            "--l-min",
+            "2",
+            "--l-max",
+            "2",
+            "--gravity",
+            "0",
+            "--mesh",
+            "20",
+            "--f-max-mhz",
+            "10",
+            "--out",
+            "custom-modes.json"
+          ],
+          "returncode": 0,
+          "stdout": "Saved 4 modes: custom-modes.json\n",
+          "stderr": "Solving Homogeneous solid sphere: families T; l=2..2; mesh=20; gravity=0 \u2192 custom-modes.json\n  T0_2:solid:sphere: unverified \u00b7 1.5922705 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T1_2:solid:sphere: unverified \u00b7 4.542944 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T2_2:solid:sphere: unverified \u00b7 6.6939869 mHz\n    warning: Finite-element result has not been independently benchmarked.\n  T3_2:solid:sphere: unverified \u00b7 8.768142 mHz\n    warning: Finite-element result has not been independently benchmarked.\n"
+        },
+        {
+          "argv": [
+            "scene",
+            "custom-modes.json",
+            "--wireframe-spacing-deg",
+            "30",
+            "--out",
+            "custom-scene.json"
+          ],
+          "returncode": 0,
+          "stdout": "custom-scene.json\n",
+          "stderr": ""
+        }
+      ],
+      "custom_solve_modes": 4,
+      "custom_field": [
+        [
+          0.0,
+          4.730257913889723e-17,
+          0.0
+        ]
+      ],
+      "pilot": {
+        "modes": 4,
+        "frequency_hz": 0.0015922705742720579,
+        "module_path": "/private/tmp/terra-r3-sdist-env/lib/python3.13/site-packages/earth_modes/experimental/toroidal.py",
+        "image": "pilot.png",
+        "glb": "pilot.glb"
+      },
+      "recipe": {
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "mode_id": "S0_2",
+        "static_outputs": [
+          "earth.png",
+          "eigenfunctions.svg",
+          "model.svg",
+          "probe.csv",
+          "probe.svg",
+          "tables"
+        ],
+        "media_duration_s": 1.0,
+        "blender_native": "not run by this recipe",
+        "gif": {
+          "frame_count": 20,
+          "size": [
+            640,
+            480
+          ],
+          "frame_delays_ms": [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ]
+        },
+        "mp4": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 640,
+              "height": 480,
+              "r_frame_rate": "24/1",
+              "duration": "1.000000",
+              "nb_frames": "24"
+            }
+          ]
+        },
+        "glb": {
+          "bytes": 247708,
+          "vertex_count": 2145,
+          "target_count": 2,
+          "key_count": 25,
+          "non_keyframe_checks": [
+            {
+              "playback_s": 0.137,
+              "error_fraction_fixed_bound": 3.397992471640596e-05
+            },
+            {
+              "playback_s": 0.413,
+              "error_fraction_fixed_bound": 1.2713386332684634e-05
+            },
+            {
+              "playback_s": 0.819,
+              "error_fraction_fixed_bound": 3.018458997801647e-05
+            }
+          ]
+        }
+      },
+      "decoding": {
+        "png": true,
+        "svg_xml": true,
+        "probe_csv_rows": 360,
+        "gif_all_frames": true,
+        "mp4_full_ffmpeg_decode": true,
+        "glb_non_keyframe_checks": true
+      },
+      "pip_check": "No broken requirements found.",
+      "resources_present": true,
+      "native_blender": "not executed"
+    }
+  },
+  "source_changes_after_media_run": "Annotation-only proportional font sizing and colorbar margin fix. Repeated installed PNG at320x240/640x480/1200x900 after final archive install; unchanged encoding/field/GLB mechanisms are covered by original complete media run.",
+  "small_image_layout": {
+    "font_scale": "min(1,width/640,height/480)",
+    "colorbar_left_fraction": 0.86,
+    "sizes": [
+      [
+        320,
+        240
+      ],
+      [
+        640,
+        480
+      ],
+      [
+        1200,
+        900
+      ]
+    ],
+    "evidence": "tests/test_grid.py::test_small_annotated_images_keep_notes_and_colorbar_inside_canvas and actual visual inspection"
+  },
+  "scientific_benchmarks": "Not rerun; separate numerical review owns frequency/shape evidence.",
+  "native_blender": "not executed",
+  "historical_archives": "0.1.0 retained separately; not used as phase2 evidence",
+  "archive_hash_location": "dist/python/SHA256SUMS; intentionally outside source archive to avoid recursive identity updates"
+}

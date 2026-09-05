@@ -1,0 +1,30 @@
+{
+  "coastlines.json": {
+    "source": "packages/earth_modes/assets/coastlines.json",
+    "destination": "apps/web/public/data/coastlines.json",
+    "sha256": "840368226de5981d6a4602effae9cfa909957d98d6380d416cde6819180e1194",
+    "bytes": 198204,
+    "status": "identical"
+  },
+  "palettes.json": {
+    "source": "packages/earth_modes/assets/palettes.json",
+    "destination": "apps/web/public/data/palettes.json",
+    "sha256": "4dba76dd996ccfba9bcd699b31f899e0513be6d10461cdc98459638e06540901",
+    "bytes": 22581,
+    "status": "identical"
+  },
+  "prem-modes.json": {
+    "source": "examples/prem-modes.json",
+    "destination": "apps/web/public/data/prem-modes.json",
+    "sha256": "cb9567887738a8d24794c2170b80f314ab29b364b79fdcf1aa78777616e02443",
+    "bytes": 1854680,
+    "status": "identical"
+  },
+  "lessons.json": {
+    "source": "examples/lessons/catalog.json",
+    "destination": "apps/web/public/data/lessons.json",
+    "sha256": "cacf97fa948878c72810c21f59778d3fd26b423e6da2f966f2c47b4bd9846be2",
+    "bytes": 17925,
+    "status": "identical"
+  }
+}

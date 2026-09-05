@@ -1,0 +1,45 @@
+{
+  "numerical_research": [
+    "docs/ROADMAP.md",
+    "docs/PLAN.md",
+    "docs/STRATEGY.md",
+    "docs/research/roadmap-science.md",
+    "docs/reviews/plan-round-3-science.md",
+    "docs/reviews/plan-round-1-numerics.md",
+    "docs/reviews/implementation-round-2-science.md",
+    "docs/reviews/strategy-counter-science.md"
+  ],
+  "scope_review": [
+    "docs/WORKFLOWS.md",
+    "docs/DATA.md",
+    "docs/research/roadmap-architecture.md",
+    "docs/reviews/implementation-round-1-contract.md",
+    "docs/reviews/plan-round-1-contract.md",
+    "docs/reviews/plan-round-1-integration.md",
+    "docs/reviews/plan-round-3-contract.md",
+    "docs/reviews/strategy-counter-integration.md",
+    "docs/reviews/plan-round-2-architecture.md",
+    "docs/reviews/implementation-round-3-contract.md",
+    "docs/reviews/strategy-counter-architecture.md",
+    "docs/CONTRACT.md"
+  ],
+  "visual_research": [
+    "docs/USER-GUIDE.md",
+    "docs/DEVELOPMENT.md",
+    "docs/ACCEPTANCE.md",
+    "docs/research/roadmap-product.md",
+    "docs/research/visualization.md",
+    "docs/research/scope-audit.md",
+    "docs/reviews/implementation-round-2-ui.md",
+    "docs/reviews/implementation-round-1-outputs.md",
+    "docs/reviews/plan-round-1-product.md",
+    "docs/reviews/plan-round-2-workflow.md",
+    "docs/reviews/PLAN-REVIEW-LOG.md",
+    "docs/reviews/implementation-round-3-cases.md",
+    "docs/reviews/plan-round-3-product.md",
+    "docs/reviews/strategy-counter-product.md",
+    "docs/reviews/implementation-round-3-release.md",
+    "docs/reviews/strategy-decisions.md",
+    "docs/reviews/plan-round-2-delivery.md"
+  ]
+}

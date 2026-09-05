@@ -1,0 +1,32 @@
+{
+  "id": "validation-F",
+  "name": "Homogeneous solid sphere",
+  "radius_m": 1000000.0,
+  "layers": [
+    {
+      "id": "0",
+      "name": "F",
+      "phase": "fluid",
+      "r_m": [
+        0.0,
+        1000000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        0,
+        0
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "analytic_material_model",
+    "description": "Uniform input material; this is not a solved mode."
+  }
+}

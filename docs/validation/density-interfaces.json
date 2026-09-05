@@ -1,0 +1,401 @@
+{
+  "kind": "thin-transition consistency, not independent solver benchmark",
+  "results": [
+    {
+      "phase": "fluid",
+      "gravity": 1,
+      "model": {
+        "id": "homogeneous-fluid",
+        "name": "Homogeneous fluid sphere",
+        "radius_m": 1000000.0,
+        "layers": [
+          {
+            "id": "inner",
+            "name": "inner",
+            "phase": "fluid",
+            "r_m": [
+              0,
+              500000.0
+            ],
+            "rho_kg_m3": [
+              8000,
+              8000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "outer",
+            "name": "outer",
+            "phase": "fluid",
+            "r_m": [
+              500000.0,
+              1000000.0
+            ],
+            "rho_kg_m3": [
+              4000,
+              4000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              0,
+              0
+            ]
+          }
+        ],
+        "provenance": {
+          "kind": "analytic_material_model",
+          "description": "Uniform input material; this is not a solved mode."
+        }
+      },
+      "request": {
+        "families": [
+          "R",
+          "S"
+        ],
+        "l_min": 2,
+        "l_max": 2,
+        "gravity": 1,
+        "n_max": 0,
+        "frequency_max_hz": 0.02
+      },
+      "runs": [
+        {
+          "width_m": 0,
+          "mesh_size": 120,
+          "frequencies_hz": {
+            "R0_0": 0.004470440186951988,
+            "S0_2": 0.0002572504276583089
+          }
+        },
+        {
+          "width_m": 0,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.004470439533043304,
+            "S0_2": 0.000257275156150074
+          }
+        },
+        {
+          "width_m": 100,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.004470469183745363,
+            "S0_2": 0.00025729953423139697
+          }
+        }
+      ],
+      "sharp_to_thin_relative_error": {
+        "R0_0": 6.63257050670385e-06,
+        "S0_2": 9.474592091973655e-05
+      },
+      "tolerance": 0.0015
+    },
+    {
+      "phase": "fluid",
+      "gravity": 2,
+      "model": {
+        "id": "homogeneous-fluid",
+        "name": "Homogeneous fluid sphere",
+        "radius_m": 1000000.0,
+        "layers": [
+          {
+            "id": "inner",
+            "name": "inner",
+            "phase": "fluid",
+            "r_m": [
+              0,
+              500000.0
+            ],
+            "rho_kg_m3": [
+              8000,
+              8000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              0,
+              0
+            ]
+          },
+          {
+            "id": "outer",
+            "name": "outer",
+            "phase": "fluid",
+            "r_m": [
+              500000.0,
+              1000000.0
+            ],
+            "rho_kg_m3": [
+              4000,
+              4000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              0,
+              0
+            ]
+          }
+        ],
+        "provenance": {
+          "kind": "analytic_material_model",
+          "description": "Uniform input material; this is not a solved mode."
+        }
+      },
+      "request": {
+        "families": [
+          "R",
+          "S"
+        ],
+        "l_min": 2,
+        "l_max": 2,
+        "gravity": 2,
+        "n_max": 0,
+        "frequency_max_hz": 0.02
+      },
+      "runs": [
+        {
+          "width_m": 0,
+          "mesh_size": 120,
+          "frequencies_hz": {
+            "R0_0": 0.0044601438490679615,
+            "S0_2": 0.00017472592788109187
+          }
+        },
+        {
+          "width_m": 0,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.004460143190739402,
+            "S0_2": 0.00017491528793512387
+          }
+        },
+        {
+          "width_m": 100,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.004460172942094562,
+            "S0_2": 0.00017511294048374893
+          }
+        }
+      ],
+      "sharp_to_thin_relative_error": {
+        "R0_0": 6.670448779888538e-06,
+        "S0_2": 0.0011287146916673096
+      },
+      "tolerance": 0.0015
+    },
+    {
+      "phase": "solid",
+      "gravity": 1,
+      "model": {
+        "id": "homogeneous-solid",
+        "name": "Homogeneous solid sphere",
+        "radius_m": 1000000.0,
+        "layers": [
+          {
+            "id": "inner",
+            "name": "inner",
+            "phase": "solid",
+            "r_m": [
+              0,
+              500000.0
+            ],
+            "rho_kg_m3": [
+              8000,
+              8000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              4000,
+              4000
+            ]
+          },
+          {
+            "id": "outer",
+            "name": "outer",
+            "phase": "solid",
+            "r_m": [
+              500000.0,
+              1000000.0
+            ],
+            "rho_kg_m3": [
+              4000,
+              4000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              4000,
+              4000
+            ]
+          }
+        ],
+        "provenance": {
+          "kind": "analytic_material_model",
+          "description": "Uniform input material; this is not a solved mode."
+        }
+      },
+      "request": {
+        "families": [
+          "R",
+          "S"
+        ],
+        "l_min": 2,
+        "l_max": 2,
+        "gravity": 1,
+        "n_max": 0,
+        "frequency_max_hz": 0.02
+      },
+      "runs": [
+        {
+          "width_m": 0,
+          "mesh_size": 120,
+          "frequencies_hz": {
+            "R0_0": 0.003810066724557155,
+            "S0_2": 0.001895650296012153
+          }
+        },
+        {
+          "width_m": 0,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.003810066721983673,
+            "S0_2": 0.0018956502946821754
+          }
+        },
+        {
+          "width_m": 100,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.003810081378984215,
+            "S0_2": 0.0018956574984119131
+          }
+        }
+      ],
+      "sharp_to_thin_relative_error": {
+        "R0_0": 3.846899602422127e-06,
+        "S0_2": 3.800121986086147e-06
+      },
+      "tolerance": 1e-05
+    },
+    {
+      "phase": "solid",
+      "gravity": 2,
+      "model": {
+        "id": "homogeneous-solid",
+        "name": "Homogeneous solid sphere",
+        "radius_m": 1000000.0,
+        "layers": [
+          {
+            "id": "inner",
+            "name": "inner",
+            "phase": "solid",
+            "r_m": [
+              0,
+              500000.0
+            ],
+            "rho_kg_m3": [
+              8000,
+              8000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              4000,
+              4000
+            ]
+          },
+          {
+            "id": "outer",
+            "name": "outer",
+            "phase": "solid",
+            "r_m": [
+              500000.0,
+              1000000.0
+            ],
+            "rho_kg_m3": [
+              4000,
+              4000
+            ],
+            "vp_m_s": [
+              8000,
+              8000
+            ],
+            "vs_m_s": [
+              4000,
+              4000
+            ]
+          }
+        ],
+        "provenance": {
+          "kind": "analytic_material_model",
+          "description": "Uniform input material; this is not a solved mode."
+        }
+      },
+      "request": {
+        "families": [
+          "R",
+          "S"
+        ],
+        "l_min": 2,
+        "l_max": 2,
+        "gravity": 2,
+        "n_max": 0,
+        "frequency_max_hz": 0.02
+      },
+      "runs": [
+        {
+          "width_m": 0,
+          "mesh_size": 120,
+          "frequencies_hz": {
+            "R0_0": 0.003798013767712607,
+            "S0_2": 0.0018865739145433281
+          }
+        },
+        {
+          "width_m": 0,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.003798013765138077,
+            "S0_2": 0.001886573913159184
+          }
+        },
+        {
+          "width_m": 100,
+          "mesh_size": 240,
+          "frequencies_hz": {
+            "R0_0": 0.003798028506370333,
+            "S0_2": 0.0018865812114094204
+          }
+        }
+      ],
+      "sharp_to_thin_relative_error": {
+        "R0_0": 3.88128531192411e-06,
+        "S0_2": 3.86850573530495e-06
+      },
+      "tolerance": 1e-05
+    }
+  ]
+}

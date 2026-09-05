@@ -1,0 +1,78 @@
+{
+  "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+  "scope": "project identity, lesson sampling, fixed color envelopes and real section-node geometry",
+  "lessons": [
+    {
+      "id": "01-breathing",
+      "steps": 3,
+      "fixed_color_limit": 0.28991668216326655,
+      "sampled_component_peak": 0.27611112586977776,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 0,
+      "internal_node_segments": 0,
+      "point_samples": 1025,
+      "physical_window_s": 1229.0931322531928
+    },
+    {
+      "id": "02-tangential",
+      "steps": 3,
+      "fixed_color_limit": 0.4683325804901025,
+      "sampled_component_peak": 0.446031029038193,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 0,
+      "internal_node_segments": 0,
+      "point_samples": 1025,
+      "physical_window_s": 2633.5515278665107
+    },
+    {
+      "id": "03-indices",
+      "steps": 3,
+      "fixed_color_limit": 0.41801349790276854,
+      "sampled_component_peak": 0.3981080932407319,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 2892,
+      "internal_node_segments": 2354,
+      "point_samples": 1025,
+      "physical_window_s": 3230.823660805354
+    },
+    {
+      "id": "04-liquid-core",
+      "steps": 3,
+      "fixed_color_limit": 0.3620103083085907,
+      "sampled_component_peak": 0.3447717221986578,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 0,
+      "internal_node_segments": 0,
+      "point_samples": 1025,
+      "physical_window_s": 3230.823660805354
+    },
+    {
+      "id": "05-traveling",
+      "steps": 3,
+      "fixed_color_limit": 0.30920173634424486,
+      "sampled_component_peak": 0.2944778441373761,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 0,
+      "internal_node_segments": 0,
+      "point_samples": 1025,
+      "physical_window_s": 3230.823660805354
+    },
+    {
+      "id": "06-beats",
+      "steps": 3,
+      "fixed_color_limit": 0.29162060630548803,
+      "sampled_component_peak": 0.2763300447581232,
+      "sampled_times": 65,
+      "clipped_samples": 0,
+      "node_segments": 0,
+      "internal_node_segments": 0,
+      "point_samples": 4097,
+      "physical_window_s": 60950.34626009777
+    }
+  ]
+}

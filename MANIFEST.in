@@ -1,0 +1,17 @@
+# The Python source distribution includes its runnable scientific examples,
+# validation evidence and documentation; the web application is a separate build.
+include LICENSE README.md pyproject.toml
+recursive-include docs *.md *.json *.txt *.svg
+recursive-include examples *.py *.json *.txt *.md *.png *.csv
+recursive-include scripts *.py
+recursive-include schema *.json *.md
+recursive-include vendor *.md
+recursive-include tests *.py
+global-exclude *.pyc *.pyo .DS_Store
+prune artifacts
+prune apps
+prune build
+prune .venv
+# Live coordination is tracked locally, not distributed as stale task state.
+exclude docs/team/CURRENT.md
+prune docs/team/handoffs

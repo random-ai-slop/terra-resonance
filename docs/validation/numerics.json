@@ -1,0 +1,3634 @@
+{
+  "scope": "N1\u2013N6 frequencies, boundary physics, canonical mass and first-order Q; not source excitation or inverse kernels",
+  "mineos_commit": "26f842dbe95b0c27d5e77146d415268db1239913",
+  "results": {
+    "N1": [
+      {
+        "mode_id": "R0_0",
+        "computed_hz": 0.0034933966007758524,
+        "reference_hz": 0.0034933965953315494,
+        "relative_error": 1.5584553647585153e-09,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_2:solid:0",
+        "computed_hz": 0.001592270479457867,
+        "reference_hz": 0.001592270479466163,
+        "relative_error": 5.210054609960935e-12,
+        "tolerance": 0.005
+      },
+      {
+        "model": "homogeneous fluid",
+        "mode_id": "R0_0",
+        "computed_hz": 0.004000002969816603,
+        "reference_hz": 0.004,
+        "relative_error": 7.424541506040327e-07,
+        "tolerance": 0.005
+      },
+      {
+        "model": "homogeneous fluid",
+        "mode_id": "R1_0",
+        "computed_hz": 0.008000023680731525,
+        "reference_hz": 0.008,
+        "relative_error": 2.9600914406291423e-06,
+        "tolerance": 0.005
+      },
+      {
+        "model": "homogeneous fluid",
+        "mode_id": "R2_0",
+        "computed_hz": 0.012000080001580374,
+        "reference_hz": 0.012,
+        "relative_error": 6.666798364474147e-06,
+        "tolerance": 0.005
+      }
+    ],
+    "N3": [
+      {
+        "phases": "S",
+        "gravity": 0,
+        "mode_count": 23,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 7.0933182318484255e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 319,
+              "threshold": 1.4020429582469409e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 320,
+              "threshold": 1.4693253052944254e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 159,
+              "threshold": 1.7460474472960835e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 1.7477183244864032e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.0955990404747898e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "S",
+        "gravity": 1,
+        "mode_count": 24,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 7.09331797156385e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 320,
+              "threshold": 1.4020428961966354e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 320,
+              "threshold": 1.469325207060974e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 159,
+              "threshold": 1.7460474472960835e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 1.7477183244864032e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.0955887786898136e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S0_1",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "S",
+        "gravity": 2,
+        "mode_count": 23,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 7.093317570076256e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 319,
+              "threshold": 1.4020428818869163e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 320,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 320,
+              "threshold": 1.46932514224908e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 159,
+              "threshold": 1.7460474472960835e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 1.7477183244864032e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.095913720611821e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "F",
+        "gravity": 0,
+        "mode_count": 12,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 5.223679080063114e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 80,
+              "positive": 160,
+              "threshold": 7.835535262978307e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 80,
+              "positive": 160,
+              "threshold": 7.835568549958365e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          }
+        ],
+        "max_relative_frequency_change": 1.0418164575461671e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2"
+        ]
+      },
+      {
+        "phases": "F",
+        "gravity": 1,
+        "mode_count": 15,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 5.223678761585044e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 21,
+              "near_zero": 58,
+              "positive": 161,
+              "threshold": 7.835534785151276e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 37,
+              "near_zero": 42,
+              "positive": 161,
+              "threshold": 7.835568071911452e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          }
+        ],
+        "max_relative_frequency_change": 1.6440061725909874e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S0_1",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2"
+        ]
+      },
+      {
+        "phases": "F",
+        "gravity": 2,
+        "mode_count": 14,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 160,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 160,
+              "threshold": 5.223679843141251e-12
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 21,
+              "near_zero": 59,
+              "positive": 160,
+              "threshold": 7.835536407474796e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 240,
+            "spectrum": {
+              "negative": 37,
+              "near_zero": 42,
+              "positive": 161,
+              "threshold": 7.835569694213383e-12
+            },
+            "excluded_subspace_count": 79,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "not_applicable",
+            "matrix_dimension": 0,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 0,
+              "threshold": 0
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "no solid domain",
+            "spectral_completeness": {
+              "status": "complete",
+              "reason": "fluid has no elastic toroidal modes"
+            }
+          }
+        ],
+        "max_relative_frequency_change": 1.6443833385916648e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2"
+        ]
+      },
+      {
+        "phases": "SFS",
+        "gravity": 0,
+        "mode_count": 24,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 162,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 162,
+              "threshold": 2.844424712140388e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 30,
+              "positive": 266,
+              "threshold": 5.197224844866659e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 28,
+              "positive": 268,
+              "threshold": 5.19723361125919e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 47,
+              "threshold": 5.232348048733255e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 56,
+              "threshold": 6.221458388071809e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 48,
+              "threshold": 5.244010843149842e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 57,
+              "threshold": 6.22156148090415e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.079955093214647e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T3_1:solid:2",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T3_2:solid:2"
+        ]
+      },
+      {
+        "phases": "SFS",
+        "gravity": 1,
+        "mode_count": 25,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 162,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 162,
+              "threshold": 2.844452214772069e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 26,
+              "positive": 267,
+              "threshold": 5.197275096609469e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 5,
+              "near_zero": 23,
+              "positive": 268,
+              "threshold": 5.197283863043455e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 47,
+              "threshold": 5.232348048733255e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 56,
+              "threshold": 6.221458388071809e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 48,
+              "threshold": 5.244010843149842e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 57,
+              "threshold": 6.22156148090415e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.079955093214647e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T3_1:solid:2",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T3_2:solid:2"
+        ]
+      },
+      {
+        "phases": "SFS",
+        "gravity": 2,
+        "mode_count": 24,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 162,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 162,
+              "threshold": 2.8444522129224977e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 27,
+              "positive": 266,
+              "threshold": 5.197275093231481e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 5,
+              "near_zero": 23,
+              "positive": 268,
+              "threshold": 5.197283859668414e-11
+            },
+            "excluded_subspace_count": 28,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 47,
+              "threshold": 5.232348048733255e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 56,
+              "threshold": 6.221458388071809e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 48,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 48,
+              "threshold": 5.244010843149842e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 57,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 57,
+              "threshold": 6.22156148090415e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.079955093214647e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T3_1:solid:2",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T3_2:solid:2"
+        ]
+      },
+      {
+        "phases": "FS",
+        "gravity": 0,
+        "mode_count": 23,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.82788059128252e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 36,
+              "positive": 250,
+              "threshold": 5.023448869310339e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 35,
+              "positive": 251,
+              "threshold": 5.023466494956354e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 88,
+              "threshold": 9.714668084069529e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 89,
+              "threshold": 9.714925225964221e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.764719496835042e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:1",
+          "T2_1:solid:1",
+          "T3_1:solid:1",
+          "T4_1:solid:1",
+          "T0_2:solid:1",
+          "T1_2:solid:1",
+          "T2_2:solid:1",
+          "T3_2:solid:1",
+          "T4_2:solid:1"
+        ]
+      },
+      {
+        "phases": "FS",
+        "gravity": 1,
+        "mode_count": 24,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.8278995074323444e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 32,
+              "positive": 251,
+              "threshold": 5.0234824719406795e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 5,
+              "near_zero": 30,
+              "positive": 251,
+              "threshold": 5.0235000976442596e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 88,
+              "threshold": 9.714668084069529e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 89,
+              "threshold": 9.714925225964221e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.7648412689899806e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S0_1",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:1",
+          "T2_1:solid:1",
+          "T3_1:solid:1",
+          "T4_1:solid:1",
+          "T0_2:solid:1",
+          "T1_2:solid:1",
+          "T2_2:solid:1",
+          "T3_2:solid:1",
+          "T4_2:solid:1"
+        ]
+      },
+      {
+        "phases": "FS",
+        "gravity": 2,
+        "mode_count": 23,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.827899505886738e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 33,
+              "positive": 250,
+              "threshold": 5.023482469198028e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 5,
+              "near_zero": 30,
+              "positive": 251,
+              "threshold": 5.023500094907533e-11
+            },
+            "excluded_subspace_count": 35,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 88,
+              "threshold": 9.714668084069529e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:1",
+            "status": "success",
+            "matrix_dimension": 89,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 89,
+              "threshold": 9.714925225964221e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 1.7652337317822396e-05,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:1",
+          "T2_1:solid:1",
+          "T3_1:solid:1",
+          "T4_1:solid:1",
+          "T0_2:solid:1",
+          "T1_2:solid:1",
+          "T2_2:solid:1",
+          "T3_2:solid:1",
+          "T4_2:solid:1"
+        ]
+      },
+      {
+        "phases": "SF",
+        "gravity": 0,
+        "mode_count": 21,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.822057169000608e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 38,
+              "positive": 248,
+              "threshold": 5.013101338510909e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 37,
+              "positive": 249,
+              "threshold": 5.013113328220415e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 87,
+              "threshold": 9.600882561093922e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 88,
+              "threshold": 9.612826276634442e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 9.656442142450484e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "SF",
+        "gravity": 1,
+        "mode_count": 23,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.8220340027868277e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 4,
+              "near_zero": 33,
+              "positive": 249,
+              "threshold": 5.0130601860820766e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 6,
+              "near_zero": 30,
+              "positive": 250,
+              "threshold": 5.013072175743107e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 87,
+              "threshold": 9.600882561093922e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 88,
+              "threshold": 9.612826276634442e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 9.656442142450484e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S1_1",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "SF",
+        "gravity": 2,
+        "mode_count": 22,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 161,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 161,
+              "threshold": 2.822033999413601e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 4,
+              "near_zero": 34,
+              "positive": 248,
+              "threshold": 5.0130601800919066e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 286,
+            "spectrum": {
+              "negative": 6,
+              "near_zero": 30,
+              "positive": 250,
+              "threshold": 5.013072169757009e-11
+            },
+            "excluded_subspace_count": 36,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 87,
+              "threshold": 9.600882561093922e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 88,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 88,
+              "threshold": 9.612826276634442e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 9.656442142450484e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:0",
+          "T2_1:solid:0",
+          "T3_1:solid:0",
+          "T4_1:solid:0",
+          "T0_2:solid:0",
+          "T1_2:solid:0",
+          "T2_2:solid:0",
+          "T3_2:solid:0",
+          "T4_2:solid:0"
+        ]
+      },
+      {
+        "phases": "SFSFS",
+        "gravity": 0,
+        "mode_count": 21,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 164,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 164,
+              "threshold": 3.049950053927512e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 35,
+              "positive": 261,
+              "threshold": 5.50487730400317e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 32,
+              "positive": 264,
+              "threshold": 5.505056119953341e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 25,
+              "threshold": 3.3161789977453235e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 38,
+              "threshold": 3.842543443744777e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 32,
+              "threshold": 3.6018354692054614e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 26,
+              "threshold": 3.333053339685427e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 39,
+              "threshold": 3.842766529099434e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 33,
+              "threshold": 3.6018827725315095e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 8.090080069534042e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T1_1:solid:4",
+          "T0_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T0_2:solid:4",
+          "T1_2:solid:4"
+        ]
+      },
+      {
+        "phases": "SFSFS",
+        "gravity": 1,
+        "mode_count": 22,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 164,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 164,
+              "threshold": 3.049943371068175e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 31,
+              "positive": 262,
+              "threshold": 5.504865242170701e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 4,
+              "near_zero": 28,
+              "positive": 264,
+              "threshold": 5.5050440579482084e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 25,
+              "threshold": 3.3161789977453235e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 38,
+              "threshold": 3.842543443744777e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 32,
+              "threshold": 3.6018354692054614e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 26,
+              "threshold": 3.333053339685427e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 39,
+              "threshold": 3.842766529099434e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 33,
+              "threshold": 3.6018827725315095e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 8.090080069534042e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S2_1",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T1_1:solid:4",
+          "T0_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T0_2:solid:4",
+          "T1_2:solid:4"
+        ]
+      },
+      {
+        "phases": "SFSFS",
+        "gravity": 2,
+        "mode_count": 21,
+        "groups": [
+          {
+            "family": "R",
+            "l": 0,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 164,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 164,
+              "threshold": 3.049943363608466e-11
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 1,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 3,
+              "near_zero": 32,
+              "positive": 261,
+              "threshold": 5.5048652287327917e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "S",
+            "l": 2,
+            "solid_domain_id": null,
+            "status": "success",
+            "matrix_dimension": 296,
+            "spectrum": {
+              "negative": 4,
+              "near_zero": 28,
+              "positive": 264,
+              "threshold": 5.505044044562034e-11
+            },
+            "excluded_subspace_count": 32,
+            "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 25,
+              "threshold": 3.3161789977453235e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 38,
+              "threshold": 3.842543443744777e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 1,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 1,
+              "positive": 32,
+              "threshold": 3.6018354692054614e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:0",
+            "status": "success",
+            "matrix_dimension": 26,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 26,
+              "threshold": 3.333053339685427e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:2",
+            "status": "success",
+            "matrix_dimension": 39,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 39,
+              "threshold": 3.842766529099434e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          },
+          {
+            "family": "T",
+            "l": 2,
+            "solid_domain_id": "solid:4",
+            "status": "success",
+            "matrix_dimension": 33,
+            "spectrum": {
+              "negative": 0,
+              "near_zero": 0,
+              "positive": 33,
+              "threshold": 3.6018827725315095e-13
+            },
+            "excluded_subspace_count": 0,
+            "exclusion_basis": "none",
+            "spectral_completeness": {
+              "status": "truncated",
+              "reason": "explicit n_max"
+            },
+            "eigensolver": "direct symmetric generalized eigensolve"
+          }
+        ],
+        "max_relative_frequency_change": 8.090080069534042e-06,
+        "tested_mode_ids": [
+          "R0_0",
+          "R1_0",
+          "R2_0",
+          "R3_0",
+          "R4_0",
+          "S3_1",
+          "S4_1",
+          "S0_2",
+          "S1_2",
+          "S2_2",
+          "S3_2",
+          "S4_2",
+          "T1_1:solid:2",
+          "T2_1:solid:2",
+          "T1_1:solid:4",
+          "T0_2:solid:0",
+          "T0_2:solid:2",
+          "T1_2:solid:2",
+          "T2_2:solid:2",
+          "T0_2:solid:4",
+          "T1_2:solid:4"
+        ]
+      }
+    ],
+    "N2": [
+      {
+        "mode_id": "R0_0",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+        "reference_frequency_hz": 0.000814044,
+        "relative_error": 0.0005356027279050934,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "R1_0",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+        "reference_frequency_hz": 0.0016311519999999999,
+        "relative_error": 6.72491938381592e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "R2_0",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+        "reference_frequency_hz": 0.0025097450000000003,
+        "relative_error": 5.951478832666446e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S2_1",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0004044036,
+        "relative_error": 0.0001582564607381931,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S3_1",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0009436615000000001,
+        "relative_error": 0.00015257186187911387,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S4_1",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001412623,
+        "relative_error": 4.192311398731885e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S0_2",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.00030966310000000004,
+        "relative_error": 0.0004666524921184134,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S1_2",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0006802513,
+        "relative_error": 4.465176999590703e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S2_2",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0009415713,
+        "relative_error": 3.5189456304540734e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S3_2",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001106318,
+        "relative_error": 1.1082700073550278e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S4_2",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0017220949999999999,
+        "relative_error": 2.82589754202478e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S0_3",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0004690639,
+        "relative_error": 0.0003590826804807934,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S1_3",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0009401076,
+        "relative_error": 0.00011092615696273178,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S2_3",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001241763,
+        "relative_error": 5.274069800109693e-06,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S3_3",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001421074,
+        "relative_error": 2.4563583705838887e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S4_3",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.002048584,
+        "relative_error": 7.658601059556958e-06,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S0_4",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.0006476219,
+        "relative_error": 0.0002375165942258839,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S1_4",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001173143,
+        "relative_error": 0.00012745862884355752,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S2_4",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001378181,
+        "relative_error": 9.064593263885534e-06,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S3_4",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.001836657,
+        "relative_error": 2.3832306832782812e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "S4_4",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+        "reference_frequency_hz": 0.002277648,
+        "relative_error": 2.5440999932957453e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T1_1:solid:prem-00",
+        "source": "MINEOS jcom4 raw index0 corresponds first nonzero l1 inner-core toroidal mode",
+        "reference_frequency_hz": 0.0026373449999999997,
+        "relative_error": 5.107167343199048e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.001236232,
+        "relative_error": 1.792316175408537e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T2_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.0021862870000000003,
+        "relative_error": 5.281787661082227e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_2:solid:prem-00",
+        "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+        "reference_frequency_hz": 0.0011359319823910452,
+        "relative_error": 2.2096907208002392e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.000379707,
+        "relative_error": 2.2050494604464177e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T1_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.001320171,
+        "relative_error": 1.79240486493093e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T2_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.002229216,
+        "relative_error": 4.967229592822697e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_3:solid:prem-00",
+        "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+        "reference_frequency_hz": 0.001751565149801916,
+        "relative_error": 3.245619418890122e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.0005865837,
+        "relative_error": 2.9694958855408515e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T1_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.001439049,
+        "relative_error": 1.725212663705733e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T2_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.002293239,
+        "relative_error": 4.4978032479159324e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_4:solid:prem-00",
+        "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+        "reference_frequency_hz": 0.0023054521413700263,
+        "relative_error": 4.2233631725840937e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.0007657931999999999,
+        "relative_error": 3.865210818099207e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T1_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.001585248,
+        "relative_error": 1.6985377791822742e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      },
+      {
+        "mode_id": "T2_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+        "reference_frequency_hz": 0.002378006,
+        "relative_error": 3.90152955336287e-05,
+        "tolerance": 0.005,
+        "quantity": "frequency_hz",
+        "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+      }
+    ],
+    "N4": [
+      {
+        "mode_id": "R0_0",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.548092439354288e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "R1_0",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 5.428547499030834e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "R2_0",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.2079343635696945e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S1_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 0.00021181775563270625,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S2_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.2818097693262252e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S3_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 8.377934690241319e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S4_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 4.9784199521872705e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S5_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.5189723377610575e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S6_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 4.611564011637032e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S7_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.2749352707334546e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S8_1",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.419645524782988e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S0_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.7146339047846688e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S1_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.693439861344993e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S2_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.4525153997193297e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S3_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 9.343033208373748e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S4_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 5.049155353250003e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S5_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.636011003317088e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S6_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 6.357915110633248e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S7_2",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.9787144717764135e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S0_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.3335438227380315e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S1_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.2145729412504073e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S2_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.094021194584108e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S3_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.814329354457205e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S4_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 7.385819204767235e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S5_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.9509185650129417e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S6_3",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 6.162564303300426e-06,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S0_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.3082068338580938e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S1_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.1095658842921975e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S2_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.5109711061400524e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S3_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.7453679775495778e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S4_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.8071444505543823e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "S5_4",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.2594028227320277e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T1_1:solid:prem-00",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.502422897180872e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.346054365902679e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T2_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.3297467592197245e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_2:solid:prem-00",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.7748202648621777e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.3435585280416078e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T1_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.2658782790617298e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T2_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.071218880538529e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_3:solid:prem-00",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.610837472313058e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.907314499079432e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T1_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.1701631585756348e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T2_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.6995223950878538e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_4:solid:prem-00",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 3.395776759806047e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.5384809779819757e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T1_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 1.1105288732860123e-05,
+        "tolerance": 0.005
+      },
+      {
+        "mode_id": "T2_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "coarse_mesh": 140,
+        "fine_mesh": 280,
+        "relative_frequency_change": 2.2351090329880853e-05,
+        "tolerance": 0.005
+      }
+    ],
+    "N6": [
+      {
+        "mode_id": "R0_0",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "R1_0",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "R2_0",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S1_1",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "S2_1",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S3_1",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S4_1",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "S5_1",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "S6_1",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "S7_1",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S8_1",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S0_2",
+        "mass_integral": 0.9999999999999997
+      },
+      {
+        "mode_id": "S1_2",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S2_2",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S3_2",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "S4_2",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "S5_2",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "S6_2",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S7_2",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S0_3",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S1_3",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "S2_3",
+        "mass_integral": 0.9999999999999996
+      },
+      {
+        "mode_id": "S3_3",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "S4_3",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "S5_3",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S6_3",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S0_4",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "S1_4",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S2_4",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "S3_4",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "S4_4",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "S5_4",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "T1_1:solid:prem-00",
+        "mass_integral": 0.9999999999999998
+      },
+      {
+        "mode_id": "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "T2_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 0.9999999999999997
+      },
+      {
+        "mode_id": "T0_2:solid:prem-00",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "T1_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "T2_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 0.9999999999999999
+      },
+      {
+        "mode_id": "T0_3:solid:prem-00",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 0.9999999999999997
+      },
+      {
+        "mode_id": "T1_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "T2_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "T0_4:solid:prem-00",
+        "mass_integral": 1.0
+      },
+      {
+        "mode_id": "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0000000000000002
+      },
+      {
+        "mode_id": "T1_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0000000000000004
+      },
+      {
+        "mode_id": "T2_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "mass_integral": 1.0
+      }
+    ],
+    "N5": {
+      "null_q": null,
+      "null_limit_frequency_relative_error": 0.0,
+      "computed_modal_q": 300.01745436030546,
+      "finite_difference_dlnf_dlnmu": 0.49999999872873957,
+      "modal_q_from_finite_difference": 300.00000076275626,
+      "relative_q_error": 5.817865834933933e-05,
+      "attenuation": {
+        "method": "first-order constant-Q logarithmic dispersion and strain-energy loss",
+        "elastic_frequency_hz": 0.0015883756100947115,
+        "corrected_frequency_hz": 0.0015891553817622996,
+        "target_frequency_hz": 0.001,
+        "reference_frequency_hz": 0.01,
+        "inverse_modal_q": 0.0033331394072794564,
+        "bulk_strain_energy": 0.0,
+        "shear_strain_energy": 9.959576898270749e-05,
+        "eigenfunction": "elastic approximation at effective target-frequency model",
+        "experimental": true
+      }
+    }
+  },
+  "bundle_sha256": "cb9567887738a8d24794c2170b80f314ab29b364b79fdcf1aa78777616e02443"
+}

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terra-resonance"
+version = "0.2.1"
+description = "Reproducible normal-mode science and visualizations for spherically symmetric planets"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-only"
+dependencies = ["numpy>=2.0", "scipy>=1.15", "matplotlib>=3.9", "pillow>=11", "rfc8785>=0.1.4"]
+
+[project.urls]
+Homepage = "https://random-ai-slop.github.io/terra-resonance/"
+Repository = "https://github.com/random-ai-slop/terra-resonance"
+Issues = "https://github.com/random-ai-slop/terra-resonance/issues"
+Documentation = "https://github.com/random-ai-slop/terra-resonance/blob/main/docs/USER-GUIDE.md"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+build = ["build>=1.2"]
+
+[project.scripts]
+terra = "earth_modes.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["packages"]
+
+[tool.setuptools.package-data]
+earth_modes = ["vendor/**/*", "assets/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["packages"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["**/__pycache__/*", "**/*.pyc"]

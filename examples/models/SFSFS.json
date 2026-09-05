@@ -1,0 +1,116 @@
+{
+  "id": "validation-SFSFS",
+  "name": "Homogeneous solid sphere",
+  "radius_m": 1000000.0,
+  "layers": [
+    {
+      "id": "0",
+      "name": "S",
+      "phase": "solid",
+      "r_m": [
+        0.0,
+        150000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        4000,
+        4000
+      ]
+    },
+    {
+      "id": "1",
+      "name": "F",
+      "phase": "fluid",
+      "r_m": [
+        150000.0,
+        350000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "2",
+      "name": "S",
+      "phase": "solid",
+      "r_m": [
+        350000.0,
+        600000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        4000,
+        4000
+      ]
+    },
+    {
+      "id": "3",
+      "name": "F",
+      "phase": "fluid",
+      "r_m": [
+        600000.0,
+        800000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "4",
+      "name": "S",
+      "phase": "solid",
+      "r_m": [
+        800000.0,
+        1000000.0
+      ],
+      "rho_kg_m3": [
+        4000,
+        4000
+      ],
+      "vp_m_s": [
+        8000,
+        8000
+      ],
+      "vs_m_s": [
+        4000,
+        4000
+      ]
+    }
+  ],
+  "provenance": {
+    "kind": "analytic_material_model",
+    "description": "Uniform input material; this is not a solved mode."
+  }
+}

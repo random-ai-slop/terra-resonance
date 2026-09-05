@@ -1,0 +1,86 @@
+name: Pages
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: pages
+  # Late reruns must not replace a pending deployment of the newest main revision.
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    outputs:
+      current: ${{ steps.revision.outputs.current }}
+    steps:
+      - name: Ignore superseded source revisions
+        id: revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          current=$(gh api "repos/$REPOSITORY/commits/main" --jq .sha)
+          if [ "$current" = "$SOURCE_SHA" ]; then
+            echo 'current=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'current=false' >> "$GITHUB_OUTPUT"
+            echo 'A newer source revision exists; its successful CI will deploy.'
+          fi
+      - name: Download the exact static output that passed CI
+        if: steps.revision.outputs.current == 'true'
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: pages-static
+          path: site
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+      - name: Verify deployment identity
+        if: steps.revision.outputs.current == 'true'
+        env:
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('site')
+          manifest = json.loads((root / 'deployment.json').read_text())
+          assert manifest['source_commit'] == os.environ['SOURCE_SHA'], 'Wrong source artifact'
+          assert manifest['base_path'] == '/terra-resonance', 'Wrong Pages base path'
+          for name in ('index.html', 'data/prem-modes.json', 'data/lessons.json', '.nojekyll'):
+              assert (root / name).is_file(), f'Missing {name}'
+          PY
+      - name: Prepare Pages artifact
+        if: steps.revision.outputs.current == 'true'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: site
+
+  deploy:
+    needs: prepare
+    if: needs.prepare.outputs.current == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy tested website
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

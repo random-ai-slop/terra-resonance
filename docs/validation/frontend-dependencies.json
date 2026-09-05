@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-04",
+  "before": {
+    "info": 0,
+    "low": 1,
+    "moderate": 2,
+    "high": 8,
+    "critical": 0,
+    "total": 11
+  },
+  "after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "scope": "npm advisory database at verification time, not a proof of absence of unknown vulnerabilities",
+  "versions": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-server-dom-webpack": "19.2.8",
+    "vinext": "1.0.0-beta.9",
+    "vite": "8.2.2",
+    "@vitejs/plugin-rsc": "0.5.34",
+    "@cloudflare/vite-plugin": "1.54.4",
+    "wrangler": "4.129.0",
+    "@noble/hashes": "2.4.0",
+    "fflate": "0.8.3"
+  }
+}

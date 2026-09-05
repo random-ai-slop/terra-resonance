@@ -1,0 +1,423 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModeBundle 1.0",
+  "$comment": "Wire structure only. Python/TypeScript semantic validation remains mandatory: JCS domain, IDs, array lengths, layer topology, normalization, regularity, hashes, evidence and resource/sampling limits.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "model": {
+      "$ref": "#/$defs/model"
+    },
+    "modes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mode"
+      },
+      "minItems": 0
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "model",
+    "modes",
+    "provenance"
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "layer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "solid",
+            "fluid"
+          ]
+        },
+        "r_m": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 2
+        },
+        "rho_kg_m3": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 2
+        },
+        "vp_m_s": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 2
+        },
+        "vs_m_s": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 2
+        },
+        "q_bulk": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minItems": 2
+        },
+        "q_shear": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minItems": 2
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "phase",
+        "r_m",
+        "rho_kg_m3",
+        "vp_m_s",
+        "vs_m_s"
+      ],
+      "additionalProperties": true
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "radius_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/layer"
+          },
+          "minItems": 1
+        },
+        "reference_frequency_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "provenance": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "radius_m",
+        "layers"
+      ],
+      "additionalProperties": true
+    },
+    "region": {
+      "type": "object",
+      "properties": {
+        "layer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "r_m": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 2
+        },
+        "u": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        "v": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        "w": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        "potential": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        }
+      },
+      "required": [
+        "layer_id",
+        "r_m",
+        "u",
+        "v",
+        "w"
+      ],
+      "additionalProperties": true
+    },
+    "mode": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "enum": [
+            "R",
+            "S",
+            "T"
+          ]
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "l": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "frequency_hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "q": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/region"
+          },
+          "minItems": 1
+        },
+        "normalization": {
+          "const": "mass_integral_1"
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "quality": {
+              "$ref": "#/$defs/quality"
+            }
+          },
+          "required": [
+            "quality"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "id",
+        "family",
+        "n",
+        "l",
+        "frequency_hz",
+        "q",
+        "regions",
+        "normalization",
+        "provenance"
+      ],
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "family": {
+                "const": "R"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "l": {
+                "const": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "l": {
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unverified",
+            "unconverged",
+            "converged",
+            "benchmark_checked"
+          ]
+        },
+        "mesh_convergence": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "coarse_mesh": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "fine_mesh": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "relative_frequency_change": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tolerance": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              },
+              "required": [
+                "coarse_mesh",
+                "fine_mesh",
+                "relative_frequency_change",
+                "tolerance"
+              ],
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "benchmark": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference_frequency_hz": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "relative_error": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tolerance": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "quantity": {
+                  "const": "frequency_hz"
+                },
+                "model_hash": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "source",
+                "reference_frequency_hz",
+                "relative_error",
+                "tolerance",
+                "quantity",
+                "model_hash"
+              ],
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "status",
+        "mesh_convergence",
+        "benchmark",
+        "warnings"
+      ],
+      "additionalProperties": true
+    }
+  }
+}

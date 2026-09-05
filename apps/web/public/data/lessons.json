@@ -1,0 +1,632 @@
+{
+  "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+  "lessons": [
+    {
+      "id": "01-breathing",
+      "title": "A breathing sphere",
+      "steps": [
+        "Play one period and compare radial arrows in different directions on the sphere.",
+        "Pause and change time from 0 to T/2; verify that expansion and contraction exchange.",
+        "Halve the geometric gain and confirm that the eigenfrequency and material-point period stay fixed."
+      ],
+      "conclusion": "The surface radial coefficient of R0_0 is independent of direction; displacement reverses after half a period.",
+      "caution": "Display gain makes motion visible; these amplitudes are not earthquake displacements in metres. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "R0_0",
+            "m": 0,
+            "amplitude": 1.0,
+            "phase_rad": 0.0
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 153.6366415316491,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "radial",
+        "arrows": true,
+        "reference": true,
+        "cutaway": false,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.28991668216326655,
+        "point": {
+          "latitude_deg": 28.0,
+          "longitude_deg": 34.0,
+          "radius_fraction": 1.0
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 1229.0931322531928,
+          "samples": 256
+        },
+        "nodes": false,
+        "camera": {
+          "azimuth_deg": 25.0,
+          "elevation_deg": 18.0,
+          "distance": 3.2
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 28.0,
+        "longitude_deg": 34.0,
+        "radius_fraction": 1.0,
+        "start_s": 0.0,
+        "step_s": 1.2002862619660086,
+        "sample_count": 1025,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 8.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "mode_id": "R0_0",
+        "frequency_hz": 0.0008136079958129652,
+        "surface_radial_spread": 0.0,
+        "half_period_reversal_error": 0.0,
+        "color_policy": {
+          "method": "sum of analytic component envelopes",
+          "component": "radial",
+          "analytic_envelope": 0.27611112586977765,
+          "safety_factor": 1.05,
+          "scope": "surface",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": []
+    },
+    {
+      "id": "02-tangential",
+      "title": "Purely tangential motion?",
+      "steps": [
+        "Check whether displacement arrows are perpendicular to the reference radius.",
+        "Follow the gold material point for one period; it moves back and forth along a fixed tangent.",
+        "Increase and decrease geometric gain to distinguish first-order tangential displacement from the radius change of the exaggerated position."
+      ],
+      "conclusion": "Displacement of this surface-solid-domain T0_2 mode is tangential everywhere; a single real mode gives a local line-segment trajectory.",
+      "caution": "Tangential oscillation is not planetary rotation; finite displayed displacement creates a second-order geometric radius change. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+            "m": 1,
+            "amplitude": 1.0,
+            "phase_rad": 0.0
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 329.19394098331384,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "phi",
+        "arrows": true,
+        "reference": true,
+        "cutaway": false,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.4683325804901025,
+        "point": {
+          "latitude_deg": 28.0,
+          "longitude_deg": 34.0,
+          "radius_fraction": 1.0
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 2633.5515278665107,
+          "samples": 256
+        },
+        "nodes": false,
+        "camera": {
+          "azimuth_deg": 25.0,
+          "elevation_deg": 18.0,
+          "distance": 3.2
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 28.0,
+        "longitude_deg": 34.0,
+        "radius_fraction": 1.0,
+        "start_s": 0.0,
+        "step_s": 2.5718276639321394,
+        "sample_count": 1025,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 8.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "mode_id": "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "max_radial_projection": 2.0816681711721685e-17,
+        "trajectory_secondary_singular_ratio": 1.4103208284228267e-16,
+        "color_policy": {
+          "method": "sum of analytic component envelopes",
+          "component": "phi",
+          "analytic_envelope": 0.44603102903819286,
+          "safety_factor": 1.05,
+          "scope": "surface",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": []
+    },
+    {
+      "id": "03-indices",
+      "title": "What do n, l and m change?",
+      "steps": [
+        "Keep S0_2 and change only m from 0 to 2; compare the node pattern and frequency.",
+        "Return to S0_2, m=0, then select S0_3; compare only angular degree l.",
+        "Return to the baseline again, then select S1_2; compare radial eigenfunctions at the same l."
+      ],
+      "conclusion": "In a spherical model, m selects a degenerate angular basis without changing frequency; changing n or l selects a different eigenmode.",
+      "caution": "The branch label n is not the total zero count of every U/V/W component in a layered solid-fluid model. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "S0_2",
+            "m": 0,
+            "amplitude": 1.0,
+            "phase_rad": 0.0
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 403.85295760066924,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "radial",
+        "arrows": true,
+        "reference": true,
+        "cutaway": true,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.41801349790276854,
+        "point": {
+          "latitude_deg": 28.0,
+          "longitude_deg": 34.0,
+          "radius_fraction": 1.0
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 3230.823660805354,
+          "samples": 256
+        },
+        "nodes": true,
+        "camera": {
+          "azimuth_deg": -45.0,
+          "elevation_deg": 20.0,
+          "distance": 2.9
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 28.0,
+        "longitude_deg": 34.0,
+        "radius_fraction": 1.0,
+        "start_s": 0.0,
+        "step_s": 3.1551012312552285,
+        "sample_count": 1025,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 8.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "m_variants_share_mode_id": "S0_2",
+        "same_frequency_hz": 0.00030951859494266794,
+        "l_comparison_hz": 0.00046889546727747126,
+        "n_comparison_hz": 0.0006802816744245871,
+        "color_policy": {
+          "method": "sum of analytic component envelopes",
+          "component": "radial",
+          "analytic_envelope": 0.39810809324073193,
+          "safety_factor": 1.05,
+          "scope": "all radii and both material sides",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": [
+        {
+          "label": "Change only m: 0 → 2",
+          "terms": [
+            {
+              "mode_id": "S0_2",
+              "m": 2,
+              "amplitude": 1.0,
+              "phase_rad": 0.0
+            }
+          ]
+        },
+        {
+          "label": "Return to the baseline; change only l: 2 → 3",
+          "terms": [
+            {
+              "mode_id": "S0_3",
+              "m": 0,
+              "amplitude": 1.0,
+              "phase_rad": 0.0
+            }
+          ]
+        },
+        {
+          "label": "Return to the baseline; change only n: 0 → 1",
+          "terms": [
+            {
+              "mode_id": "S1_2",
+              "m": 0,
+              "amplitude": 1.0,
+              "phase_rad": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04-liquid-core",
+      "title": "Across the liquid core boundary",
+      "steps": [
+        "Use the cutaway and U/V curves to locate the outer-core–mantle boundary.",
+        "Compare U on the fluid and solid sides at the same boundary radius; normal displacement is continuous.",
+        "Switch the linked point from the fluid material side to the solid side; tangential displacement may jump."
+      ],
+      "conclusion": "A fluid-solid interface couples normal motion, but tangential displacement need not be continuous; interpolation must not smooth across it.",
+      "caution": "The fluid is not stationary: it participates in S/R modes; an ideal fluid does not support elastic T modes. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "S0_2",
+            "m": 1,
+            "amplitude": 1.0,
+            "phase_rad": 0.0
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 403.85295760066924,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "radial",
+        "arrows": true,
+        "reference": true,
+        "cutaway": true,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.3620103083085907,
+        "point": {
+          "latitude_deg": 28,
+          "longitude_deg": 0,
+          "radius_fraction": 0.5462250824046461,
+          "layer_id": "prem-01"
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 3230.823660805354,
+          "samples": 256
+        },
+        "nodes": false,
+        "camera": {
+          "azimuth_deg": -45.0,
+          "elevation_deg": 20.0,
+          "distance": 2.9
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 28,
+        "longitude_deg": 0,
+        "radius_fraction": 0.5462250824046461,
+        "layer_id": "prem-01",
+        "start_s": 0.0,
+        "step_s": 3.1551012312552285,
+        "sample_count": 1025,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 8.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "boundary_radius_m": 3480000.0,
+        "fluid_layer_id": "prem-01",
+        "solid_layer_id": "prem-02",
+        "normalized_u_jump": 1.5874313433789743e-08,
+        "normalized_v_jump": 0.1975094140090231,
+        "opposite_side_point": {
+          "latitude_deg": 28,
+          "longitude_deg": 0,
+          "radius_fraction": 0.5462250824046461,
+          "layer_id": "prem-02"
+        },
+        "color_policy": {
+          "method": "sum of analytic component envelopes",
+          "component": "radial",
+          "analytic_envelope": 0.3447717221986578,
+          "safety_factor": 1.05,
+          "scope": "all radii and both material sides",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": []
+    },
+    {
+      "id": "05-traveling",
+      "title": "Building a traveling pattern",
+      "steps": [
+        "Inspect the two terms: m=+2 and m=-2 of S0_2, with equal amplitudes and a phase difference of π/2.",
+        "Advance from t=0 to T/8; the pattern shifts 22.5° toward decreasing longitude.",
+        "Observe the closed local trajectory of a fixed material point, then remove one term to compare a standing wave."
+      ],
+      "conclusion": "Two degenerate real bases in quadrature produce cos(2φ+ωt), a traveling pattern with angular speed −ω/2.",
+      "caution": "The pattern moves; material points oscillate locally rather than following its peaks around the planet. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "S0_2",
+            "m": 2,
+            "amplitude": 1.0,
+            "phase_rad": 0.0
+          },
+          {
+            "mode_id": "S0_2",
+            "m": -2,
+            "amplitude": 1.0,
+            "phase_rad": 1.5707963267948966
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 403.85295760066924,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "radial",
+        "arrows": true,
+        "reference": true,
+        "cutaway": false,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.30920173634424486,
+        "point": {
+          "latitude_deg": 28.0,
+          "longitude_deg": 34.0,
+          "radius_fraction": 1.0
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 3230.823660805354,
+          "samples": 256
+        },
+        "nodes": false,
+        "camera": {
+          "azimuth_deg": 25.0,
+          "elevation_deg": 18.0,
+          "distance": 3.2
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 28.0,
+        "longitude_deg": 34.0,
+        "radius_fraction": 1.0,
+        "start_s": 0.0,
+        "step_s": 3.1551012312552285,
+        "sample_count": 1025,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 8.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "frequency_hz": 0.00030951859494266794,
+        "negative_m_phase_rad": 1.5707963267948966,
+        "test_physical_time_s": 403.85295760066924,
+        "longitude_shift_deg": -22.5,
+        "radial_translation_error": 0.0,
+        "color_policy": {
+          "method": "exact quadrature traveling-pair envelope",
+          "component": "radial",
+          "analytic_envelope": 0.29447784413737604,
+          "safety_factor": 1.05,
+          "scope": "surface",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": []
+    },
+    {
+      "id": "06-beats",
+      "title": "Beats at a fixed point",
+      "steps": [
+        "Read the x time series at the gold point on the equator at zero longitude; the two local amplitudes are explicitly balanced.",
+        "Inspect at least two envelope periods and compare cancellation near T_beat/2 and 3T_beat/2.",
+        "Disable each term in turn, then restore the sum to confirm that the slow envelope follows the frequency difference."
+      ],
+      "conclusion": "The frequency difference is 0.0328136 mHz; the amplitude-envelope period at this point is 1/Δf ≈ 8.465 hours.",
+      "caution": "The x component is balanced at this receiver; beat depth can change at another location. Two-frequency superposition does not guarantee a seamless loop. This lesson uses a fixed component color range without changing the modes or physical amplitudes.",
+      "scene": {
+        "schema_version": "1.1",
+        "wireframe_spacing_deg": 15,
+        "model_id": "prem-isotropic-noocean-3mhz",
+        "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+        "terms": [
+          {
+            "mode_id": "S0_4",
+            "m": 0,
+            "amplitude": 0.3659686465244798,
+            "phase_rad": 0.0
+          },
+          {
+            "mode_id": "S1_2",
+            "m": 0,
+            "amplitude": 1.0,
+            "phase_rad": 3.141592653589793
+          }
+        ],
+        "time_s": 0.0,
+        "time_scale": 2539.5977608374073,
+        "deformation": 0.035,
+        "surface": "solid",
+        "geography": false,
+        "color": "radial",
+        "arrows": true,
+        "reference": true,
+        "cutaway": false,
+        "radius_fraction": 1.0,
+        "quality": "standard",
+        "arrow_scale": 0.12,
+        "color_limit": 0.29162060630548803,
+        "point": {
+          "latitude_deg": 0,
+          "longitude_deg": 0,
+          "radius_fraction": 1.0
+        },
+        "trajectory": {
+          "enabled": true,
+          "start_s": 0.0,
+          "duration_s": 60950.34626009777,
+          "samples": 997
+        },
+        "nodes": false,
+        "camera": {
+          "azimuth_deg": 25.0,
+          "elevation_deg": 18.0,
+          "distance": 3.2
+        },
+        "background": "dark"
+      },
+      "probe": {
+        "latitude_deg": 0,
+        "longitude_deg": 0,
+        "radius_fraction": 1.0,
+        "start_s": 0.0,
+        "step_s": 14.880455629906683,
+        "sample_count": 4097,
+        "derivative": 0,
+        "normalized": true
+      },
+      "export": {
+        "format": "mp4",
+        "width": 960,
+        "height": 720,
+        "duration_s": 24.0,
+        "fps": 24,
+        "transparent": false,
+        "annotation": true,
+        "omit_arrows": false,
+        "omit_geography": false,
+        "omit_analysis_overlays": false
+      },
+      "verification": {
+        "mode_ids": [
+          "S0_4",
+          "S1_2"
+        ],
+        "frequency_difference_hz": 3.281359537262113e-05,
+        "relative_frequency_difference": 0.05067986582545871,
+        "local_unweighted_x": [
+          0.1626216071111399,
+          -0.05951440945009959
+        ],
+        "balanced_local_amplitude": 0.05951440945009959,
+        "beat_envelope_period_s": 30475.173130048886,
+        "probe_window_s": 60950.34626009777,
+        "complete_envelope_periods": 2,
+        "analytic_x_signal_max_error": 5.7245874707234634e-15,
+        "cancellation_sample_max": 4.996003610813204e-16,
+        "amplitude_policy": "equal local x amplitudes at equator/lon0; retain global illustration normalization",
+        "color_policy": {
+          "method": "sum of analytic component envelopes",
+          "component": "radial",
+          "analytic_envelope": 0.27773391076713144,
+          "safety_factor": 1.05,
+          "scope": "surface",
+          "temporal_policy": "fixed for the complete scene; no frame or Q rescaling"
+        }
+      },
+      "variants": []
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "scope": "Homogeneous T0_2 only; not an Earth sensitivity kernel.",
+  "independent_reference": "At fixed density and radius, toroidal elastic eigenfrequencies scale exactly with uniform Vs.",
+  "h": 0.01,
+  "meshes": [
+    24,
+    48
+  ],
+  "records": {
+    "baseline-mesh-24": {
+      "frequency_hz": 0.0003436465086362228,
+      "bundle_hash": "335875ac48e2da2a327d8225f628310ff06b37162adbfee62b6a23e28f2bf416",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0,
+      "mesh": 24
+    },
+    "plus_h-mesh-24": {
+      "frequency_hz": 0.00034708297372255687,
+      "bundle_hash": "e9e6bda5ee2e91addc79aa6de6d88e70cd20c97b64af83e3cc8e2586b89d0588",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0.01,
+      "mesh": 24
+    },
+    "minus_h-mesh-24": {
+      "frequency_hz": 0.00034021004354990524,
+      "bundle_hash": "243392a8df9d41035b29ff9b7b1c8d5aa226c5c270d3a62c8946a4f812aa264b",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": -0.01,
+      "mesh": 24
+    },
+    "plus_h2-mesh-24": {
+      "frequency_hz": 0.00034536474117935695,
+      "bundle_hash": "597eaaecabd7b717ce8c027e9e29f4568561d4ae6849e74b7df53f17d39f286d",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0.005,
+      "mesh": 24
+    },
+    "minus_h2-mesh-24": {
+      "frequency_hz": 0.0003419282760930424,
+      "bundle_hash": "27280576012b26ea8af1eab130b0b7c8f807cf0a8ac98e693095116983707952",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": -0.005,
+      "mesh": 24
+    },
+    "baseline-mesh-48": {
+      "frequency_hz": 0.00034364650905117255,
+      "bundle_hash": "6e2494067cee584e2216d1999589ec8d85498bdb5d33ba9d78ac3d9acdd4b8b3",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0,
+      "mesh": 48
+    },
+    "plus_h-mesh-48": {
+      "frequency_hz": 0.00034708297414174803,
+      "bundle_hash": "14ec7fde14edc8ef266b135cff467772bb0247c6bd25dd9c2a0802483a4701d7",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0.01,
+      "mesh": 48
+    },
+    "minus_h-mesh-48": {
+      "frequency_hz": 0.00034021004396073037,
+      "bundle_hash": "40bdfbf1b977646d1e6eb099de83c0e08894db2a4d77706cab18a941e5b3060e",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": -0.01,
+      "mesh": 48
+    },
+    "plus_h2-mesh-48": {
+      "frequency_hz": 0.0003453647415964123,
+      "bundle_hash": "daf70ab617f0e648cd168f47d8cb19ac88c985e26c521a2405d278c28ec0566a",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": 0.005,
+      "mesh": 48
+    },
+    "minus_h2-mesh-48": {
+      "frequency_hz": 0.0003419282765059467,
+      "bundle_hash": "b4b348a8c019035942e9884e9f53e4256ce7dd0a9fd01c972da846f27bb11c5b",
+      "mode_id": "T0_2:solid:sphere",
+      "epsilon": -0.005,
+      "mesh": 48
+    }
+  },
+  "derivatives": {
+    "h-mesh-24": {
+      "d_log_f_d_log_vs": 0.9999999999894038,
+      "exact_reference": 1.0,
+      "absolute_error": 1.0596190591627419e-11
+    },
+    "h2-mesh-24": {
+      "d_log_f_d_log_vs": 0.9999999999861304,
+      "exact_reference": 1.0,
+      "absolute_error": 1.386957215743223e-11
+    },
+    "h-mesh-48": {
+      "d_log_f_d_log_vs": 0.9999999999991571,
+      "exact_reference": 1.0,
+      "absolute_error": 8.428813202954188e-13
+    },
+    "h2-mesh-48": {
+      "d_log_f_d_log_vs": 0.9999999999865766,
+      "exact_reference": 1.0,
+      "absolute_error": 1.342337352383538e-11
+    }
+  },
+  "relative_mesh_frequency_change": 1.2074901029175969e-09,
+  "relative_step_sensitivity_change": 1.2580492203539961e-11,
+  "caution": "Small material steps do not establish a general mode-tracking or perturbation-theory method."
+}

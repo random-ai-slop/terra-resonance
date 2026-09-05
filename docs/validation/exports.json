@@ -1,0 +1,77 @@
+{
+  "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+  "mode_id": "S0_2",
+  "static_outputs": [
+    "earth.png",
+    "eigenfunctions.svg",
+    "model.svg",
+    "probe.csv",
+    "probe.svg",
+    "tables"
+  ],
+  "media_duration_s": 1.0,
+  "blender_native": "not run by this recipe",
+  "gif": {
+    "frame_count": 20,
+    "size": [
+      640,
+      480
+    ],
+    "frame_delays_ms": [
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ]
+  },
+  "mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "r_frame_rate": "24/1",
+        "duration": "1.000000",
+        "nb_frames": "24"
+      }
+    ]
+  },
+  "glb": {
+    "bytes": 247124,
+    "vertex_count": 2145,
+    "target_count": 2,
+    "key_count": 25,
+    "non_keyframe_checks": [
+      {
+        "playback_s": 0.137,
+        "error_fraction_fixed_bound": 3.397992471640596e-05
+      },
+      {
+        "playback_s": 0.413,
+        "error_fraction_fixed_bound": 1.2713386332684634e-05
+      },
+      {
+        "playback_s": 0.819,
+        "error_fraction_fixed_bound": 3.018458997801647e-05
+      }
+    ]
+  }
+}

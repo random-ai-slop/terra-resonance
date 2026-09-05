@@ -1,0 +1,1469 @@
+{
+  "format": "terra-field-reference",
+  "version": "1.0",
+  "purpose": "Cross-language compatibility; analytic bundles are field identities, not solved planetary modes. Independent identities are tested in tests/test_fields.py.",
+  "absolute_tolerance": 1e-11,
+  "bundles": {
+    "analytic": {
+      "schema_version": "1.0",
+      "model": {
+        "id": "homogeneous-solid",
+        "name": "Homogeneous solid sphere",
+        "radius_m": 2.0,
+        "layers": [
+          {
+            "id": "sphere",
+            "name": "Uniform sphere",
+            "phase": "solid",
+            "r_m": [
+              0.0,
+              2.0
+            ],
+            "rho_kg_m3": [
+              2.0,
+              2.0
+            ],
+            "vp_m_s": [
+              4.0,
+              4.0
+            ],
+            "vs_m_s": [
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "provenance": {
+          "kind": "analytic_material_model",
+          "description": "Uniform input material; this is not a solved mode."
+        }
+      },
+      "modes": [
+        {
+          "id": "dipole",
+          "family": "S",
+          "n": 1,
+          "l": 1,
+          "frequency_hz": 0.125,
+          "q": null,
+          "normalization": "mass_integral_1",
+          "regions": [
+            {
+              "layer_id": "sphere",
+              "r_m": [
+                0.0,
+                1.0,
+                2.0
+              ],
+              "u": [
+                0.23570226039551587,
+                0.23570226039551587,
+                0.23570226039551587
+              ],
+              "v": [
+                0.33333333333333337,
+                0.33333333333333337,
+                0.33333333333333337
+              ],
+              "w": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "provenance": {
+            "kind": "analytic_field_fixture",
+            "quality": {
+              "status": "unverified",
+              "mesh_convergence": null,
+              "benchmark": null,
+              "warnings": [
+                "Analytic field test fixture; not a solved planetary eigenmode."
+              ]
+            }
+          }
+        },
+        {
+          "id": "radial",
+          "family": "R",
+          "n": 1,
+          "l": 0,
+          "frequency_hz": 0.125,
+          "q": 7.0,
+          "normalization": "mass_integral_1",
+          "regions": [
+            {
+              "layer_id": "sphere",
+              "r_m": [
+                0.0,
+                1.0,
+                2.0
+              ],
+              "u": [
+                0.0,
+                0.23570226039551587,
+                0.47140452079103173
+              ],
+              "v": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "w": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "provenance": {
+            "kind": "analytic_field_fixture",
+            "quality": {
+              "status": "unverified",
+              "mesh_convergence": null,
+              "benchmark": null,
+              "warnings": [
+                "Analytic field test fixture; not a solved planetary eigenmode."
+              ]
+            }
+          }
+        },
+        {
+          "id": "toroidal",
+          "family": "T",
+          "n": 1,
+          "l": 1,
+          "frequency_hz": 0.125,
+          "q": null,
+          "normalization": "mass_integral_1",
+          "regions": [
+            {
+              "layer_id": "sphere",
+              "r_m": [
+                0.0,
+                1.0,
+                2.0
+              ],
+              "u": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "v": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "w": [
+                0.0,
+                0.23570226039551587,
+                0.47140452079103173
+              ]
+            }
+          ],
+          "provenance": {
+            "kind": "analytic_field_fixture",
+            "quality": {
+              "status": "unverified",
+              "mesh_convergence": null,
+              "benchmark": null,
+              "warnings": [
+                "Analytic field test fixture; not a solved planetary eigenmode."
+              ]
+            }
+          }
+        },
+        {
+          "id": "quadrupole",
+          "family": "S",
+          "n": 1,
+          "l": 2,
+          "frequency_hz": 0.125,
+          "q": null,
+          "normalization": "mass_integral_1",
+          "regions": [
+            {
+              "layer_id": "sphere",
+              "r_m": [
+                0.0,
+                1.0,
+                2.0
+              ],
+              "u": [
+                0.0,
+                0.23570226039551587,
+                0.47140452079103173
+              ],
+              "v": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "w": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "provenance": {
+            "kind": "analytic_field_fixture",
+            "quality": {
+              "status": "unverified",
+              "mesh_convergence": null,
+              "benchmark": null,
+              "warnings": [
+                "Analytic field test fixture; not a solved planetary eigenmode."
+              ]
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "purpose": "Independent field identities; not solved eigenfrequencies"
+      }
+    },
+    "interface": {
+      "schema_version": "1.0",
+      "model": {
+        "id": "interface",
+        "name": "Solid and fluid fixture",
+        "radius_m": 2.0,
+        "layers": [
+          {
+            "id": "solid",
+            "name": "Solid",
+            "phase": "solid",
+            "r_m": [
+              0.0,
+              1.0
+            ],
+            "rho_kg_m3": [
+              2.0,
+              2.0
+            ],
+            "vp_m_s": [
+              4.0,
+              4.0
+            ],
+            "vs_m_s": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "id": "fluid",
+            "name": "Fluid",
+            "phase": "fluid",
+            "r_m": [
+              1.0,
+              2.0
+            ],
+            "rho_kg_m3": [
+              1.0,
+              1.0
+            ],
+            "vp_m_s": [
+              3.0,
+              3.0
+            ],
+            "vs_m_s": [
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      "modes": [
+        {
+          "id": "toroidal",
+          "family": "T",
+          "n": 1,
+          "l": 1,
+          "frequency_hz": 0.125,
+          "q": null,
+          "normalization": "mass_integral_1",
+          "regions": [
+            {
+              "layer_id": "solid",
+              "r_m": [
+                0.0,
+                1.0
+              ],
+              "u": [
+                0.0,
+                0.0
+              ],
+              "v": [
+                0.0,
+                0.0
+              ],
+              "w": [
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "provenance": {
+            "kind": "analytic_field_fixture",
+            "quality": {
+              "status": "unverified",
+              "mesh_convergence": null,
+              "benchmark": null,
+              "warnings": [
+                "Analytic field test fixture; not a solved planetary eigenmode."
+              ]
+            },
+            "solid_domain_id": "solid-0"
+          }
+        }
+      ],
+      "provenance": {
+        "purpose": "Independent field identities; not solved eigenfrequencies"
+      }
+    }
+  },
+  "bundle_hashes": {
+    "analytic": "35ba2843382decdc2a57a17b5d9dc650f450c3c7ca81110f8becdab4610eb7f5",
+    "interface": "1cacda26679c8008ca8e93c2e1efc4525e0aea554ca5d0f5cda6a3ca36383ac8"
+  },
+  "model_hashes": {
+    "analytic": "59ad1651b3978cf3dedea0ad358bcb43f078a1812099b512d15c1e9d530e2123",
+    "interface": "4da9329868fb6bf799134878881d7786830a216231f355e5b1ed0cbd1fa5646f"
+  },
+  "field_cases": [
+    {
+      "name": "dipole-centre-poles-m-1",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "dipole",
+          "m": -1,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": false,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          -0.11516471649044517,
+          0.0
+        ],
+        [
+          0.0,
+          -0.11516471649044518,
+          0.0
+        ],
+        [
+          0.0,
+          -0.11516471649044518,
+          0.0
+        ],
+        [
+          0.0,
+          -0.11516471649044518,
+          0.0
+        ],
+        [
+          -6.938893903907228e-18,
+          -0.11516471649044518,
+          -6.938893903907228e-18
+        ],
+        [
+          0.0,
+          -0.11516471649044518,
+          1.3877787807814457e-17
+        ]
+      ]
+    },
+    {
+      "name": "dipole-centre-poles-m0",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "dipole",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": false,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.11516471649044517
+        ],
+        [
+          0.0,
+          0.0,
+          0.11516471649044516
+        ],
+        [
+          0.0,
+          0.0,
+          0.11516471649044516
+        ],
+        [
+          0.0,
+          0.0,
+          0.11516471649044516
+        ],
+        [
+          0.0,
+          -6.938893903907228e-18,
+          0.11516471649044516
+        ],
+        [
+          0.0,
+          0.0,
+          0.11516471649044518
+        ]
+      ]
+    },
+    {
+      "name": "dipole-centre-poles-m1",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "dipole",
+          "m": 1,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": false,
+      "layer_id": null,
+      "expected": [
+        [
+          -0.11516471649044517,
+          0.0,
+          0.0
+        ],
+        [
+          -0.11516471649044518,
+          0.0,
+          0.0
+        ],
+        [
+          -0.11516471649044518,
+          0.0,
+          0.0
+        ],
+        [
+          -0.11516471649044518,
+          0.0,
+          -1.5407439555097887e-33
+        ],
+        [
+          -0.11516471649044518,
+          -6.938893903907228e-18,
+          0.0
+        ],
+        [
+          -0.11516471649044518,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "radial-Q-derivative-0",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "radial",
+          "m": 0,
+          "amplitude": 1.3,
+          "phase_rad": 0.7
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 1.25,
+      "derivative": 0,
+      "normalized": true,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.0378551421028824
+        ],
+        [
+          -4.635917860756313e-18,
+          0.0,
+          0.0378551421028824
+        ],
+        [
+          -0.0378551421028824,
+          0.0,
+          -2.3179589303781566e-18
+        ],
+        [
+          -0.005678271315432359,
+          -0.0075710284205764795,
+          -0.009463785525720601
+        ],
+        [
+          -1.8927571051441203e-10,
+          3.7855142102882395e-10,
+          -5.678271315432358e-10
+        ]
+      ]
+    },
+    {
+      "name": "radial-Q-derivative-1",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "radial",
+          "m": 0,
+          "amplitude": 1.3,
+          "phase_rad": 0.7
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 1.25,
+      "derivative": 1,
+      "normalized": true,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -0.26474331217245006
+        ],
+        [
+          -3.242170498476595e-17,
+          0.0,
+          0.26474331217245006
+        ],
+        [
+          -0.26474331217245006,
+          0.0,
+          -1.6210852492382975e-17
+        ],
+        [
+          -0.039711496825867505,
+          -0.052948662434490014,
+          -0.06618582804311253
+        ],
+        [
+          -1.3237165608622506e-09,
+          2.6474331217245004e-09,
+          -3.971149682586751e-09
+        ]
+      ]
+    },
+    {
+      "name": "radial-Q-derivative-2",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "radial",
+          "m": 0,
+          "amplitude": 1.3,
+          "phase_rad": 0.7
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 1.25,
+      "derivative": 2,
+      "normalized": true,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.05317422250806206
+        ],
+        [
+          6.511964139164734e-18,
+          0.0,
+          -0.05317422250806206
+        ],
+        [
+          0.05317422250806206,
+          0.0,
+          3.255982069582367e-18
+        ],
+        [
+          0.007976133376209308,
+          0.010634844501612412,
+          0.013293555627015516
+        ],
+        [
+          2.6587111254031035e-10,
+          -5.317422250806205e-10,
+          7.976133376209307e-10
+        ]
+      ]
+    },
+    {
+      "name": "mixed-vector-field",
+      "bundle": "analytic",
+      "terms": [
+        {
+          "mode_id": "dipole",
+          "m": 1,
+          "amplitude": 1.0,
+          "phase_rad": 0.2
+        },
+        {
+          "mode_id": "toroidal",
+          "m": -1,
+          "amplitude": -0.7,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.4,
+          0.5
+        ],
+        [
+          1e-08,
+          -2e-08,
+          3e-08
+        ]
+      ],
+      "time_s": 3.0,
+      "derivative": 0,
+      "normalized": true,
+      "layer_id": null,
+      "expected": [
+        [
+          0.23512379569121078,
+          0.0,
+          0.0
+        ],
+        [
+          0.40613467485723276,
+          0.0,
+          0.0
+        ],
+        [
+          0.06411291652518883,
+          0.0,
+          -2.0942792579004356e-17
+        ],
+        [
+          0.23512379569121078,
+          0.0,
+          -0.17101087916602195
+        ],
+        [
+          0.27787651548271625,
+          6.869154506741515e-18,
+          -0.02565163187490329
+        ],
+        [
+          0.23512379825637397,
+          -1.1567027255810165e-17,
+          -8.550543900465964e-10
+        ]
+      ]
+    },
+    {
+      "name": "interface-None",
+      "bundle": "interface",
+      "terms": [
+        {
+          "mode_id": "toroidal",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0.9999999999,
+          0,
+          0
+        ],
+        [
+          1.0000000001,
+          0,
+          0
+        ],
+        [
+          2.1,
+          0,
+          0
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": true,
+      "layer_id": null,
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.345494149436786,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "interface-solid",
+      "bundle": "interface",
+      "terms": [
+        {
+          "mode_id": "toroidal",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0.9999999999,
+          0,
+          0
+        ],
+        [
+          1.0000000001,
+          0,
+          0
+        ],
+        [
+          2.1,
+          0,
+          0
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": true,
+      "layer_id": "solid",
+      "expected": [
+        [
+          0.0,
+          -0.34549414947133544,
+          0.0
+        ],
+        [
+          0.0,
+          -0.345494149436786,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "interface-fluid",
+      "bundle": "interface",
+      "terms": [
+        {
+          "mode_id": "toroidal",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "points_m": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0.9999999999,
+          0,
+          0
+        ],
+        [
+          1.0000000001,
+          0,
+          0
+        ],
+        [
+          2.1,
+          0,
+          0
+        ]
+      ],
+      "time_s": 0.0,
+      "derivative": 0,
+      "normalized": true,
+      "layer_id": "fluid",
+      "expected": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "harmonic_cases": [
+    {
+      "l": 0,
+      "m": 0,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.28209479177387814,
+          0.28209479177387814,
+          0.28209479177387814,
+          0.28209479177387814
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "l": 1,
+      "m": -1,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.0,
+          -0.056228860296093475,
+          -0.3395916470082647,
+          -4.687157997108822e-17
+        ],
+        [
+          -0.04877885814549102,
+          -0.18177261917105828,
+          -0.1320262942849126,
+          0.3827354956851399
+        ],
+        [
+          -0.4861615345087115,
+          -0.45003271528561,
+          0.32554413761800544,
+          -0.3037201919209411
+        ]
+      ]
+    },
+    {
+      "l": 1,
+      "m": 0,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.48860251190291987,
+          0.46677980829928756,
+          0.17704890904480425,
+          -0.48860251190291987
+        ],
+        [
+          0.0,
+          -0.14439191529280052,
+          -0.45539663859528823,
+          -5.983655022572674e-17
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "l": 1,
+      "m": 1,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          -0.0,
+          -0.13299376102556723,
+          0.30341986046747466,
+          -3.7194996087240024e-17
+        ],
+        [
+          -0.4861615345087115,
+          -0.42993267421261805,
+          0.11796344269030565,
+          0.3037201919209411
+        ],
+        [
+          0.04877885814549102,
+          0.1902707802330778,
+          0.36435343980864543,
+          0.3827354956851399
+        ]
+      ]
+    },
+    {
+      "l": 2,
+      "m": 0,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.63078313050504,
+          0.5481516197937817,
+          -0.19115585460162732,
+          0.63078313050504
+        ],
+        [
+          0.0,
+          -0.5342504204763436,
+          -0.639106169353419,
+          2.3174596251874334e-16
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "l": 4,
+      "m": 3,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.0,
+          -0.015814695067509855,
+          -0.42363234605818784,
+          -2.939280231082287e-48
+        ],
+        [
+          0.0,
+          -0.14848177102853788,
+          0.5955478228859118,
+          7.200313346988032e-32
+        ],
+        [
+          0.0,
+          0.4129442859175911,
+          0.9669200301832268,
+          0.0
+        ]
+      ]
+    },
+    {
+      "l": 64,
+      "m": 1,
+      "theta": [
+        0.0,
+        0.3,
+        1.2,
+        3.141592653589793
+      ],
+      "phi": [
+        0.1,
+        0.4,
+        2.3,
+        0.9
+      ],
+      "expected": [
+        [
+          0.0,
+          0.20073355773660626,
+          0.29162144477897545,
+          1.1123729326205098e-14
+        ],
+        [
+          -145.39400154803945,
+          -47.763035787043755,
+          6.854653486781194,
+          -90.83214306320826
+        ],
+        [
+          14.588059468514029,
+          -0.28718437883836617,
+          0.3501856350585744,
+          -114.46287149880989
+        ]
+      ]
+    }
+  ],
+  "hash_cases": [
+    {
+      "value": {
+        "n": 1,
+        "z": -0.0
+      },
+      "sha256": "11beb7b10beec1509e9c51e46aaa2445ba87a6134074c358144a087207082403"
+    },
+    {
+      "value": {
+        "z": 0,
+        "n": 1.0
+      },
+      "sha256": "11beb7b10beec1509e9c51e46aaa2445ba87a6134074c358144a087207082403"
+    },
+    {
+      "value": {
+        "a": "\u5730\u7403\ud83d\ude42",
+        "b": 1e-07,
+        "c": 1e+21
+      },
+      "sha256": "65a47b380cb6b1ce991df18d787098f10ab860f9d3aac825d6f800423a0c2958"
+    },
+    {
+      "value": {
+        "metadata": {
+          "unknown": true,
+          "nested": [
+            "\u00b5",
+            null
+          ]
+        }
+      },
+      "sha256": "1fd90998b00d43543293e44d4605288b952716e6fcbbf70c063000f922bfbe97"
+    },
+    {
+      "value": {
+        "a": "e\u0301",
+        "b": "\u00e9"
+      },
+      "sha256": "bf691ed1b655fba67dbd0f711a09c1da8325f683e1c1f418b9cf770aa87926d0"
+    }
+  ],
+  "invalid_json_cases": [
+    "{\"value\":9007199254740992}",
+    "{\"value\":\"\\ud800\"}",
+    "{\"value\":NaN}"
+  ],
+  "default_scenes": {
+    "analytic": {
+      "schema_version": "1.1",
+      "model_id": "homogeneous-solid",
+      "bundle_hash": "35ba2843382decdc2a57a17b5d9dc650f450c3c7ca81110f8becdab4610eb7f5",
+      "terms": [
+        {
+          "mode_id": "quadrupole",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "time_s": 0.0,
+      "time_scale": 1.0,
+      "deformation": 0.035,
+      "surface": "solid",
+      "geography": false,
+      "color": "radial",
+      "arrows": false,
+      "reference": true,
+      "cutaway": false,
+      "radius_fraction": 1.0,
+      "quality": "standard",
+      "arrow_scale": 0.12,
+      "color_limit": 1.0925484305920792,
+      "point": null,
+      "trajectory": {
+        "enabled": false,
+        "start_s": 0.0,
+        "duration_s": 8.0,
+        "samples": 256
+      },
+      "nodes": false,
+      "camera": {
+        "azimuth_deg": 25.0,
+        "elevation_deg": 18.0,
+        "distance": 3.2
+      },
+      "background": "dark",
+      "wireframe_spacing_deg": 15
+    },
+    "interface": {
+      "schema_version": "1.1",
+      "model_id": "interface",
+      "bundle_hash": "1cacda26679c8008ca8e93c2e1efc4525e0aea554ca5d0f5cda6a3ca36383ac8",
+      "terms": [
+        {
+          "mode_id": "toroidal",
+          "m": 0,
+          "amplitude": 1.0,
+          "phase_rad": 0.0
+        }
+      ],
+      "time_s": 0.0,
+      "time_scale": 1.0,
+      "deformation": 0.035,
+      "surface": "solid",
+      "geography": false,
+      "color": "radial",
+      "arrows": false,
+      "reference": true,
+      "cutaway": false,
+      "radius_fraction": 1.0,
+      "quality": "standard",
+      "arrow_scale": 0.12,
+      "color_limit": 0.8462843753216345,
+      "point": null,
+      "trajectory": {
+        "enabled": false,
+        "start_s": 0.0,
+        "duration_s": 8.0,
+        "samples": 256
+      },
+      "nodes": false,
+      "camera": {
+        "azimuth_deg": 25.0,
+        "elevation_deg": 18.0,
+        "distance": 3.2
+      },
+      "background": "dark",
+      "wireframe_spacing_deg": 15
+    }
+  }
+}

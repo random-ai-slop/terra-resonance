@@ -1,0 +1,2506 @@
+{
+  "schema_version": "1.0",
+  "generator": "earth_modes.export",
+  "generator_version": "0.2.0",
+  "annotation_language": "en",
+  "section_surface_policy": "filled scientific sections; legacy shell triangle edges preserved",
+  "numpy_version": "2.5.2",
+  "matplotlib_version": "3.11.1",
+  "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+  "model_id": "prem-isotropic-noocean-3mhz",
+  "model_reference_frequency_hz": 0.003,
+  "model_provenance": {
+    "source": "https://github.com/harrymd/Ouroboros",
+    "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+    "source_path": "example/input/models/prem_noocean_at_03.000_mHz_noq.txt",
+    "source_sha256": "6f4e6433f87e1f40d6597ba797a127aa7f032b537d325b196578e34635741aa1",
+    "license": "GPL-3.0",
+    "approximations": [
+      "isotropic mean of anisotropic speeds",
+      "no ocean",
+      "3 mHz reference dispersion correction",
+      "attenuation removed in supplied table"
+    ],
+    "q_semantics": "Zero source Q columns are absent attenuation information, not finite zero Q."
+  },
+  "bundle_provenance": {
+    "solver": "Ouroboros mixed Galerkin v6.0",
+    "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+    "patches": [
+      "private-namespace",
+      "numpy-modern",
+      "sorted-jacobi-quadrature",
+      "material-mesh",
+      "whole-mode-discrete-normalization",
+      "physical-spectrum-extraction",
+      "shifted-inverse-low-spectrum-refinement",
+      "indexed-mixed-reduction",
+      "regular-centre-congruence",
+      "fluid-free-surface",
+      "multi-interface-offset",
+      "fluid-material-density-sheet",
+      "rigid-translation-stiffness-projection",
+      "linear-density-gravity",
+      "poisson-potential",
+      "linear-q-strain-energy"
+    ],
+    "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052",
+    "request": {
+      "families": [
+        "R",
+        "S",
+        "T"
+      ],
+      "l_min": 1,
+      "l_max": 4,
+      "frequency_min_hz": 5e-05,
+      "frequency_max_hz": 0.003,
+      "mesh_size": 140,
+      "gravity": 2,
+      "n_max": null,
+      "linear_q": false,
+      "target_frequency_hz": null,
+      "convergence_check": true,
+      "memory_mib": 512
+    },
+    "gravity": 2,
+    "groups": [
+      {
+        "family": "R",
+        "l": 0,
+        "solid_domain_id": null,
+        "status": "success",
+        "matrix_dimension": 282,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 282,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "S",
+        "l": 1,
+        "solid_domain_id": null,
+        "status": "success",
+        "matrix_dimension": 525,
+        "spectrum": {
+          "negative": 1,
+          "near_zero": 39,
+          "positive": 485,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 39,
+        "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "S",
+        "l": 2,
+        "solid_domain_id": null,
+        "status": "success",
+        "matrix_dimension": 525,
+        "spectrum": {
+          "negative": 2,
+          "near_zero": 36,
+          "positive": 487,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 39,
+        "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "S",
+        "l": 3,
+        "solid_domain_id": null,
+        "status": "success",
+        "matrix_dimension": 525,
+        "spectrum": {
+          "negative": 3,
+          "near_zero": 34,
+          "positive": 488,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 39,
+        "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "S",
+        "l": 4,
+        "solid_domain_id": null,
+        "status": "success",
+        "matrix_dimension": 525,
+        "spectrum": {
+          "negative": 4,
+          "near_zero": 32,
+          "positive": 489,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 39,
+        "exclusion_basis": "Ouroboros mixed fluid tangential essential-space dimension",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 1,
+        "solid_domain_id": "solid:prem-00",
+        "status": "success",
+        "matrix_dimension": 40,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 1,
+          "positive": 39,
+          "threshold": 1.4401628961550324e-14
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 1,
+        "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "status": "success",
+        "matrix_dimension": 163,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 1,
+          "positive": 162,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 2,
+        "solid_domain_id": "solid:prem-00",
+        "status": "success",
+        "matrix_dimension": 40,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 40,
+          "threshold": 1.4571785458717267e-14
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 2,
+        "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "status": "success",
+        "matrix_dimension": 163,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 163,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 3,
+        "solid_domain_id": "solid:prem-00",
+        "status": "success",
+        "matrix_dimension": 40,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 40,
+          "threshold": 1.7170912303356446e-14
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 3,
+        "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "status": "success",
+        "matrix_dimension": 163,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 163,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 4,
+        "solid_domain_id": "solid:prem-00",
+        "status": "success",
+        "matrix_dimension": 40,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 40,
+          "threshold": 2.422825545406991e-14
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      },
+      {
+        "family": "T",
+        "l": 4,
+        "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+        "status": "success",
+        "matrix_dimension": 163,
+        "spectrum": {
+          "negative": 0,
+          "near_zero": 0,
+          "positive": 163,
+          "threshold": 9.869604401089358e-11
+        },
+        "excluded_subspace_count": 0,
+        "exclusion_basis": "none",
+        "spectral_completeness": {
+          "status": "complete",
+          "reason": "full computed finite-element eigenspectrum"
+        },
+        "eigensolver": "direct symmetric generalized eigensolve"
+      }
+    ],
+    "effective_settings": {
+      "mesh_counts": {
+        "prem-00": 20,
+        "prem-01": 39,
+        "prem-02": 6,
+        "prem-03": 27,
+        "prem-04": 5,
+        "prem-05": 5,
+        "prem-06": 7,
+        "prem-07": 7,
+        "prem-08": 7,
+        "prem-09": 5,
+        "prem-10": 4,
+        "prem-11": 4,
+        "prem-12": 4
+      },
+      "actual_mesh_size": 140,
+      "matrix_dimension_estimate": 970,
+      "estimated_working_memory_bytes": 90326400
+    },
+    "runtime_s": 0.5572050829650834,
+    "effective_model": {
+      "reference": "bundle.model"
+    }
+  },
+  "scene": {
+    "schema_version": "1.1",
+    "wireframe_spacing_deg": 15,
+    "model_id": "prem-isotropic-noocean-3mhz",
+    "bundle_hash": "e26a5121a8ac0f448b81c66d5c0b4fba241116f18bf7de96cd6f758608478ef9",
+    "terms": [
+      {
+        "mode_id": "S0_4",
+        "m": 0,
+        "amplitude": 0.3659686465244798,
+        "phase_rad": 0.0
+      },
+      {
+        "mode_id": "S1_2",
+        "m": 0,
+        "amplitude": 1.0,
+        "phase_rad": 3.141592653589793
+      }
+    ],
+    "time_s": 0.0,
+    "time_scale": 2539.5977608374073,
+    "deformation": 0.035,
+    "surface": "solid",
+    "geography": false,
+    "color": "radial",
+    "arrows": true,
+    "reference": true,
+    "cutaway": false,
+    "radius_fraction": 1.0,
+    "quality": "standard",
+    "arrow_scale": 0.12,
+    "color_limit": 0.29162060630548803,
+    "point": {
+      "latitude_deg": 0,
+      "longitude_deg": 0,
+      "radius_fraction": 1.0
+    },
+    "trajectory": {
+      "enabled": true,
+      "start_s": 0.0,
+      "duration_s": 60950.34626009777,
+      "samples": 997
+    },
+    "nodes": false,
+    "camera": {
+      "azimuth_deg": 25.0,
+      "elevation_deg": 18.0,
+      "distance": 3.2
+    },
+    "background": "dark"
+  },
+  "mode_provenance": {
+    "R0_0": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999969961993076.6,
+        "rescale_factor": 3.1623251554975056e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.548092439354288e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+          "reference_frequency_hz": 0.000814044,
+          "relative_error": 0.0005356027279050934,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "R1_0": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999987810133599.5,
+        "rescale_factor": 3.16229693421569e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 5.428547499030834e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+          "reference_frequency_hz": 0.0016311519999999999,
+          "relative_error": 6.72491938381592e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "R2_0": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 2,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000038493693408.8,
+        "rescale_factor": 3.162216798052118e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.2079343635696945e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/R.txt",
+          "reference_frequency_hz": 0.0025097450000000003,
+          "relative_error": 5.951478832666446e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S1_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 40,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000224945010827.4,
+        "rescale_factor": 3.161922050870405e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 0.00021181775563270625,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S2_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 41,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000032916261896.2,
+        "rescale_factor": 3.162225616273368e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.2818097693262252e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0004044036,
+          "relative_error": 0.0001582564607381931,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S3_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 42,
+      "source_n": 3,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000044579439725.0,
+        "rescale_factor": 3.1622071762417985e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 8.377934690241319e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0009436615000000001,
+          "relative_error": 0.00015257186187911387,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S4_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 43,
+      "source_n": 4,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000033473054034.9,
+        "rescale_factor": 3.162224735951531e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 4.9784199521872705e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001412623,
+          "relative_error": 4.192311398731885e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S5_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 44,
+      "source_n": 5,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000773791479024.1,
+        "rescale_factor": 3.1610548979909804e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.5189723377610575e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S6_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 45,
+      "source_n": 6,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000054193123652.1,
+        "rescale_factor": 3.162191976798821e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 4.611564011637032e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S7_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 46,
+      "source_n": 7,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999952949800524.4,
+        "rescale_factor": 3.162352055690987e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.2749352707334546e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S8_1": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 47,
+      "source_n": 8,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000132632049131.4,
+        "rescale_factor": 3.162067971343748e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.419645524782988e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S0_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 39,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999998926780142.1,
+        "rescale_factor": 3.1622793570793356e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.7146339047846688e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.00030966310000000004,
+          "relative_error": 0.0004666524921184134,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S1_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 40,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000007635655477.9,
+        "rescale_factor": 3.162265587206149e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.693439861344993e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0006802513,
+          "relative_error": 4.465176999590703e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S2_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 41,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999978765572420.5,
+        "rescale_factor": 3.162311235281072e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.4525153997193297e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0009415713,
+          "relative_error": 3.5189456304540734e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S3_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 42,
+      "source_n": 3,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000103528830398.8,
+        "rescale_factor": 3.16211397942375e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 9.343033208373748e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001106318,
+          "relative_error": 1.1082700073550278e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S4_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 43,
+      "source_n": 4,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000025045085890.9,
+        "rescale_factor": 3.1622380611543937e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 5.049155353250003e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0017220949999999999,
+          "relative_error": 2.82589754202478e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S5_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 44,
+      "source_n": 5,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000038610336193.2,
+        "rescale_factor": 3.162216613634346e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.636011003317088e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S6_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 45,
+      "source_n": 6,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000714126684179.4,
+        "rescale_factor": 3.161149131136988e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 6.357915110633248e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S7_2": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 46,
+      "source_n": 7,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000168808869709.1,
+        "rescale_factor": 3.162010783697481e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.9787144717764135e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S0_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 39,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999998297914315.1,
+        "rescale_factor": 3.162280351405583e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.3335438227380315e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0004690639,
+          "relative_error": 0.0003590826804807934,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S1_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 40,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000012122069686.5,
+        "rescale_factor": 3.16225849366755e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.2145729412504073e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0009401076,
+          "relative_error": 0.00011092615696273178,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S2_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 41,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000022669503242.6,
+        "rescale_factor": 3.16224181714595e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.094021194584108e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001241763,
+          "relative_error": 5.274069800109693e-06,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S3_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 42,
+      "source_n": 3,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999955792166425.4,
+        "rescale_factor": 3.1623475612082764e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.814329354457205e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001421074,
+          "relative_error": 2.4563583705838887e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S4_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 43,
+      "source_n": 4,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000016851918914.4,
+        "rescale_factor": 3.1622510152817853e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 7.385819204767235e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.002048584,
+          "relative_error": 7.658601059556958e-06,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S5_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 44,
+      "source_n": 5,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000029217362737.8,
+        "rescale_factor": 3.162231464473927e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.9509185650129417e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S6_3": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 45,
+      "source_n": 6,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000127016505465.2,
+        "rescale_factor": 3.162076848569115e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 6.162564303300426e-06,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "S0_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 39,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999997631540999.8,
+        "rescale_factor": 3.1622814050375245e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.3082068338580938e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.0006476219,
+          "relative_error": 0.0002375165942258839,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S1_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 40,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000008674664250.9,
+        "rescale_factor": 3.162263944409129e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.1095658842921975e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001173143,
+          "relative_error": 0.00012745862884355752,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S2_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 41,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000051956293674.6,
+        "rescale_factor": 3.162195513256006e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.5109711061400524e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001378181,
+          "relative_error": 9.064593263885534e-06,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S3_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 42,
+      "source_n": 3,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999880554300733.9,
+        "rescale_factor": 3.1624665373221665e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.7453679775495778e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.001836657,
+          "relative_error": 2.3832306832782812e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S4_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 43,
+      "source_n": 4,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000014427214502.2,
+        "rescale_factor": 3.162254848986146e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.8071444505543823e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/S.txt",
+          "reference_frequency_hz": 0.002277648,
+          "relative_error": 2.5440999932957453e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "S5_4": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": null,
+      "raw_eigenpair_index": 44,
+      "source_n": 5,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000003178224270.0,
+        "rescale_factor": 3.162272634966554e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "postprocessed",
+        "units": "m kg^(-1/2) s^(-2)",
+        "gravity": 2,
+        "method": "Poisson integral of canonical displacement; layer boundaries retained",
+        "role": "consistent self-gravity diagnostic"
+      },
+      "quality": {
+        "status": "converged",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.2594028227320277e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": null,
+        "warnings": [
+          "Finite-element result has not been independently benchmarked."
+        ]
+      }
+    },
+    "T1_1:solid:prem-00": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-00",
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000476089951490.8,
+        "rescale_factor": 3.161525164540512e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.502422897180872e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS jcom4 raw index0 corresponds first nonzero l1 inner-core toroidal mode",
+          "reference_frequency_hz": 0.0026373449999999997,
+          "relative_error": 5.107167343199048e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000049949164698.5,
+        "rescale_factor": 3.162198686563031e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.346054365902679e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.001236232,
+          "relative_error": 1.792316175408537e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T2_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 2,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999931674388689.1,
+        "rescale_factor": 3.1623856979818556e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.3297467592197245e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.0021862870000000003,
+          "relative_error": 5.281787661082227e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_2:solid:prem-00": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-00",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1001095415359751.1,
+        "rescale_factor": 3.1605470780579595e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.7748202648621777e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+          "reference_frequency_hz": 0.0011359319823910452,
+          "relative_error": 2.2096907208002392e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000003880068084.2,
+        "rescale_factor": 3.162271525259921e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.3435585280416078e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.000379707,
+          "relative_error": 2.2050494604464177e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T1_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000044288976060.4,
+        "rescale_factor": 3.1622076354745685e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.2658782790617298e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.001320171,
+          "relative_error": 1.79240486493093e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T2_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 2,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999927915229903.9,
+        "rescale_factor": 3.1623916423597576e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.071218880538529e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.002229216,
+          "relative_error": 4.967229592822697e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_3:solid:prem-00": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-00",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1001193486635346.8,
+        "rescale_factor": 3.160392279570708e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.610837472313058e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+          "reference_frequency_hz": 0.001751565149801916,
+          "relative_error": 3.245619418890122e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000010954764540.2,
+        "rescale_factor": 3.162260339307099e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.907314499079432e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.0005865837,
+          "relative_error": 2.9694958855408515e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T1_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000035137492216.5,
+        "rescale_factor": 3.1622221043791085e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.1701631585756348e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.001439049,
+          "relative_error": 1.725212663705733e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T2_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 2,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999923269889132.9,
+        "rescale_factor": 3.1623989881082824e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.6995223950878538e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.002293239,
+          "relative_error": 4.4978032479159324e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_4:solid:prem-00": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-00",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1001285784006137.5,
+        "rescale_factor": 3.160246615552958e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 3.395776759806047e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "Independent traction ODE shooting; scripts/validate_numerics.py",
+          "reference_frequency_hz": 0.0023054521413700263,
+          "relative_error": 4.2233631725840937e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 0,
+      "source_n": 0,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000019961255308.4,
+        "rescale_factor": 3.162246099125012e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.5384809779819757e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.0007657931999999999,
+          "relative_error": 3.865210818099207e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T1_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 1,
+      "source_n": 1,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 1000022459874906.9,
+        "rescale_factor": 3.1622421485862336e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 1.1105288732860123e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.001585248,
+          "relative_error": 1.6985377791822742e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    },
+    "T2_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": {
+      "solver": "Ouroboros v6.0",
+      "upstream_commit": "fa63363040a28c08d9fe2bd7d05dcc823d90dd1e",
+      "solid_domain_id": "solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12",
+      "raw_eigenpair_index": 2,
+      "source_n": 2,
+      "label_convention": "radial index after essential-space removal, retaining zero-mode index",
+      "normalization_conversion": {
+        "source": "Ouroboros unscaled generalized mass eigenvector; tangential unit-vector basis",
+        "quadrature": "layerwise trapezoid on exported region grid",
+        "pre_rescale_integral": 999918993017441.8,
+        "rescale_factor": 3.162405751236266e-08,
+        "displacement_units": "kg^(-1/2)",
+        "internal_radius_to_m": 1000000.0,
+        "internal_density_to_kg_m3": 1000.0,
+        "internal_generalized_mass_to_kg": 1000000000000000.0,
+        "centre_method": "regular U=V=0 except S l1 even-U extrapolation and V=sqrt(2)U",
+        "corrections": []
+      },
+      "potential": {
+        "status": "absent",
+        "reason": "not evaluated"
+      },
+      "quality": {
+        "status": "benchmark_checked",
+        "mesh_convergence": {
+          "coarse_mesh": 140,
+          "fine_mesh": 280,
+          "relative_frequency_change": 2.2351090329880853e-05,
+          "tolerance": 0.005
+        },
+        "benchmark": {
+          "source": "MINEOS 26f842dbe95b0c27d5e77146d415268db1239913 raw output docs/validation/mineos/T.txt",
+          "reference_frequency_hz": 0.002378006,
+          "relative_error": 3.90152955336287e-05,
+          "tolerance": 0.005,
+          "quantity": "frequency_hz",
+          "model_hash": "0481d664b43d0243bdcbb009e99f532fffecf70b121dce5369e8bec417702052"
+        },
+        "warnings": []
+      }
+    }
+  },
+  "illustration_divisors": {
+    "R0_0": 1.7146230238711622e-12,
+    "R1_0": 2.6064798910187625e-12,
+    "R2_0": 3.2585800314464007e-12,
+    "S1_1": 9.04056387295702e-12,
+    "S2_1": 1.8053010572705317e-12,
+    "S3_1": 2.1384041043554187e-12,
+    "S4_1": 2.389035825542304e-12,
+    "S5_1": 2.67659110248201e-11,
+    "S6_1": 6.728956682338025e-12,
+    "S7_1": 4.028892648867856e-12,
+    "S8_1": 8.862099048023622e-12,
+    "S0_2": 2.0683243339071078e-12,
+    "S1_2": 2.398783537746978e-12,
+    "S2_2": 9.084332958884848e-12,
+    "S3_2": 3.1508283788344895e-12,
+    "S4_2": 2.2501534301687847e-12,
+    "S5_2": 2.6759607148783065e-12,
+    "S6_2": 1.4986081551300334e-11,
+    "S7_2": 5.306151680180955e-12,
+    "S0_3": 2.239758997124018e-12,
+    "S1_3": 2.589089544825824e-12,
+    "S2_3": 2.342636810759781e-12,
+    "S3_3": 1.108287029657152e-11,
+    "S4_3": 2.2121793655304634e-12,
+    "S5_3": 2.733880784738946e-12,
+    "S6_3": 2.526888127329918e-12,
+    "S0_4": 2.3195916567614942e-12,
+    "S1_4": 2.5833420952688284e-12,
+    "S2_4": 2.678304691657235e-12,
+    "S3_4": 1.263662915817981e-11,
+    "S4_4": 2.7008914261115993e-12,
+    "S5_4": 2.2145565472465737e-12,
+    "T1_1:solid:prem-00": 2.3767402421177293e-11,
+    "T1_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.6513702835712144e-12,
+    "T2_1:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 3.0238933923853056e-12,
+    "T0_2:solid:prem-00": 1.5421183211455755e-11,
+    "T0_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.3278478092157638e-12,
+    "T1_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.637423960385231e-12,
+    "T2_2:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.9915594592220536e-12,
+    "T0_3:solid:prem-00": 1.6138297539739493e-11,
+    "T0_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.5142640468053095e-12,
+    "T1_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.5951843523026127e-12,
+    "T2_3:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.9413466029662e-12,
+    "T0_4:solid:prem-00": 1.6780003692409837e-11,
+    "T0_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.7198968917356066e-12,
+    "T1_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.5179414571137465e-12,
+    "T2_4:solid:prem-02,prem-03,prem-04,prem-05,prem-06,prem-07,prem-08,prem-09,prem-10,prem-11,prem-12": 2.8716217991628933e-12
+  },
+  "amplitude_meaning": "dimensionless illustration coefficient; not earthquake excitation",
+  "reproduction": "Use the matching saved project/bundle; this hash alone cannot restore input data.",
+  "format": "png",
+  "probe": {
+    "radius_fraction": 1.0,
+    "derivative": 0,
+    "normalized": true,
+    "latitude_deg": 0,
+    "longitude_deg": 0,
+    "start_s": 0.0,
+    "step_s": 14.880455629906683,
+    "sample_count": 4097
+  },
+  "units": "1",
+  "coordinates": "Cartesian x at lat0/lon0, y at lat0/lon90E, z north",
+  "production": {
+    "width": 800,
+    "height": 500,
+    "dpi": 100,
+    "transparent": false,
+    "annotation": true,
+    "layout": "scientific figure"
+  },
+  "export_spec": {
+    "format": "png",
+    "width": 800,
+    "height": 500,
+    "duration_s": 8.0,
+    "fps": null,
+    "transparent": false,
+    "annotation": true,
+    "omit_arrows": false,
+    "omit_geography": false,
+    "omit_analysis_overlays": false
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SceneSpec 1.0 / 1.1",
+  "$comment": "Wire structure only. Python/TypeScript semantic validation remains mandatory: JCS domain, IDs, array lengths, layer topology, normalization, regularity, hashes, evidence and resource/sampling limits.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bundle_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "mode_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "m": {
+            "type": "integer",
+            "minimum": -64,
+            "maximum": 64
+          },
+          "amplitude": {
+            "type": "number"
+          },
+          "phase_rad": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "mode_id",
+          "m",
+          "amplitude",
+          "phase_rad"
+        ],
+        "additionalProperties": true
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "time_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "time_scale": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "deformation": {
+      "type": "number",
+      "minimum": 0
+    },
+    "surface": {
+      "enum": [
+        "solid",
+        "wireframe"
+      ]
+    },
+    "geography": {
+      "type": "boolean"
+    },
+    "color": {
+      "enum": [
+        "radial",
+        "magnitude",
+        "theta",
+        "phi"
+      ]
+    },
+    "arrows": {
+      "type": "boolean"
+    },
+    "reference": {
+      "type": "boolean"
+    },
+    "cutaway": {
+      "type": "boolean"
+    },
+    "radius_fraction": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1
+    },
+    "quality": {
+      "enum": [
+        "draft",
+        "standard",
+        "high"
+      ]
+    },
+    "arrow_scale": {
+      "type": "number",
+      "minimum": 0
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "azimuth_deg": {
+          "type": "number"
+        },
+        "elevation_deg": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "distance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "azimuth_deg",
+        "elevation_deg",
+        "distance"
+      ],
+      "additionalProperties": true
+    },
+    "background": {
+      "enum": [
+        "dark",
+        "light"
+      ]
+    },
+    "color_limit": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "point": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "latitude_deg": {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            "longitude_deg": {
+              "type": "number"
+            },
+            "radius_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "layer_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "latitude_deg",
+            "longitude_deg",
+            "radius_fraction"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "trajectory": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "start_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "samples": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 2048
+        }
+      },
+      "required": [
+        "enabled",
+        "start_s",
+        "duration_s",
+        "samples"
+      ],
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "boolean"
+    },
+    "wireframe_spacing_deg": {
+      "enum": [
+        null,
+        5,
+        10,
+        15,
+        30
+      ],
+      "description": "Material surface-grid spacing. Scene 1.0 allows only absent/null; new 1.1 scenes default to 15. Inactive for filled surfaces."
+    }
+  },
+  "required": [
+    "schema_version",
+    "model_id",
+    "bundle_hash",
+    "terms",
+    "time_s",
+    "time_scale",
+    "deformation",
+    "surface",
+    "geography",
+    "color",
+    "arrows",
+    "reference",
+    "cutaway",
+    "radius_fraction",
+    "quality",
+    "arrow_scale",
+    "camera",
+    "background",
+    "color_limit",
+    "point",
+    "trajectory",
+    "nodes"
+  ],
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "geography": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "radius_fraction": {
+            "const": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "nodes": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "color": {
+            "enum": [
+              "radial",
+              "theta",
+              "phi"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "trajectory": {
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "point": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.1"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "wireframe_spacing_deg"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.0"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "wireframe_spacing_deg": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}
