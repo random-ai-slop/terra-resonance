@@ -13,6 +13,7 @@ import csv
 from email.parser import BytesParser
 import hashlib
 import json
+import math
 import os
 import shutil
 from pathlib import Path
@@ -234,6 +235,43 @@ def installed_check(version):
             "agreement_tamper_rejected": True, "existing_comparison": True}
 
 
+
+def check_recipe_outputs(folder, version):
+    """Read actual outputs from a copied recipe run by an isolated installation."""
+    from PIL import Image
+
+    names = ("cross-20", "cross-40", "refinement-default", "refinement-pilot")
+    for name in names:
+        report = json.loads((folder / (name + ".json")).read_text())
+        require(report["generator_version"] == version and len(report["rows"]) == 1,
+                "Copied recipe report has wrong producer or pair count")
+        row = report["rows"][0]
+        require(math.isfinite(row["shape_distance"]) and row["shape_distance"] <= .003,
+                "Copied recipe shape regression exceeds named sphere bound")
+    evidence = json.loads((folder / "independent-frequency.json").read_text())
+    results = evidence["results"]
+    require(len(results) == 4 and all(math.isfinite(row["relative_error"])
+                                    and 0 <= row["relative_error"] <= .005 for row in results),
+            "Copied recipe independent frequency check failed")
+    require(set(evidence["agreement_reports"]) == {name + ".json" for name in names},
+            "Copied recipe omitted a method/refinement report")
+    for method in ("default", "pilot"):
+        for mesh in (20, 40):
+            require((folder / f"{method}-{mesh}.json").is_file(), "Copied recipe missing a full bundle")
+    with Image.open(folder / "cross-40.png") as picture:
+        picture.load(); require(picture.size == (1200, 800), "Copied recipe PNG differs from default dimensions")
+    vector = ET.parse(folder / "cross-40.svg").getroot()
+    require(any(node.tag.endswith("path") for node in vector.iter())
+            and not any(node.tag.endswith("image") for node in vector.iter()), "Copied recipe SVG is not native")
+    with (folder / "cross-40.csv").open(newline="") as stream:
+        require(len(list(csv.DictReader(stream))) == 1, "Copied recipe scalar CSV is incomplete")
+    return {"reports": list(names), "independent_reference_hz": evidence["reference"]["frequency_hz"],
+            "maximum_independent_frequency_error": max(row["relative_error"] for row in results),
+            "png": [1200, 800], "native_svg": True,
+            "artifact_sha256": {str(path.relative_to(folder)): hashlib.sha256(path.read_bytes()).hexdigest()
+                                for path in sorted(folder.iterdir()) if path.is_file()}}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dist-dir", type=Path, default=ROOT / "dist/ci")
@@ -261,6 +299,9 @@ def main():
             env = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
             env.update(MPLCONFIGDIR=str(scratch / "mpl"), XDG_CACHE_HOME=str(scratch / "cache"),
                        MPLBACKEND="Agg", OPENBLAS_NUM_THREADS="1")
+            recipe = scratch / "agreement-recipe.py"
+            shutil.copyfile(ROOT / "examples/recipes/agreement.py", recipe)
+            recipe_digest = hashlib.sha256(recipe.read_bytes()).hexdigest()
             for index, path in enumerate(selected):
                 destination = scratch / f"env-{index}"
                 venv.EnvBuilder(with_pip=True).create(destination)
@@ -270,7 +311,20 @@ def main():
                 report = scratch / f"check-{index}.json"
                 subprocess.run([str(python), "-I", str(Path(__file__).resolve()), "--installed", version,
                                 "--report", str(report)], check=True, cwd=work, env=env)
-                checks.append({"archive": path.name, **json.loads(report.read_text())})
+                recipe_output = work / "recipe-output"
+                subprocess.run([str(python), "-I", str(recipe), str(recipe_output)],
+                               check=True, cwd=work, env=env)
+                recipe_result = check_recipe_outputs(recipe_output, version)
+                before = recipe_result["artifact_sha256"]
+                refused = subprocess.run([str(python), "-I", str(recipe), str(recipe_output)],
+                                         cwd=work, env=env, capture_output=True, text=True)
+                require(refused.returncode != 0, "Copied recipe reused an existing output directory")
+                after = {str(p.relative_to(recipe_output)): hashlib.sha256(p.read_bytes()).hexdigest()
+                         for p in recipe_output.iterdir() if p.is_file()}
+                require(before == after, "Failed recipe retry changed existing outputs")
+                checks.append({"archive": path.name, **json.loads(report.read_text()),
+                               "copied_recipe": {"script_sha256": recipe_digest, **recipe_result,
+                                                 "existing_directory_protected": True}})
         (folder / "SHA256SUMS").write_text("".join(f"{a['sha256']}  {a['name']}\n" for a in audits))
         result = {"version": version, "archives": audits, "installed": checks}
     if args.report:
