@@ -111,12 +111,24 @@ export default function Workbench() {
         const lesson = catalog.lessons[2];
         if (!lesson || catalog.bundle_hash !== fallback.bundle_hash)
           throw issue('The default lesson does not match the mode bundle');
+        const initialScene = {
+          ...lesson.scene,
+          deformation: 0.15,
+          arrows: false,
+          reference: false,
+          geography: true,
+          nodes: false,
+          cutaway: false,
+          radius_fraction: 1,
+          point: null,
+          trajectory: { ...lesson.scene.trajectory, enabled: false },
+        } satisfies Scene;
         const p = await parseProject(
           JSON.stringify({
             format: 'terra-project',
             version: '1.0',
             bundle: valid,
-            scene: lesson.scene,
+            scene: initialScene,
             probe: lesson.probe,
             export: lesson.export,
             teaching: lessonMetadata(lesson),
